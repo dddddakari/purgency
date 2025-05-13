@@ -1,6 +1,6 @@
-TileMap
 StaticBody2D
 CollisionShape2D
+TileMap
 Sprite2D
 WorldEnvironment
 AnimatedSprite2D

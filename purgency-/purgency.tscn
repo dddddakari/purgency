@@ -1,23 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://bh742jefp6nhe"]
 
-[ext_resource type="Texture2D" uid="uid://cv6ls4sbljlnp" path="res://icon.svg" id="1_8k3gi"]
+[ext_resource type="Texture2D" uid="uid://mwec5xm8pk2j" path="res://floor_house_2.png" id="1_n8cfa"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="2_n8cfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8cfa"]
-size = Vector2(120.602, 125.211)
+size = Vector2(95.3334, 18.0549)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="FloorHouse2" type="Sprite2D" parent="."]
+physics_interpolation_mode = 1
+position = Vector2(572, 330)
+scale = Vector2(11.9531, 6.82812)
+texture = ExtResource("1_n8cfa")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(581, 318.5)
-scale = Vector2(8.92187, 4.99219)
-texture = ExtResource("1_8k3gi")
+[node name="StaticBody2D" type="StaticBody2D" parent="FloorHouse2"]
+position = Vector2(-47.8536, -48.3295)
+scale = Vector2(0.0836601, 0.146453)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(569, 315)
-scale = Vector2(8.92187, 4.83984)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorHouse2/StaticBody2D"]
+position = Vector2(573.234, 591.641)
+scale = Vector2(11.9531, 6.82813)
 shape = SubResource("RectangleShape2D_n8cfa")
 
 [node name="Player" parent="." instance=ExtResource("2_n8cfa")]
