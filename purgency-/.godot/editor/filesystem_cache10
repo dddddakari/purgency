@@ -1,4 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1747151906
-icon.svg::CompressedTexture2D::6311504376415590157::1747151856::1747151908::1::::<><><>0<>0<>64259108af109ed7edacb32dcb1bfab9<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-purgency.tscn::PackedScene::2945612165652725038::1747151856::0::1::::<><><>0<>0<><>::
+::res://::1747152439
+icon.svg::CompressedTexture2D/CompressedTexture2D::6311504376415590157::1747151856::1747151908::1::::<><><>0<>0<>64259108af109ed7edacb32dcb1bfab9<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+purgency.tscn::PackedScene/PackedScene::2945612165652725038::1747151856::0::1::::<><><>0<>0<><>::
+::res://entities/::1747152439
+::res://entities/player/::1747152439
+player.tscn::PackedScene::8308596005498646553::1747152434::0::1::::<><><>0<>0<><>::
+Prototype_Character.png::CompressedTexture2D::6088788509300740476::1747152315::1747152439::1::::<><><>0<>0<>491d4f2f52cda3863b0b36df14ef582f<>res://.godot/imported/Prototype_Character.png-e882b73a7700e88448d84fcfd20dc9ca.ctex::
