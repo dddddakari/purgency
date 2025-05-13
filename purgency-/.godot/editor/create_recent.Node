@@ -1,6 +1,9 @@
-AnimatedSprite2D
+TileMap
+StaticBody2D
 CollisionShape2D
 Sprite2D
+WorldEnvironment
+AnimatedSprite2D
 AnimationTree
 AnimationPlayer
 CharacterBody2D

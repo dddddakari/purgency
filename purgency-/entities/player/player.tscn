@@ -1,5 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://dqm0mk3hhq2c0"]
+[gd_scene load_steps=34 format=3 uid="uid://dqm0mk3hhq2c0"]
 
+[ext_resource type="Script" uid="uid://cb1lvfarc3j8s" path="res://entities/player/player.gd" id="1_abrql"]
 [ext_resource type="Texture2D" uid="uid://cs0ppsqod3klo" path="res://entities/player/Prototype_Character.png" id="1_symyc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sglur"]
@@ -274,12 +275,13 @@ animations = [{
 size = Vector2(34, 62)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_abrql")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(147, 139)
 scale = Vector2(4.375, 4.65625)
 sprite_frames = SubResource("SpriteFrames_vewsg")
-frame_progress = 0.352819
+frame_progress = 0.237084
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(147, 141)
