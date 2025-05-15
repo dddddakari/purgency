@@ -1,2 +1,5 @@
-res://purgency.tscn
+res://scene/purgency.tscn
 res://entities/player/player.tscn
+res://scene/game.tscn
+res://scene/player.tscn
+res://entities/player/player.gd
