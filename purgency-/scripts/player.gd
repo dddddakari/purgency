@@ -3,6 +3,9 @@ extends CharacterBody2D
 const SPEED = 300
 var current_dir = "none"
 
+func _ready():
+	$Sprite2D.play("default")
+
 func _physics_process(delta):
 	player_movement(delta)
 	
