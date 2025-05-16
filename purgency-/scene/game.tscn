@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://br07bu5j8xrhq" path="res://scene/floor_house_2.png" id="1_dbls1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dbls1"]
-normal = Vector2(0.999998, -0.0018315)
-distance = 551.562
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_33cqm"]
 normal = Vector2(-0.999956, 0.00936631)
