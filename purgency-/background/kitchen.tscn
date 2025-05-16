@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dq60hd5ebe0rd"]
+[gd_scene load_steps=16 format=3 uid="uid://dq60hd5ebe0rd"]
 
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://background/TopDownHouse_DoorsAndWindows.png" id="1_0t17n"]
 [ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://background/TopDownHouse_FloorsAndWalls.png" id="2_q4quo"]
@@ -924,6 +924,9 @@ sources/3 = SubResource("TileSetAtlasSource_ivwby")
 sources/4 = SubResource("TileSetAtlasSource_scder")
 sources/5 = SubResource("TileSetAtlasSource_m008p")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gi5xj"]
+normal = Vector2(0, 1)
+
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_06717")
 format = 2
@@ -936,14 +939,26 @@ layer_2/tile_data = PackedInt32Array(458755, 3, 2, 458756, 65539, 2, 524291, 3, 
 layer_3/name = "Layer3"
 layer_3/tile_data = PackedInt32Array(524292, 655363, 0, 589828, 655363, 1, 458757, 131077, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-5, 33)
-anchor_mode = 0
-zoom = Vector2(5, 5)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(94, 77)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_gi5xj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(100, -1)
 
 [node name="Player" parent="." instance=ExtResource("7_gi5xj")]
 position = Vector2(138, 141)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-122, -74)
+scale = Vector2(5, 5)
+anchor_mode = 0
+zoom = Vector2(5, 5)
+limit_left = -25
+limit_top = -25
+limit_right = 1000
+limit_bottom = 1000
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
