@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dq60hd5ebe0rd"]
+[gd_scene load_steps=15 format=3 uid="uid://dq60hd5ebe0rd"]
 
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://background/TopDownHouse_DoorsAndWindows.png" id="1_0t17n"]
 [ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://background/TopDownHouse_FloorsAndWalls.png" id="2_q4quo"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bthbo8fsd2hbt" path="res://background/TopDownHouse_FurnitureState1.png" id="4_3ydyx"]
 [ext_resource type="Texture2D" uid="uid://dbnln7t4kg4nj" path="res://background/TopDownHouse_FurnitureState2.png" id="5_lhb2l"]
 [ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://background/TopDownHouse_SmallItems.png" id="6_ntq2s"]
+[ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_gi5xj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnsi2"]
 texture = ExtResource("1_0t17n")
@@ -941,3 +942,8 @@ anchor_mode = 0
 zoom = Vector2(5, 5)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("7_gi5xj")]
+position = Vector2(138, 141)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]

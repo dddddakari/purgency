@@ -274,17 +274,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_abrql"]
-radius = 16.0
+radius = 9.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_abrql")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4.54747e-13, -8)
-scale = Vector2(-4.63982, 4.64844)
+position = Vector2(-1, -4)
+scale = Vector2(-1.73084, 1.64941)
 sprite_frames = SubResource("SpriteFrames_vewsg")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_abrql")
