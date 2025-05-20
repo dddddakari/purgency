@@ -66,8 +66,3 @@ func play_anim(movement):
 			anim.play("walking")
 		elif movement == 0:
 			anim.play("default")
-	
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
