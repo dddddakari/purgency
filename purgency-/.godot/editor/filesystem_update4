@@ -11,3 +11,7 @@ res://background/interactable.tscn
 res://interactionsystem/InteractingComponent.tscn
 res://interactionsystem/interactable.tscn
 res://entities/items/fridge/Fridge.tscn
+res://background/outside/black_scene.tscn
+res://background/outside/area_2d.gd
+res://background/outside/outside.tscn
+res://background/area_2d.gd

@@ -1,8 +1,8 @@
+CollisionShape2D
+Area2D
 AnimatedSprite2D
 Sprite2D
-CollisionShape2D
 TileMapLayer
-Area2D
 Label
 Node2D
 TileMap
