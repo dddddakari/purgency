@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 res://scene/game.tscn
 res://entities/player/player.tscn
 res://background/kitchen.tscn
@@ -11,3 +12,10 @@ res://background/interactable.tscn
 res://interactionsystem/InteractingComponent.tscn
 res://interactionsystem/interactable.tscn
 res://entities/items/fridge/Fridge.tscn
+=======
+res://area_2d.gd
+res://entities/player/player.tscn
+res://scripts/player.gd
+res://scene/game.tscn
+res://background/black_scene.tscn
+>>>>>>> Stashed changes
