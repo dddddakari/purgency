@@ -1,12 +1,14 @@
+AnimatedSprite2D
 Sprite2D
+CollisionShape2D
 TileMapLayer
+Area2D
+Label
+Node2D
 TileMap
 AnimationPlayer
-CollisionShape2D
 Camera2D
 StaticBody2D
 Camera2D
-AnimatedSprite2D
 WorldEnvironment
 AnimationTree
-CharacterBody2D
