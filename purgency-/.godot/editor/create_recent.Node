@@ -1,8 +1,10 @@
+CollisionShape2D
+Area2D
+CanvasLayer
 Sprite2D
 TileMapLayer
 TileMap
 AnimationPlayer
-CollisionShape2D
 Camera2D
 StaticBody2D
 Camera2D
