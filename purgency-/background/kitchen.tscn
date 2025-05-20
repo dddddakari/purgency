@@ -1046,7 +1046,6 @@ position = Vector2(69, 130)
 shape = SubResource("SegmentShape2D_3a2s8")
 
 [node name="Player" parent="." instance=ExtResource("7_gi5xj")]
-visible = false
 position = Vector2(138, 141)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
