@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cqj6ybiq41b84"]
+
+[node name="Outside" type="Area2D"]

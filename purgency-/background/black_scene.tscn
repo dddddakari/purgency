@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://mcqkuakwpw6"]
+[gd_scene load_steps=5 format=3 uid="uid://c65r7n7ogk5at"]
 
-[ext_resource type="Script" uid="uid://bgm5jnsg630f4" path="res://background/outside/area_2d.gd" id="2_dr6vr"]
-[ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="2_yr563"]
-[ext_resource type="Texture2D" uid="uid://cstojhgu67nqv" path="res://background/outside/back.jpg" id="3_ocfx7"]
+[ext_resource type="Texture2D" path="res://background/outside/back.jpg" id="1_tvbw6"]
+[ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="2_3fl4l"]
+[ext_resource type="Script" uid="uid://d102vt75qbi5o" path="res://area_2d.gd" id="3_5lhwi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yr563"]
 radius = 304.795
@@ -13,9 +13,9 @@ position = Vector2(1629, 801)
 [node name="Back" type="Sprite2D" parent="."]
 position = Vector2(-1045, -456.5)
 scale = Vector2(1.184, 0.673)
+texture = ExtResource("1_tvbw6")
 
-[node name="Player" parent="." instance=ExtResource("2_yr563")]
-z_index = 3
+[node name="Player" parent="." instance=ExtResource("2_3fl4l")]
 position = Vector2(-1037, -602)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -32,15 +32,11 @@ drag_vertical_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-1258, -622)
-script = ExtResource("2_dr6vr")
+script = ExtResource("3_5lhwi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(243, 79)
 shape = SubResource("CircleShape2D_yr563")
-
-[node name="Back" type="Sprite2D" parent="Area2D"]
-position = Vector2(131, 320)
-texture = ExtResource("3_ocfx7")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

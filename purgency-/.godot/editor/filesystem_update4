@@ -1,0 +1,10 @@
+res://scene/game.tscn
+res://interactionsystem/InteractingComponent.tscn
+res://interactionsystem/interactable.tscn
+res://entities/items/fridge/Fridge.tscn
+res://background/kitchen01.tscn
+res://entities/player/player.tscn
+res://background/outside/outside.tscn
+res://background/outside/black_scene.tscn
+res://background/outside.tscn
+res://background/black_scene.tscn
