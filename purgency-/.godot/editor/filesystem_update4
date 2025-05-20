@@ -1,3 +1,13 @@
-res://entities/player/player.tscn
 res://scene/game.tscn
+res://entities/player/player.tscn
 res://background/kitchen.tscn
+res://background/kitchen01.tscn
+res://menus/start_screen.tscn
+res://background/interact.gd
+res://background/Fridge.tscn
+res://background/fridge.gd
+res://background/InteractingComponent.tscn
+res://background/interactable.tscn
+res://interactionsystem/InteractingComponent.tscn
+res://interactionsystem/interactable.tscn
+res://entities/items/fridge/Fridge.tscn
