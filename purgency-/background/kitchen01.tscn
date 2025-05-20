@@ -1798,7 +1798,9 @@ shape = SubResource("SegmentShape2D_aw786")
 
 [node name="door" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1, 1)
+scale = Vector2(1.05669, 0.958715)
 shape = SubResource("SegmentShape2D_6iqww")
+disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(115, 209)
