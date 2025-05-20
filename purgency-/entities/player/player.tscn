@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://dqm0mk3hhq2c0"]
+[gd_scene load_steps=37 format=3 uid="uid://dqm0mk3hhq2c0"]
 
 [ext_resource type="Script" uid="uid://cy136o77vv0xn" path="res://scripts/player.gd" id="1_abrql"]
 [ext_resource type="Texture2D" uid="uid://cs0ppsqod3klo" path="res://entities/player/Prototype_Character.png" id="1_symyc"]
+[ext_resource type="PackedScene" uid="uid://cuq3e8q041hyd" path="res://interactionsystem/InteractingComponent.tscn" id="3_sglur"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abrql"]
 atlas = ExtResource("1_symyc")
@@ -286,5 +287,9 @@ sprite_frames = SubResource("SpriteFrames_vewsg")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_abrql")
+
+[node name="InteractingComponent" parent="." instance=ExtResource("3_sglur")]
+position = Vector2(-41, -62)

@@ -1,9 +1,0 @@
-res://entities/player/player.tscn
-res://scene/game.tscn
-res://background/kitchen.tscn
-res://background/kitchen/kitchen.tscn
-res://background/outside/black_scene.tscn
-res://background/kitchen/area_2d1.gd
-res://black_scene.tscn
-res://scripts/player.gd
-res://area_2d.gd
