@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bpgckbqg0nw5n"]
+[gd_scene load_steps=39 format=4 uid="uid://bpgckbqg0nw5n"]
 
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://background/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dbnln7t4kg4nj" path="res://background/TopDownHouse_FurnitureState2.png" id="5_ir46g"]
 [ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://background/TopDownHouse_SmallItems.png" id="6_86o3m"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_f7jwb"]
+[ext_resource type="Script" uid="uid://dd1h5xck64yn5" path="res://background/outside/area_2d.gd" id="9_d0mku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
 texture = ExtResource("1_pkqpq")
@@ -1690,6 +1691,13 @@ b = Vector2(92, 0)
 a = Vector2(-23, 0)
 b = Vector2(42, 0)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6iqww"]
+a = Vector2(3, 119)
+b = Vector2(58, 119)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mal84"]
+radius = 21.095
+
 [node name="Kitchen01" type="Node2D"]
 
 [node name="Layers" type="Node2D" parent="."]
@@ -1787,3 +1795,18 @@ shape = SubResource("SegmentShape2D_nt3qv")
 [node name="wall-door-right" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(70, 115)
 shape = SubResource("SegmentShape2D_aw786")
+
+[node name="door" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 1)
+shape = SubResource("SegmentShape2D_6iqww")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(115, 209)
+script = ExtResource("9_d0mku")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(12, 1)
+shape = SubResource("CircleShape2D_mal84")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
