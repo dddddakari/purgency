@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c65r7n7ogk5at"]
 
-[ext_resource type="Texture2D" path="res://background/outside/back.jpg" id="1_tvbw6"]
-[ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="2_3fl4l"]
-[ext_resource type="Script" uid="uid://d102vt75qbi5o" path="res://area_2d.gd" id="3_5lhwi"]
+[ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="1_ocfx7"]
+[ext_resource type="Script" uid="uid://d102vt75qbi5o" path="res://area_2d.gd" id="2_md4wr"]
+[ext_resource type="Texture2D" uid="uid://dw1ef1amy10cr" path="res://background/outside/black.jpg" id="3_ephxb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yr563"]
 radius = 304.795
@@ -10,12 +10,12 @@ radius = 304.795
 [node name="black scene" type="Node2D"]
 position = Vector2(1629, 801)
 
-[node name="Back" type="Sprite2D" parent="."]
-position = Vector2(-1045, -456.5)
-scale = Vector2(1.184, 0.673)
-texture = ExtResource("1_tvbw6")
+[node name="Black" type="Sprite2D" parent="."]
+position = Vector2(-1062, -419)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("3_ephxb")
 
-[node name="Player" parent="." instance=ExtResource("2_3fl4l")]
+[node name="Player" parent="." instance=ExtResource("1_ocfx7")]
 position = Vector2(-1037, -602)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -32,7 +32,7 @@ drag_vertical_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-1258, -622)
-script = ExtResource("3_5lhwi")
+script = ExtResource("2_md4wr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(243, 79)
