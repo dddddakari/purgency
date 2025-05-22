@@ -1,17 +1,17 @@
-[gd_scene load_steps=38 format=4 uid="uid://bpgckbqg0nw5n"]
+[gd_scene load_steps=37 format=4 uid="uid://bpgckbqg0nw5n"]
 
-[ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://background/TopDownHouse_DoorsAndWindows.png" id="1_mq4e7"]
-[ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://background/TopDownHouse_FloorsAndWalls.png" id="2_mppru"]
-[ext_resource type="Texture2D" uid="uid://c1qctmh3d84wc" path="res://background/TopDownHouse_FloorsAndWalls_OpenDoors.png" id="3_y7cd1"]
-[ext_resource type="Texture2D" uid="uid://bthbo8fsd2hbt" path="res://background/TopDownHouse_FurnitureState1.png" id="4_bd51q"]
-[ext_resource type="Texture2D" uid="uid://dbnln7t4kg4nj" path="res://background/TopDownHouse_FurnitureState2.png" id="5_jeocq"]
-[ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://background/TopDownHouse_SmallItems.png" id="6_6e7pm"]
-[ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_db8sy"]
-[ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="8_h2x6i"]
-[ext_resource type="Script" uid="uid://bs2armi551nx2" path="res://background/kitchen/area_2d.gd" id="9_qyhie"]
+[ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
+[ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://background/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
+[ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://background/TopDownHouse_FloorsAndWalls.png" id="2_mal84"]
+[ext_resource type="Texture2D" uid="uid://c1qctmh3d84wc" path="res://background/TopDownHouse_FloorsAndWalls_OpenDoors.png" id="3_d0mku"]
+[ext_resource type="Texture2D" uid="uid://bthbo8fsd2hbt" path="res://background/TopDownHouse_FurnitureState1.png" id="4_6iqww"]
+[ext_resource type="Texture2D" uid="uid://dbnln7t4kg4nj" path="res://background/TopDownHouse_FurnitureState2.png" id="5_ir46g"]
+[ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://background/TopDownHouse_SmallItems.png" id="6_86o3m"]
+[ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_f7jwb"]
+[ext_resource type="PackedScene" uid="uid://bqfmymrbtgbe6" path="res://entities/items/letter/Letter.tscn" id="9_d0mku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
-texture = ExtResource("1_mq4e7")
+texture = ExtResource("1_pkqpq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -188,7 +188,7 @@ texture = ExtResource("1_mq4e7")
 17:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6bh0"]
-texture = ExtResource("2_mppru")
+texture = ExtResource("2_mal84")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -353,7 +353,7 @@ texture = ExtResource("2_mppru")
 17:8/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6x5ck"]
-texture = ExtResource("3_y7cd1")
+texture = ExtResource("3_d0mku")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -380,7 +380,7 @@ texture = ExtResource("3_y7cd1")
 7:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cqlux"]
-texture = ExtResource("4_bd51q")
+texture = ExtResource("4_6iqww")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -616,7 +616,7 @@ texture = ExtResource("4_bd51q")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4i1an"]
-texture = ExtResource("5_jeocq")
+texture = ExtResource("5_ir46g")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -852,7 +852,7 @@ texture = ExtResource("5_jeocq")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nt3qv"]
-texture = ExtResource("6_6e7pm")
+texture = ExtResource("6_86o3m")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -927,7 +927,7 @@ sources/4 = SubResource("TileSetAtlasSource_4i1an")
 sources/5 = SubResource("TileSetAtlasSource_nt3qv")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3sh63"]
-texture = ExtResource("4_bd51q")
+texture = ExtResource("4_6iqww")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1166,7 +1166,7 @@ texture = ExtResource("4_bd51q")
 sources/0 = SubResource("TileSetAtlasSource_3sh63")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_32a6j"]
-texture = ExtResource("4_bd51q")
+texture = ExtResource("4_6iqww")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1405,7 +1405,7 @@ texture = ExtResource("4_bd51q")
 sources/0 = SubResource("TileSetAtlasSource_32a6j")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_td05b"]
-texture = ExtResource("4_bd51q")
+texture = ExtResource("4_6iqww")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1691,9 +1691,6 @@ b = Vector2(92, 0)
 a = Vector2(-23, 0)
 b = Vector2(42, 0)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mq4e7"]
-radius = 15.0333
-
 [node name="Kitchen01" type="Node2D"]
 
 [node name="Layers" type="Node2D" parent="."]
@@ -1714,7 +1711,7 @@ tile_set = SubResource("TileSet_wcc6m")
 tile_map_data = PackedByteArray("AAACAAgAAAAJAAAAAAACAAkAAAAJAAEAAAAEAAkAAAAKAAAAAAAEAAoAAAAKAAEAAAAGAAgAAAAJAAAAABAGAAkAAAAJAAEAABA=")
 tile_set = SubResource("TileSet_of622")
 
-[node name="Player" parent="." instance=ExtResource("7_db8sy")]
+[node name="Player" parent="." instance=ExtResource("7_f7jwb")]
 z_index = 1
 position = Vector2(138, 141)
 
@@ -1730,8 +1727,11 @@ limit_bottom = 1000
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="Fridge" parent="." instance=ExtResource("8_h2x6i")]
+[node name="Fridge" parent="." instance=ExtResource("1_mal84")]
 position = Vector2(49, 80)
+
+[node name="Letter" parent="." instance=ExtResource("9_d0mku")]
+position = Vector2(88, 139)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(98, 91)
@@ -1791,14 +1791,3 @@ shape = SubResource("SegmentShape2D_nt3qv")
 [node name="wall-door-right" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(70, 115)
 shape = SubResource("SegmentShape2D_aw786")
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(126, 209)
-script = ExtResource("9_qyhie")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, 2)
-shape = SubResource("CircleShape2D_mq4e7")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
