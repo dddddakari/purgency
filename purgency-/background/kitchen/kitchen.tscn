@@ -1,15 +1,15 @@
 [gd_scene load_steps=29 format=4 uid="uid://dq60hd5ebe0rd"]
 
-[ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://background/TopDownHouse_DoorsAndWindows.png" id="1_0t17n"]
-[ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://background/TopDownHouse_FloorsAndWalls.png" id="2_q4quo"]
-[ext_resource type="Texture2D" uid="uid://c1qctmh3d84wc" path="res://background/TopDownHouse_FloorsAndWalls_OpenDoors.png" id="3_s4pks"]
-[ext_resource type="Texture2D" uid="uid://bthbo8fsd2hbt" path="res://background/TopDownHouse_FurnitureState1.png" id="4_3ydyx"]
-[ext_resource type="Texture2D" uid="uid://dbnln7t4kg4nj" path="res://background/TopDownHouse_FurnitureState2.png" id="5_lhb2l"]
-[ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://background/TopDownHouse_SmallItems.png" id="6_ntq2s"]
-[ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_gi5xj"]
+[ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://background/TopDownHouse_DoorsAndWindows.png" id="1_eafyc"]
+[ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://background/TopDownHouse_FloorsAndWalls.png" id="2_l8cmq"]
+[ext_resource type="Texture2D" uid="uid://c1qctmh3d84wc" path="res://background/TopDownHouse_FloorsAndWalls_OpenDoors.png" id="3_l5jeh"]
+[ext_resource type="Texture2D" uid="uid://bthbo8fsd2hbt" path="res://background/TopDownHouse_FurnitureState1.png" id="4_kkwfi"]
+[ext_resource type="Texture2D" uid="uid://dbnln7t4kg4nj" path="res://background/TopDownHouse_FurnitureState2.png" id="5_vll7a"]
+[ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://background/TopDownHouse_SmallItems.png" id="6_omcb3"]
+[ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_odp7i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnsi2"]
-texture = ExtResource("1_0t17n")
+texture = ExtResource("1_eafyc")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -186,7 +186,7 @@ texture = ExtResource("1_0t17n")
 17:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jluyr"]
-texture = ExtResource("2_q4quo")
+texture = ExtResource("2_l8cmq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -351,7 +351,7 @@ texture = ExtResource("2_q4quo")
 17:8/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6unl"]
-texture = ExtResource("3_s4pks")
+texture = ExtResource("3_l5jeh")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -378,7 +378,7 @@ texture = ExtResource("3_s4pks")
 7:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ivwby"]
-texture = ExtResource("4_3ydyx")
+texture = ExtResource("4_kkwfi")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -614,7 +614,7 @@ texture = ExtResource("4_3ydyx")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scder"]
-texture = ExtResource("5_lhb2l")
+texture = ExtResource("5_vll7a")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -850,7 +850,7 @@ texture = ExtResource("5_lhb2l")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m008p"]
-texture = ExtResource("6_ntq2s")
+texture = ExtResource("6_omcb3")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1065,7 +1065,7 @@ shape = SubResource("SegmentShape2D_d2t3c")
 position = Vector2(69, 130)
 shape = SubResource("SegmentShape2D_3a2s8")
 
-[node name="Player" parent="." instance=ExtResource("7_gi5xj")]
+[node name="Player" parent="." instance=ExtResource("7_odp7i")]
 position = Vector2(138, 141)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
