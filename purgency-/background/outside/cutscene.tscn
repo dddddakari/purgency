@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://db17yv43wbjn7"]
+
+[ext_resource type="Texture2D" uid="uid://cl3xusiebmnb8" path="res://background/outside/black.jpg" id="1_q7vq4"]
+
+[node name="Cutscene" type="Node2D"]
+
+[node name="Black" type="Sprite2D" parent="."]
+position = Vector2(585, 332)
+scale = Vector2(0.368667, 0.323)
+texture = ExtResource("1_q7vq4")
