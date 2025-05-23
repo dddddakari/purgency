@@ -1686,7 +1686,7 @@ size = Vector2(14, 17)
 size = Vector2(15, 10)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_nt3qv"]
-b = Vector2(145, -1)
+b = Vector2(128, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_aw786"]
 a = Vector2(-23, 0)
