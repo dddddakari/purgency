@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="purgency"
-run/main_scene="uid://bpgckbqg0nw5n"
+run/main_scene="uid://dd8tq5378pqb1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
