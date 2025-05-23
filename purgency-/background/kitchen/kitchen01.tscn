@@ -1686,7 +1686,7 @@ size = Vector2(14, 17)
 size = Vector2(15, 10)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_nt3qv"]
-b = Vector2(92, 0)
+b = Vector2(145, -1)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_aw786"]
 a = Vector2(-23, 0)
@@ -1793,7 +1793,7 @@ position = Vector2(-82, 116)
 shape = SubResource("SegmentShape2D_nt3qv")
 
 [node name="wall-door-right" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(70, 115)
+position = Vector2(69, 116)
 shape = SubResource("SegmentShape2D_aw786")
 
 [node name="Area2D" type="Area2D" parent="."]

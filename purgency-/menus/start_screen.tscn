@@ -38,7 +38,7 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Camera2D" type="Camera2D" parent="VBoxContainer"]
-position = Vector2(424, 298)
+position = Vector2(390, 300)
 zoom = Vector2(2, 2)
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/New Game" to="." method="_on_new_game_pressed"]
