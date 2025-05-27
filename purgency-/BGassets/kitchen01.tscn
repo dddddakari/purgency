@@ -1,12 +1,12 @@
 [gd_scene load_steps=37 format=4 uid="uid://dye6xep8r2xnu"]
 
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
-[ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://background/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
-[ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://background/TopDownHouse_FloorsAndWalls.png" id="2_mal84"]
-[ext_resource type="Texture2D" uid="uid://c1qctmh3d84wc" path="res://background/TopDownHouse_FloorsAndWalls_OpenDoors.png" id="3_d0mku"]
-[ext_resource type="Texture2D" uid="uid://bthbo8fsd2hbt" path="res://background/TopDownHouse_FurnitureState1.png" id="4_6iqww"]
-[ext_resource type="Texture2D" uid="uid://dbnln7t4kg4nj" path="res://background/TopDownHouse_FurnitureState2.png" id="5_ir46g"]
-[ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://background/TopDownHouse_SmallItems.png" id="6_86o3m"]
+[ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
+[ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://BGassets/TopDownHouse_FloorsAndWalls.png" id="2_mal84"]
+[ext_resource type="Texture2D" uid="uid://c1qctmh3d84wc" path="res://BGassets/TopDownHouse_FloorsAndWalls_OpenDoors.png" id="3_d0mku"]
+[ext_resource type="Texture2D" uid="uid://bthbo8fsd2hbt" path="res://BGassets/TopDownHouse_FurnitureState1.png" id="4_6iqww"]
+[ext_resource type="Texture2D" uid="uid://dbnln7t4kg4nj" path="res://BGassets/TopDownHouse_FurnitureState2.png" id="5_ir46g"]
+[ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://BGassets/TopDownHouse_SmallItems.png" id="6_86o3m"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_f7jwb"]
 [ext_resource type="PackedScene" uid="uid://bqfmymrbtgbe6" path="res://entities/items/letter/Letter.tscn" id="9_d0mku"]
 
