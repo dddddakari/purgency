@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://BGassets/TopDownHouse_SmallItems.png" id="6_omcb3"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_odp7i"]
 
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnsi2"]
 texture = ExtResource("1_eafyc")
 0:0/0 = 0
