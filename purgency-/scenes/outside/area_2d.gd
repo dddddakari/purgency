@@ -10,4 +10,5 @@ func _on_body_exited(_body):
 
 func _process(_delta):
 	if entered == true: 
-		get_tree().change_scene_to_file("res://scenes/outside/black.jpg")
+		if Input.is_action_just_pressed("interact"):
+			get_tree().change_scene_to_file("res://scenes/kitchen/kitchen01.tscn")
