@@ -1,12 +1,13 @@
 [gd_scene load_steps=29 format=4 uid="uid://dq60hd5ebe0rd"]
 
-[ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://background/TopDownHouse_DoorsAndWindows.png" id="1_eafyc"]
-[ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://background/TopDownHouse_FloorsAndWalls.png" id="2_l8cmq"]
-[ext_resource type="Texture2D" uid="uid://c1qctmh3d84wc" path="res://background/TopDownHouse_FloorsAndWalls_OpenDoors.png" id="3_l5jeh"]
-[ext_resource type="Texture2D" uid="uid://bthbo8fsd2hbt" path="res://background/TopDownHouse_FurnitureState1.png" id="4_kkwfi"]
-[ext_resource type="Texture2D" uid="uid://dbnln7t4kg4nj" path="res://background/TopDownHouse_FurnitureState2.png" id="5_vll7a"]
-[ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://background/TopDownHouse_SmallItems.png" id="6_omcb3"]
+[ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_eafyc"]
+[ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://BGassets/TopDownHouse_FloorsAndWalls.png" id="2_l8cmq"]
+[ext_resource type="Texture2D" uid="uid://c1qctmh3d84wc" path="res://BGassets/TopDownHouse_FloorsAndWalls_OpenDoors.png" id="3_l5jeh"]
+[ext_resource type="Texture2D" uid="uid://bthbo8fsd2hbt" path="res://BGassets/TopDownHouse_FurnitureState1.png" id="4_kkwfi"]
+[ext_resource type="Texture2D" uid="uid://dbnln7t4kg4nj" path="res://BGassets/TopDownHouse_FurnitureState2.png" id="5_vll7a"]
+[ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://BGassets/TopDownHouse_SmallItems.png" id="6_omcb3"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_odp7i"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnsi2"]
 texture = ExtResource("1_eafyc")
