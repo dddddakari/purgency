@@ -1693,7 +1693,7 @@ a = Vector2(-23, 0)
 b = Vector2(42, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mq4e7"]
-radius = 14.0
+radius = 17.0
 
 [node name="Kitchen01" type="Node2D"]
 
@@ -1797,11 +1797,11 @@ position = Vector2(69, 116)
 shape = SubResource("SegmentShape2D_aw786")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(120, 207)
+position = Vector2(128, 210)
 script = ExtResource("10_mppru")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(7, 1)
+position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_mq4e7")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
