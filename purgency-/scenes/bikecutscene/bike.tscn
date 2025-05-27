@@ -1,0 +1,101 @@
+[gd_scene load_steps=19 format=3 uid="uid://dqu34qk6ogv86"]
+
+[ext_resource type="Texture2D" uid="uid://6w8xqkn0xy8t" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_001.png" id="1_7fphc"]
+[ext_resource type="Script" uid="uid://dr55tlji8lyrp" path="res://scenes/bikecutscene/bike.gd" id="1_hgu6w"]
+[ext_resource type="Texture2D" uid="uid://cj2jantoo6l0" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_002.png" id="2_hgu6w"]
+[ext_resource type="Texture2D" uid="uid://c6cydu7jfdi31" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_003.png" id="3_ao5pf"]
+[ext_resource type="Texture2D" uid="uid://bcypra0vea0ao" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_004.png" id="4_2os0n"]
+[ext_resource type="Texture2D" uid="uid://50broxh5dwxd" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_005.png" id="5_heky6"]
+[ext_resource type="Texture2D" uid="uid://owoy11al3ltu" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_006.png" id="6_o5hc1"]
+[ext_resource type="Texture2D" uid="uid://bi61tnqrpl146" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_007.png" id="7_qeg6b"]
+[ext_resource type="Texture2D" uid="uid://dwogeiqakqog1" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_008.png" id="8_kq5a8"]
+[ext_resource type="Texture2D" uid="uid://cv7qi5m71u4k1" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_009.png" id="9_sle48"]
+[ext_resource type="Texture2D" uid="uid://c3eudwo56u1f0" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_010.png" id="10_h8s1f"]
+[ext_resource type="Texture2D" uid="uid://e7qcg1dnh0s" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_011.png" id="11_jr0rs"]
+[ext_resource type="Texture2D" uid="uid://b4uowdmkpdv5i" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_012.png" id="12_uejw8"]
+[ext_resource type="Texture2D" uid="uid://bnhh8axtimmj3" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_013.png" id="13_vkvq1"]
+[ext_resource type="Texture2D" uid="uid://x3osg028e5ib" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_014.png" id="14_53j5u"]
+[ext_resource type="Texture2D" uid="uid://hx23o5f1ay8w" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_015.png" id="15_5aojm"]
+[ext_resource type="Texture2D" uid="uid://gbuabk1px1ts" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_016.png" id="16_ti3sc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wx3lb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7fphc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hgu6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ao5pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2os0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_heky6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o5hc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qeg6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kq5a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sle48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h8s1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jr0rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_uejw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vkvq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_53j5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5aojm")
+}, {
+"duration": 1.5,
+"texture": ExtResource("16_ti3sc")
+}],
+"loop": false,
+"name": &"SONIC",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bike" type="Node2D"]
+script = ExtResource("1_hgu6w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(580.5, 332.5)
+scale = Vector2(0.608854, 0.580556)
+sprite_frames = SubResource("SpriteFrames_wx3lb")
+animation = &"SONIC"
+frame = 13
+frame_progress = 0.0314316
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+position = Vector2(2.46364, 23.2536)
+zoom = Vector2(1.03, 1.03)
+
+[node name="InputBlocker" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
