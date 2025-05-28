@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://dq60hd5ebe0rd"]
+[gd_scene load_steps=29 format=4 uid="uid://d04wyp2rcbycw"]
 
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_eafyc"]
 [ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://BGassets/TopDownHouse_FloorsAndWalls.png" id="2_l8cmq"]
