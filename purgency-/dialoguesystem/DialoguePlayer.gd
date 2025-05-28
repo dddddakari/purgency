@@ -9,7 +9,6 @@ var d_active = false
 func _ready():
 	$NinePatchRect.visible = false
 	
-	
 func start():
 	if d_active:
 		return
@@ -25,17 +24,30 @@ func start():
 func load_dialogue():
 	if not FileAccess.file_exists(d_file):
 		push_error("Dialogue file not found: " + d_file)
+		print("File not found:", d_file)
 		return []
 
 	var file = FileAccess.open(d_file, FileAccess.READ)
 	var content = file.get_as_text()
-	return JSON.parse_string(content)
+	print("File content:", content)  # DEBUG: show raw JSON
+	
+	var data = JSON.parse_string(content)
+	if typeof(data) != TYPE_ARRAY:
+		push_error("Parsed data is not an array.")
+		print("Parsed result:", data)  # DEBUG
+		return []
 
-func _input(event: InputEvent):
+	print("Dialogue loaded successfully:", data.size(), "lines")
+	return data
+
+
+
+
+func _input(event):
 	if not d_active:
 		return
-	if event.is_action_pressed("ui_accept"):
-		next_script()
+	if event.is_action_pressed("interact"):
+			next_script()
 		
 func next_script():
 	curr_dialogue_id +=1
@@ -45,9 +57,8 @@ func next_script():
 		$NinePatchRect.visible = false
 		return
 	
-	$NinePatchRect/Name.text = dialogue[curr_dialogue_id]['name']
-	$NinePatchRect/DialogueText.text = dialogue[curr_dialogue_id]['text']
-
+	$NinePatchRect.get_node("name").text = dialogue[curr_dialogue_id].get("name", "Unknown")
+	$NinePatchRect.get_node("text").text = dialogue[curr_dialogue_id].get("text", "")
 
 func _on_Timer_timeout():
 	d_active = false

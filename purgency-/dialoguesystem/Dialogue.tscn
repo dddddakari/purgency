@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dklxgwl1bkqaa"]
 
-[ext_resource type="Script" path="res://dialoguesystem/DialoguePlayer.gd" id="1_oah3n"]
+[ext_resource type="Script" uid="uid://v53nmmmukcug" path="res://dialoguesystem/DialoguePlayer.gd" id="1_oah3n"]
 [ext_resource type="Texture2D" uid="uid://dhk6gwfdikkme" path="res://assets/dialogue_box.png" id="1_snqsu"]
 
 [node name="Dialogue" type="CanvasLayer"]
@@ -17,7 +17,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+[node name="name" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = -50.0
@@ -28,7 +28,7 @@ text = "Name"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueText" type="RichTextLabel" parent="NinePatchRect"]
+[node name="text" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 19.0
 offset_top = 7.0
