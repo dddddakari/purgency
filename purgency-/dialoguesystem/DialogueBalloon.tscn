@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dwl652l4iro8e"]
+
+[node name="DialogueBalloon" type="CanvasLayer"]
+
+[node name="Balloon" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 142.0
+offset_bottom = 30.0
+
+[node name="NameContainer" type="Panel" parent="Balloon"]
+z_index = 1
+layout_mode = 0
+offset_right = 141.0
+offset_bottom = 28.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/NameContainer"]
+layout_mode = 0
+offset_right = 141.0
+offset_bottom = 28.0
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/NameContainer/MarginContainer"]
+layout_mode = 2
+text = "Character"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Balloon"]
+layout_mode = 0
+offset_top = 13.0
+offset_right = 406.0
+offset_bottom = 139.0
+
+[node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
+layout_mode = 0
+offset_right = 406.0
+offset_bottom = 126.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue"]
+layout_mode = 2

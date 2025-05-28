@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bpgckbqg0nw5n"]
+[gd_scene load_steps=41 format=4 uid="uid://bpgckbqg0nw5n"]
 
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
@@ -10,8 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_f7jwb"]
 [ext_resource type="PackedScene" uid="uid://bqfmymrbtgbe6" path="res://entities/items/letter/Letter.tscn" id="9_d0mku"]
 [ext_resource type="Script" uid="uid://bs2armi551nx2" path="res://scenes/kitchen/area_2d.gd" id="10_mppru"]
-[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
-[ext_resource type="Script" uid="uid://c6nlguc53vuli" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
+[ext_resource type="Script" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
 texture = ExtResource("1_pkqpq")
@@ -1808,13 +1807,6 @@ script = ExtResource("10_mppru")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_mq4e7")
-
-[node name="Dialogue" parent="." instance=ExtResource("11_r4jl7")]
-d_file = "res://dialoguesystem/json/sample.json"
-
-[node name="OPDialogue" parent="." instance=ExtResource("11_r4jl7")]
-layer = 5
-d_file = "res://dialoguesystem/json/op_dialogue.json"
 
 [node name="KitchenArea" type="Area2D" parent="."]
 script = ExtResource("12_3imob")
