@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://c6nlguc53vuli" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
 [ext_resource type="Script" uid="uid://psmlnfdk422j" path="res://inventorysystem/ContainerUI.gd" id="14_b8gmo"]
 [ext_resource type="PackedScene" uid="uid://ccml1ssjsol35" path="res://inventorysystem/InventorySlot.tscn" id="15_6fhro"]
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
 texture = ExtResource("1_pkqpq")
 0:0/0 = 0
@@ -1736,6 +1735,7 @@ theme_override_font_sizes/font_size = 10
 text = "- Space for dialogue
 "
 script = ExtResource("8_0iy2g")
+metadata/_edit_use_anchors_ = true
 
 [node name="E" type="Label" parent="Player"]
 offset_left = -120.0
@@ -1745,6 +1745,7 @@ offset_bottom = -8.0
 theme_override_font_sizes/font_size = 10
 text = "- E to Interact"
 script = ExtResource("8_0iy2g")
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-122, -74)
