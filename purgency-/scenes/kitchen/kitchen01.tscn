@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bqfmymrbtgbe6" path="res://entities/items/letter/Letter.tscn" id="9_d0mku"]
 [ext_resource type="Script" uid="uid://bs2armi551nx2" path="res://scenes/kitchen/area_2d.gd" id="10_mppru"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
-[ext_resource type="Script" uid="uid://c6nlguc53vuli" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
+[ext_resource type="Script" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
 texture = ExtResource("1_pkqpq")
