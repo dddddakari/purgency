@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bpgckbqg0nw5n"]
+[gd_scene load_steps=43 format=4 uid="uid://bpgckbqg0nw5n"]
 
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dbnln7t4kg4nj" path="res://BGassets/TopDownHouse_FurnitureState2.png" id="5_ir46g"]
 [ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://BGassets/TopDownHouse_SmallItems.png" id="6_86o3m"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_f7jwb"]
+[ext_resource type="Script" uid="uid://ckc4r340jkkwv" path="res://scripts/label.gd" id="8_0iy2g"]
 [ext_resource type="PackedScene" uid="uid://bqfmymrbtgbe6" path="res://entities/items/letter/Letter.tscn" id="9_d0mku"]
 [ext_resource type="Script" uid="uid://bs2armi551nx2" path="res://scenes/kitchen/area_2d.gd" id="10_mppru"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
@@ -1723,6 +1724,25 @@ tile_set = SubResource("TileSet_of622")
 [node name="Player" parent="." instance=ExtResource("7_f7jwb")]
 z_index = 1
 position = Vector2(138, 141)
+
+[node name="Space" type="Label" parent="Player"]
+offset_left = -120.0
+offset_top = -70.0
+offset_right = 23.0
+offset_bottom = -21.0
+theme_override_font_sizes/font_size = 10
+text = "- Space for dialogue
+"
+script = ExtResource("8_0iy2g")
+
+[node name="E" type="Label" parent="Player"]
+offset_left = -120.0
+offset_top = -57.0
+offset_right = 23.0
+offset_bottom = -8.0
+theme_override_font_sizes/font_size = 10
+text = "- E to Interact"
+script = ExtResource("8_0iy2g")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-122, -74)

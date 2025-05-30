@@ -15,12 +15,5 @@ collision_mask = 2
 position = Vector2(39.5, 60.5)
 shape = SubResource("CircleShape2D_ew3te")
 
-[node name="InteractLabel" type="Label" parent="."]
-z_index = 10
-offset_top = 24.0
-offset_right = 95.0
-offset_bottom = 47.0
-text = "E to Interact"
-
 [connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
 [connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]
