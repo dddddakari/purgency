@@ -1,12 +1,21 @@
 extends CanvasLayer
 
+# Inventory slots in the grid
+var slots: Array[Node] = []
 
-@onready var slots := $BackgroundPanel/ItemGrid.get_children()
-var container_inventory := []
+# Inventory data and owner reference
+var container_inventory: Array = []
 var container_owner: Node2D = null
 
 func _ready():
-	print("Children of BackgroundPanel:", $BackgroundPanel.get_children())
+	# Attempt to get the GridContainer that holds the item slots
+	var grid = get_node_or_null("BackgroundPanel/ItemGrid")
+	
+	if grid == null:
+		push_error(" ERROR: 'BGPanel/ItemGrid' not found. Check your scene hierarchy and node names.")
+	else:
+		slots = grid.get_children()
+		print("Found slots:", slots.size())
 
 func show_container_inventory(inventory: Array, owner: Node) -> void:
 	container_inventory = inventory
