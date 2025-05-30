@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhkj8bjqtiv28"]
+
+[ext_resource type="Script" uid="uid://kd1boarjqfla" path="res://inventorysystem/inventoryUI.gd" id="1_rcnhq"]
+
+[node name="InventoryUi" type="CanvasLayer"]
+script = ExtResource("1_rcnhq")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 221.0
+offset_bottom = 141.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 221.0
+offset_bottom = 140.0
+columns = 5
+
+[node name="InventorySlot" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2

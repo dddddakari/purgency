@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://btwiavri4pa8r"]
+
+[ext_resource type="PackedScene" uid="uid://ccml1ssjsol35" path="res://inventorysystem/InventorySlot.tscn" id="1_6tg8s"]
+[ext_resource type="Script" uid="uid://psmlnfdk422j" path="res://inventorysystem/ContainerUI.gd" id="1_gw8lv"]
+
+[node name="ContainerUi" type="CanvasLayer"]
+script = ExtResource("1_gw8lv")
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.429
+anchor_top = 0.394
+anchor_right = 0.429
+anchor_bottom = 0.394
+offset_left = -134.208
+offset_top = -99.312
+offset_right = 134.792
+offset_bottom = 98.688
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemGrid" type="GridContainer" parent="BackgroundPanel"]
+layout_mode = 0
+offset_right = 271.0
+offset_bottom = 195.0
+columns = 4
+
+[node name="InventorySlot" parent="BackgroundPanel/ItemGrid" instance=ExtResource("1_6tg8s")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="BackgroundPanel/ItemGrid" instance=ExtResource("1_6tg8s")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="BackgroundPanel/ItemGrid" instance=ExtResource("1_6tg8s")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="BackgroundPanel/ItemGrid" instance=ExtResource("1_6tg8s")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="BackgroundPanel/ItemGrid" instance=ExtResource("1_6tg8s")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="BackgroundPanel/ItemGrid" instance=ExtResource("1_6tg8s")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="BackgroundPanel/ItemGrid" instance=ExtResource("1_6tg8s")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="BackgroundPanel/ItemGrid" instance=ExtResource("1_6tg8s")]
+layout_mode = 2
