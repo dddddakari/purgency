@@ -1759,64 +1759,6 @@ limit_bottom = 1000
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="ContainerCanvas" type="CanvasLayer" parent="."]
-
-[node name="container_ui" type="Node2D" parent="ContainerCanvas"]
-visible = false
-position = Vector2(2, -1)
-script = ExtResource("14_b8gmo")
-
-[node name="BackgroundPanel" type="Panel" parent="ContainerCanvas/container_ui"]
-offset_left = 517.0
-offset_top = 41.0
-offset_right = 938.0
-offset_bottom = 285.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ItemGrid" type="GridContainer" parent="ContainerCanvas/container_ui/BackgroundPanel"]
-layout_mode = 0
-offset_left = -3.0
-offset_top = -1.0
-offset_right = 420.0
-offset_bottom = 245.0
-columns = 4
-
-[node name="InventorySlot" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot2" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-size_flags_stretch_ratio = 0.0
-
-[node name="InventorySlot3" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot4" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot5" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot6" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot7" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot8" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="ContainerCanvas"]
-visible = false
-offset_left = 908.0
-offset_top = 42.0
-offset_right = 938.0
-offset_bottom = 72.0
-theme_override_font_sizes/font_size = 15
-text = "X"
-script = ExtResource("16_6fhro")
-
 [node name="Fridge" parent="." instance=ExtResource("1_mal84")]
 position = Vector2(49, 80)
 
@@ -1904,7 +1846,66 @@ script = ExtResource("12_3imob")
 position = Vector2(112, 143.5)
 shape = SubResource("RectangleShape2D_0iy2g")
 
-[connection signal="pressed" from="ContainerCanvas/Button" to="ContainerCanvas/Button" method="_on_pressed"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="container_ui" type="CanvasLayer" parent="CanvasLayer"]
+script = ExtResource("14_b8gmo")
+
+[node name="BackgroundPanel" type="Panel" parent="CanvasLayer/container_ui"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.429
+anchor_right = 0.5
+anchor_bottom = 0.429
+offset_left = -216.0
+offset_top = -121.992
+offset_right = 205.0
+offset_bottom = 122.008
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemGrid" type="GridContainer" parent="CanvasLayer/container_ui/BackgroundPanel"]
+layout_mode = 0
+offset_right = 421.0
+offset_bottom = 243.0
+columns = 4
+
+[node name="InventorySlot" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot2" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="InventorySlot3" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot4" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot5" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="CanvasLayer/container_ui"]
+offset_left = 751.0
+offset_top = 155.0
+offset_right = 781.0
+offset_bottom = 185.0
+theme_override_font_sizes/font_size = 15
+text = "X"
+script = ExtResource("16_6fhro")
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="KitchenArea" to="KitchenArea" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer/container_ui/Button" to="CanvasLayer/container_ui/Button" method="_on_pressed"]

@@ -1,24 +1,26 @@
-[gd_scene load_steps=37 format=3 uid="uid://dqm0mk3hhq2c0"]
+[gd_scene load_steps=38 format=3 uid="uid://dqm0mk3hhq2c0"]
 
-[ext_resource type="Script" path="res://entities/player/player.gd" id="1_abrql"]
+[ext_resource type="Script" uid="uid://cy136o77vv0xn" path="res://entities/player/player.gd" id="1_abrql"]
 [ext_resource type="Texture2D" uid="uid://cs0ppsqod3klo" path="res://entities/player/Prototype_Character.png" id="1_symyc"]
+[ext_resource type="Texture2D" uid="uid://dfg0hums245ty" path="res://entities/player/finneassprite.png" id="3_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://cuq3e8q041hyd" path="res://interactionsystem/InteractingComponent.tscn" id="3_sglur"]
+[ext_resource type="PackedScene" uid="uid://ccml1ssjsol35" path="res://inventorysystem/InventorySlot.tscn" id="4_bls4j"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_abrql"]
-atlas = ExtResource("1_symyc")
-region = Rect2(0, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq0jh"]
+atlas = ExtResource("3_8fjmc")
+region = Rect2(108, 582, 191, 291)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vewsg"]
-atlas = ExtResource("1_symyc")
-region = Rect2(32, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt4e4"]
+atlas = ExtResource("3_8fjmc")
+region = Rect2(299, 582, 191, 291)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sglur"]
-atlas = ExtResource("1_symyc")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2soq1"]
+atlas = ExtResource("3_8fjmc")
+region = Rect2(108, 0, 191, 291)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bls4j"]
-atlas = ExtResource("1_symyc")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q4fm"]
+atlas = ExtResource("3_8fjmc")
+region = Rect2(299, 0, 191, 291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkugw"]
 atlas = ExtResource("1_symyc")
@@ -73,69 +75,61 @@ atlas = ExtResource("1_symyc")
 region = Rect2(0, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2kln"]
-atlas = ExtResource("1_symyc")
-region = Rect2(32, 32, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(108, 291, 191, 291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_we0b7"]
-atlas = ExtResource("1_symyc")
-region = Rect2(0, 32, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(299, 291, 191, 291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mtric"]
-atlas = ExtResource("1_symyc")
-region = Rect2(0, 96, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(108, 873, 191, 291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyb6c"]
-atlas = ExtResource("1_symyc")
-region = Rect2(32, 96, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(299, 873, 191, 291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_221hk"]
-atlas = ExtResource("1_symyc")
-region = Rect2(64, 96, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(490, 873, 191, 291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghoj8"]
-atlas = ExtResource("1_symyc")
-region = Rect2(96, 96, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(681, 873, 191, 291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1t22"]
-atlas = ExtResource("1_symyc")
-region = Rect2(0, 160, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(108, 1164, 191, 291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_50fht"]
-atlas = ExtResource("1_symyc")
-region = Rect2(32, 160, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(299, 1164, 191, 291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wuv6x"]
-atlas = ExtResource("1_symyc")
-region = Rect2(64, 160, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(490, 1164, 191, 291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qpopc"]
-atlas = ExtResource("1_symyc")
-region = Rect2(96, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wq0jh"]
-atlas = ExtResource("1_symyc")
-region = Rect2(0, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gt4e4"]
-atlas = ExtResource("1_symyc")
-region = Rect2(32, 128, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(681, 1164, 191, 291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24ehl"]
-atlas = ExtResource("1_symyc")
-region = Rect2(64, 128, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(108, 1425, 191, 285)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwdx1"]
-atlas = ExtResource("1_symyc")
-region = Rect2(96, 128, 32, 32)
+atlas = ExtResource("3_8fjmc")
+region = Rect2(299, 1425, 191, 285)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vewsg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_abrql")
+"texture": SubResource("AtlasTexture_wq0jh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vewsg")
+"texture": SubResource("AtlasTexture_gt4e4")
 }],
 "loop": true,
 "name": &"back_idle",
@@ -143,10 +137,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sglur")
+"texture": SubResource("AtlasTexture_2soq1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bls4j")
+"texture": SubResource("AtlasTexture_8q4fm")
 }],
 "loop": true,
 "name": &"default",
@@ -258,12 +252,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wq0jh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gt4e4")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_24ehl")
 }, {
 "duration": 1.0,
@@ -277,14 +265,40 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_abrql"]
 radius = 9.0
 
+[sub_resource type="GDScript" id="GDScript_7fes2"]
+script/source = "extends Node2D
+
+@onready var slots := $BackgroundPanel/ItemGrid.get_children()
+var container_inventory: Array = []
+var container_owner: Node = null
+
+func show_container_inventory(inventory: Array, owner: Node) -> void:
+	container_inventory = inventory
+	container_owner = owner
+	update_ui()
+	show()
+
+func update_ui() -> void:
+	for i in range(slots.size()):
+		if i < container_inventory.size():
+			slots[i].set_item(container_inventory[i])
+		else:
+			slots[i].clear_slot()
+
+func hide_container():
+	hide()
+"
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_abrql")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -4)
-scale = Vector2(-1.73084, 1.64941)
+position = Vector2(-2, -11)
+scale = Vector2(-0.175782, 0.18833)
 sprite_frames = SubResource("SpriteFrames_vewsg")
+animation = &"walking_left"
 autoplay = "default"
+frame_progress = 0.617748
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -293,3 +307,48 @@ shape = SubResource("CircleShape2D_abrql")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("3_sglur")]
 position = Vector2(-41, -62)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="container_ui" type="Node2D" parent="CanvasLayer"]
+visible = false
+script = SubResource("GDScript_7fes2")
+
+[node name="BackgroundPanel" type="Panel" parent="CanvasLayer/container_ui"]
+offset_left = 517.0
+offset_top = 41.0
+offset_right = 938.0
+offset_bottom = 285.0
+
+[node name="ItemGrid" type="GridContainer" parent="CanvasLayer/container_ui/BackgroundPanel"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -1.0
+offset_right = 420.0
+offset_bottom = 245.0
+columns = 4
+
+[node name="InventorySlot" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="InventorySlot3" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
+layout_mode = 2

@@ -1,19 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhkj8bjqtiv28"]
+[gd_scene load_steps=3 format=3 uid="uid://dhkj8bjqtiv28"]
 
 [ext_resource type="Script" uid="uid://kd1boarjqfla" path="res://inventorysystem/inventoryUI.gd" id="1_rcnhq"]
+[ext_resource type="Script" uid="uid://bqqte7yl6xgl3" path="res://inventorysystem/xinventory.gd" id="2_ync6x"]
 
 [node name="InventoryUi" type="CanvasLayer"]
 script = ExtResource("1_rcnhq")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 221.0
-offset_bottom = 141.0
+offset_right = 842.0
+offset_bottom = 489.0
 
 [node name="GridContainer" type="GridContainer" parent="Panel"]
+custom_minimum_size = Vector2(1, 0)
 layout_mode = 0
-offset_right = 221.0
-offset_bottom = 140.0
-columns = 5
+offset_right = 843.0
+offset_bottom = 489.0
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 6
 
 [node name="InventorySlot" type="TextureButton" parent="Panel/GridContainer"]
 layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot2" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot3" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot4" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot5" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot6" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot7" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot8" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 763.0
+offset_right = 843.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 60
+text = "X"
+script = ExtResource("2_ync6x")
+
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
