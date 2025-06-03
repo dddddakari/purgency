@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bogwwd8qi71p0"]
 
-[ext_resource type="Texture2D" uid="uid://cl3xusiebmnb8" path="res://scenes/outside/black.jpg" id="1_quflt"]
+[ext_resource type="Texture2D" uid="uid://bf65gdbth4qvo" path="res://scenes/outside/Sugestão de Mapas.jpg" id="1_w4w0a"]
 [ext_resource type="Script" uid="uid://qnmekb1g0wd2" path="res://scenes/outside/area_2d.gd" id="3_7mswb"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="3_w4w0a"]
 
@@ -10,15 +10,16 @@ size = Vector2(956.124, 701.049)
 [node name="BlackScreen" type="Node2D"]
 
 [node name="Black" type="Sprite2D" parent="."]
-position = Vector2(577, 330)
-scale = Vector2(0.385333, 0.329)
-texture = ExtResource("1_quflt")
+position = Vector2(575, 380)
+scale = Vector2(1.25398, 1.07066)
+texture = ExtResource("1_w4w0a")
 
 [node name="Area2D" type="Area2D" parent="Black"]
 position = Vector2(-5.19031, 94.2249)
 script = ExtResource("3_7mswb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Black/Area2D"]
+visible = false
 position = Vector2(4.57764e-05, 12.1581)
 shape = SubResource("RectangleShape2D_y4gf8")
 

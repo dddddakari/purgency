@@ -11,7 +11,7 @@ func _on_interact():
 	
 func use_dialogue():
 	var dialogue = get_parent().get_node("Dialogue")
-	var dialogue_file_path = "res://dialoguesystem/json/letter.json"
+	var dialogue_file_path = "res://dialoguesystem/json/sample.json"
 
 	if dialogue:
 		if FileAccess.file_exists(dialogue_file_path):
