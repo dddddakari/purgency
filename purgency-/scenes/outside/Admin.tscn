@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvaclcjg42xwn"]
+
+[ext_resource type="Texture2D" uid="uid://b474nd2262k6r" path="res://assets/noFilter.png" id="1_qe8si"]
+
+[node name="Admin" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 5)
+scale = Vector2(0.243452, 0.238691)
+texture = ExtResource("1_qe8si")
