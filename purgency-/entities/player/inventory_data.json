@@ -1,0 +1,22 @@
+{
+  "items": [
+	{
+	  "id": 1,
+	  "name": "Apple",
+	  "quantity": 3,
+	  "texture": "res://assets/icons/Food/Apple.png"
+	},
+	{
+	  "id": 2,
+	  "name": "Bug",
+	  "quantity": 2,
+	  "texture": "res://assets/icons/Food/Bug.png"
+	},
+	{
+	  "id": 3,
+	  "name": "Shimp",
+	  "quantity": 39,
+	  "texture": "res://assets/icons/Food/Shrimp.png"
+	}
+  ]
+}

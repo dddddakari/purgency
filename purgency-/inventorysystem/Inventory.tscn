@@ -1,0 +1,115 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6doyh68f4mka"]
+
+[ext_resource type="Script" uid="uid://cd8us0m24v6np" path="res://inventorysystem/inventory.gd" id="1_l5nn2"]
+[ext_resource type="PackedScene" uid="uid://cfggkb7xora7c" path="res://inventorysystem/Slot.tscn" id="2_l5nn2"]
+
+[node name="Inventory" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_right = 0.266
+anchor_bottom = 0.343
+offset_right = 0.567993
+offset_bottom = -0.264023
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1000, 1000)
+script = ExtResource("1_l5nn2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 11
+theme_override_constants/margin_bottom = 11
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.152941, 0.0392157, 0.196078, 1)
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="SlotContainer2" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="SlotContainer3" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="SlotContainer4" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="SlotContainer5" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="SlotContainer6" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="SlotContainer7" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="SlotContainer8" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="SlotContainer9" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="SlotContainer10" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="SlotContainer11" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="SlotContainer12" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="SlotContainer13" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0

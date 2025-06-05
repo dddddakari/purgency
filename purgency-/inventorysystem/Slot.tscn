@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfggkb7xora7c"]
+
+[ext_resource type="Script" uid="uid://dgeriqmh25r12" path="res://inventorysystem/slot_container.gd" id="1_632ag"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lxg0"]
+bg_color = Color(0.254024, 0.085507, 0.318009, 1)
+
+[node name="SlotContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(64, 64)
+pivot_offset = Vector2(100, 1000)
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lxg0")
+script = ExtResource("1_632ag")
+
+[node name="TextureHolder" type="Control" parent="."]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureHolder"]
+layout_mode = 2
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TextureHolder"]
+layout_mode = 2
+offset_left = 15.0
+offset_top = 52.0
+offset_right = 79.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 2

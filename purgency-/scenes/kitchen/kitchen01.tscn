@@ -1,5 +1,6 @@
-[gd_scene load_steps=46 format=4 uid="uid://bbquf0dq1psfa"]
+[gd_scene load_steps=44 format=4 uid="uid://bbquf0dq1psfa"]
 
+[ext_resource type="PackedScene" uid="uid://b6doyh68f4mka" path="res://inventorysystem/Inventory.tscn" id="1_dnkgk"]
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
 [ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://BGassets/TopDownHouse_FloorsAndWalls.png" id="2_mal84"]
@@ -13,9 +14,6 @@
 [ext_resource type="Script" uid="uid://bs2armi551nx2" path="res://scenes/kitchen/area_2d.gd" id="10_mppru"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
 [ext_resource type="Script" uid="uid://c6nlguc53vuli" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
-[ext_resource type="Script" uid="uid://psmlnfdk422j" path="res://inventorysystem/ContainerUI.gd" id="14_b8gmo"]
-[ext_resource type="PackedScene" uid="uid://ccml1ssjsol35" path="res://inventorysystem/InventorySlot.tscn" id="15_6fhro"]
-[ext_resource type="Script" uid="uid://bqqte7yl6xgl3" path="res://inventorysystem/xinventory.gd" id="16_6fhro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
 texture = ExtResource("1_pkqpq")
@@ -1738,6 +1736,14 @@ text = "- Space for dialogue
 "
 script = ExtResource("8_0iy2g")
 
+[node name="Inventory" parent="Player" instance=ExtResource("1_dnkgk")]
+offset_left = -64.0
+offset_top = -45.0
+offset_right = 317.0
+offset_bottom = 223.0
+scale = Vector2(0.312234, 0.279386)
+pivot_offset = Vector2(0, 0)
+
 [node name="E" type="Label" parent="Player"]
 offset_left = -120.0
 offset_top = -57.0
@@ -1758,64 +1764,6 @@ limit_right = 1000
 limit_bottom = 1000
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-
-[node name="ContainerCanvas" type="CanvasLayer" parent="."]
-
-[node name="container_ui" type="Node2D" parent="ContainerCanvas"]
-visible = false
-position = Vector2(2, -1)
-script = ExtResource("14_b8gmo")
-
-[node name="BackgroundPanel" type="Panel" parent="ContainerCanvas/container_ui"]
-offset_left = 517.0
-offset_top = 41.0
-offset_right = 938.0
-offset_bottom = 285.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ItemGrid" type="GridContainer" parent="ContainerCanvas/container_ui/BackgroundPanel"]
-layout_mode = 0
-offset_left = -3.0
-offset_top = -1.0
-offset_right = 420.0
-offset_bottom = 245.0
-columns = 4
-
-[node name="InventorySlot" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot2" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-size_flags_stretch_ratio = 0.0
-
-[node name="InventorySlot3" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot4" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot5" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot6" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot7" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="InventorySlot8" parent="ContainerCanvas/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("15_6fhro")]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="ContainerCanvas"]
-visible = false
-offset_left = 908.0
-offset_top = 42.0
-offset_right = 938.0
-offset_bottom = 72.0
-theme_override_font_sizes/font_size = 15
-text = "X"
-script = ExtResource("16_6fhro")
 
 [node name="Fridge" parent="." instance=ExtResource("1_mal84")]
 position = Vector2(49, 80)
@@ -1904,7 +1852,6 @@ script = ExtResource("12_3imob")
 position = Vector2(112, 143.5)
 shape = SubResource("RectangleShape2D_0iy2g")
 
-[connection signal="pressed" from="ContainerCanvas/Button" to="ContainerCanvas/Button" method="_on_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="KitchenArea" to="KitchenArea" method="_on_body_entered"]
