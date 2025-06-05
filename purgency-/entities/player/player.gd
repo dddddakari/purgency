@@ -6,10 +6,10 @@ var current_dir = "none"
 func _ready():
 	$Sprite2D.play("default")
 
-func _physics_process(_delta):
-	player_movement(_delta)
+func _physics_process(delta):
+	player_movement(delta)
 	
-func player_movement(_delta):
+func player_movement(delta):
 	
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"
