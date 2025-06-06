@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=4 uid="uid://bbquf0dq1psfa"]
 
-[ext_resource type="PackedScene" uid="uid://b6doyh68f4mka" path="res://inventorysystem/Inventory.tscn" id="1_dnkgk"]
+[ext_resource type="PackedScene" path="res://inventorysystem/Inventory.tscn" id="1_dnkgk"]
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
 [ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://BGassets/TopDownHouse_FloorsAndWalls.png" id="2_mal84"]

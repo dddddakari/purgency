@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkhrryje6nws0"]
+
+[ext_resource type="Script" path="res://inventorysystem/inventoryUI.gd" id="1_rcnhq"]
+[ext_resource type="Script" path="res://inventorysystem/xinventory.gd" id="2_ync6x"]
+[ext_resource type="PackedScene" uid="uid://cfggkb7xora7c" path="res://inventorysystem/Slot.tscn" id="3_6uco0"]
+
+[node name="InventoryUi" type="CanvasLayer"]
+script = ExtResource("1_rcnhq")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 842.0
+offset_bottom = 489.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 0
+offset_right = 843.0
+offset_bottom = 489.0
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 6
+
+[node name="InventorySlot" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot2" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot3" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot4" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot5" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot6" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot7" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="InventorySlot8" type="TextureButton" parent="Panel/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 763.0
+offset_right = 843.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 60
+text = "X"
+script = ExtResource("2_ync6x")
+
+[node name="PlayerInventory" type="PanelContainer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerInventory"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 11
+theme_override_constants/margin_bottom = 11
+
+[node name="ColorRect" type="ColorRect" parent="PlayerInventory/MarginContainer"]
+layout_mode = 2
+color = Color(0.152941, 0.0392157, 0.196078, 1)
+
+[node name="GridContainer" type="GridContainer" parent="PlayerInventory/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 4
+
+[node name="Slot1" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[node name="Slot2" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[node name="Slot3" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[node name="Slot4" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[node name="Slot5" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[node name="Slot6" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[node name="Slot7" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[node name="Slot8" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[node name="Slot9" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[node name="Slot10" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[node name="Slot11" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[node name="Slot12" parent="PlayerInventory/MarginContainer/GridContainer" instance=ExtResource("3_6uco0")]
+layout_mode = 2
+
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
