@@ -1655,8 +1655,8 @@ normal = Vector2(0.999974, -0.00714268)
 distance = -83.2193
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mal84"]
-a = Vector2(1, 57)
-b = Vector2(1, 74)
+a = Vector2(1, 72)
+b = Vector2(1, 97)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_d0mku"]
 a = Vector2(5, 1)
@@ -1677,13 +1677,13 @@ b = Vector2(0, 9)
 b = Vector2(12, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oo3te"]
-size = Vector2(47, 18.5)
+size = Vector2(47, 31.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6bh0"]
-size = Vector2(13, 7)
+size = Vector2(13, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6x5ck"]
-size = Vector2(14, 18)
+size = Vector2(14, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqlux"]
 size = Vector2(14, 17)
@@ -1757,10 +1757,10 @@ text = "- I for Inventory"
 script = ExtResource("8_0iy2g")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-122, -74)
+position = Vector2(-160, -105)
 scale = Vector2(5, 5)
 anchor_mode = 0
-zoom = Vector2(5, 5)
+zoom = Vector2(7, 7)
 limit_left = -25
 limit_top = -25
 limit_right = 1000
@@ -1784,6 +1784,7 @@ position = Vector2(49, 80)
 position = Vector2(88, 139)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(98, 91)
 
 [node name="window" type="CollisionShape2D" parent="StaticBody2D"]
@@ -1795,7 +1796,7 @@ position = Vector2(90, -61)
 shape = SubResource("SegmentShape2D_mal84")
 
 [node name="counter edge" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(105, 19)
+position = Vector2(105, 35)
 shape = SubResource("SegmentShape2D_d0mku")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -1803,7 +1804,7 @@ position = Vector2(112, 65)
 shape = SubResource("WorldBoundaryShape2D_6iqww")
 
 [node name="counters and fridge" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-54, -3)
+position = Vector2(-56, 9)
 shape = SubResource("SegmentShape2D_ir46g")
 
 [node name="plant ridge" type="CollisionShape2D" parent="StaticBody2D"]
@@ -1815,15 +1816,15 @@ position = Vector2(-83, 7)
 shape = SubResource("SegmentShape2D_f7jwb")
 
 [node name="table" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-26, 44.75)
+position = Vector2(-26, 51.25)
 shape = SubResource("RectangleShape2D_oo3te")
 
 [node name="chair-right" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(6.5, 52.5)
+position = Vector2(6.5, 58.5)
 shape = SubResource("RectangleShape2D_t6bh0")
 
 [node name="chair-left" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-59, 52)
+position = Vector2(-59, 56)
 shape = SubResource("RectangleShape2D_6x5ck")
 
 [node name="chair-down" type="CollisionShape2D" parent="StaticBody2D"]
@@ -1851,11 +1852,10 @@ position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_mq4e7")
 
 [node name="Dialogue" parent="." instance=ExtResource("11_r4jl7")]
-d_file = "res://systems/dialoguesystem/json/sample.json"
+d_file = "res://json/sample.json"
 
 [node name="OPDialogue" parent="." instance=ExtResource("11_r4jl7")]
-layer = 5
-d_file = "res://systems/dialoguesystem/json/op_dialogue.json"
+d_file = "res://json/op_dialogue.json"
 
 [node name="KitchenArea" type="Area2D" parent="."]
 script = ExtResource("12_3imob")

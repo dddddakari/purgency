@@ -261,24 +261,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_abrql"]
-radius = 9.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bls4j"]
+radius = 3.01367
+height = 14.0266
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_abrql")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2, -11)
-scale = Vector2(-0.175782, 0.18833)
+position = Vector2(-3, -8)
+scale = Vector2(-0.142169, 0.152318)
 sprite_frames = SubResource("SpriteFrames_vewsg")
 animation = &"walking_left"
 autoplay = "default"
 frame_progress = 0.617748
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, -1)
-shape = SubResource("CircleShape2D_abrql")
+position = Vector2(-1, 12)
+rotation = 1.55683
+shape = SubResource("CapsuleShape2D_bls4j")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("3_sglur")]
+visible = false
 position = Vector2(-41, -62)
