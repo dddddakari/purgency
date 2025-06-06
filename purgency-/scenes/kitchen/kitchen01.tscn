@@ -1726,24 +1726,6 @@ tile_set = SubResource("TileSet_of622")
 z_index = 1
 position = Vector2(138, 141)
 
-[node name="Inventory" parent="Player"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-offset_left = -64.0
-offset_top = -45.0
-offset_right = 317.0
-offset_bottom = 223.0
-scale = Vector2(0.312234, 0.279386)
-pivot_offset = Vector2(0, 0)
-script = null
-
 [node name="Space" type="Label" parent="Player"]
 offset_left = -120.0
 offset_top = -70.0
