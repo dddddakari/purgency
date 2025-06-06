@@ -1,6 +1,5 @@
-[gd_scene load_steps=45 format=4 uid="uid://bbquf0dq1psfa"]
+[gd_scene load_steps=44 format=4 uid="uid://bpgckbqg0nw5n"]
 
-[ext_resource type="PackedScene" uid="uid://le4evi2ue18i" path="res://inventorysystem/Inventory.tscn" id="1_dnkgk"]
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
 [ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://BGassets/TopDownHouse_FloorsAndWalls.png" id="2_mal84"]
@@ -12,9 +11,9 @@
 [ext_resource type="Script" uid="uid://ckc4r340jkkwv" path="res://scripts/label.gd" id="8_0iy2g"]
 [ext_resource type="PackedScene" uid="uid://bqfmymrbtgbe6" path="res://entities/items/letter/Letter.tscn" id="9_d0mku"]
 [ext_resource type="Script" uid="uid://bs2armi551nx2" path="res://scenes/kitchen/area_2d.gd" id="10_mppru"]
-[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
+[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
 [ext_resource type="Script" uid="uid://c6nlguc53vuli" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
-[ext_resource type="PackedScene" uid="uid://cuq1cvta81wlk" path="res://inventorysystem/Container/ContainerUI.tscn" id="15_b8gmo"]
+[ext_resource type="PackedScene" uid="uid://cuq1cvta81wlk" path="res://systems/inventorysystem/Container/ContainerUI.tscn" id="15_b8gmo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
 texture = ExtResource("1_pkqpq")
@@ -1727,13 +1726,23 @@ tile_set = SubResource("TileSet_of622")
 z_index = 1
 position = Vector2(138, 141)
 
-[node name="Inventory" parent="Player" instance=ExtResource("1_dnkgk")]
+[node name="Inventory" parent="Player"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 offset_left = -64.0
 offset_top = -45.0
 offset_right = 317.0
 offset_bottom = 223.0
 scale = Vector2(0.312234, 0.279386)
 pivot_offset = Vector2(0, 0)
+script = null
 
 [node name="Space" type="Label" parent="Player"]
 offset_left = -120.0
