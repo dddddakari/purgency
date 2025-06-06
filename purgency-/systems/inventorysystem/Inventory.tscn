@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://le4evi2ue18i"]
 
-[ext_resource type="Script" uid="uid://dcpr0nqpxys8q" path="res://inventorysystem/inventory.gd" id="1_l5nn2"]
-[ext_resource type="PackedScene" uid="uid://cfggkb7xora7c" path="res://inventorysystem/Slot.tscn" id="2_l5nn2"]
+[ext_resource type="Script" uid="uid://dcpr0nqpxys8q" path="res://systems/inventorysystem/inventory.gd" id="1_l5nn2"]
+[ext_resource type="PackedScene" uid="uid://cfggkb7xora7c" path="res://systems/inventorysystem/Slot.tscn" id="2_l5nn2"]
 
 [node name="Inventory" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)

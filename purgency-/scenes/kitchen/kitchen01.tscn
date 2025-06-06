@@ -1853,7 +1853,7 @@ d_file = "res://dialoguesystem/json/sample.json"
 
 [node name="OPDialogue" parent="." instance=ExtResource("11_r4jl7")]
 layer = 5
-d_file = "res://dialoguesystem/json/op_dialogue.json"
+d_file = "res://systems/dialoguesystem/json/op_dialogue.json"
 
 [node name="KitchenArea" type="Area2D" parent="."]
 script = ExtResource("12_3imob")

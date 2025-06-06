@@ -9,7 +9,7 @@ var container_visible := false
 var selected_slot_index := -1
 var current_container = null
 
-const SLOT_SCENE = preload("res://inventorysystem/Slot.tscn")
+const SLOT_SCENE = preload("res://systems/inventorysystem/Slot.tscn")
 
 func _ready():
 	grid_container.columns = 4
