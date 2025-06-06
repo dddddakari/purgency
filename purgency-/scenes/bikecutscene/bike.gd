@@ -3,7 +3,7 @@ extends Node2D
 func _ready():
 	# Disable input by showing a fullscreen blocker
 	$InputBlocker.visible = true
-	$AnimatedSprite2D.play("SONIC")
+	$AnimatedSprite2D.play("Bike_Cutscene")
 	$AnimatedSprite2D.animation_finished.connect(_on_cutscene_finished)
 
 func _on_cutscene_finished():
