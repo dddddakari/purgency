@@ -87,8 +87,8 @@ animations = [{
 script = ExtResource("1_hgu6w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(181, 371)
-scale = Vector2(0.724894, 0.810678)
+position = Vector2(2682.9, 1769.99)
+scale = Vector2(1.39207, 1.55681)
 sprite_frames = SubResource("SpriteFrames_wx3lb")
 animation = &"Bike_Cutscene"
 
