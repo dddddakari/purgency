@@ -1775,6 +1775,15 @@ limit_bottom = 1000
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
+[node name="F" type="Label" parent="Player"]
+offset_left = -120.0
+offset_top = -31.0
+offset_right = 1.0
+offset_bottom = -8.0
+theme_override_font_sizes/font_size = 10
+text = "- F At Door To Leave Area"
+script = ExtResource("8_0iy2g")
+
 [node name="Fridge" parent="." instance=ExtResource("1_mal84")]
 position = Vector2(49, 80)
 
