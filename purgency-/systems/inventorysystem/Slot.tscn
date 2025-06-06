@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfggkb7xora7c"]
 
-[ext_resource type="Script" uid="uid://dgeriqmh25r12" path="res://inventorysystem/slot_container.gd" id="1_632ag"]
+[ext_resource type="Script" path="res://systems/inventorysystem/slot_container.gd" id="1_7bhxk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lxg0"]
 bg_color = Color(0.254024, 0.085507, 0.318009, 1)
@@ -18,7 +18,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0lxg0")
-script = ExtResource("1_632ag")
+script = ExtResource("1_7bhxk")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2

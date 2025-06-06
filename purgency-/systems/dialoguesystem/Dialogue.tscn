@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://dklxgwl1bkqaa"]
+
+[ext_resource type="Script" uid="uid://v53nmmmukcug" path="res://systems/dialoguesystem/DialoguePlayer.gd" id="1_oah3n"]
+[ext_resource type="Texture2D" uid="uid://dhk6gwfdikkme" path="res://assets/dialogue_box.png" id="1_snqsu"]
+[ext_resource type="PackedScene" uid="uid://dbni2dhbasmnq" path="res://systems/dialoguesystem/Button.tscn" id="3_ck8dn"]
+
+[node name="Dialogue" type="CanvasLayer"]
+script = ExtResource("1_oah3n")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 90.0
+offset_top = 493.0
+offset_right = 1057.0
+offset_bottom = 620.0
+texture = ExtResource("1_snqsu")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -50.0
+offset_right = 428.0
+offset_bottom = 19.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Name"
+fit_content = true
+scroll_active = false
+
+[node name="text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 7.0
+offset_right = 943.0
+offset_bottom = 117.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Dialogue Text blah "
+fit_content = true
+scroll_active = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+
+[node name="Options" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 737.0
+offset_top = 365.0
+offset_right = 1043.0
+offset_bottom = 483.0
+
+[node name="Button" parent="Options" instance=ExtResource("3_ck8dn")]
+layout_mode = 0

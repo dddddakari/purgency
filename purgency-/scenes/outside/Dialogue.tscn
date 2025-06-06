@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dklxgwl1bkqaa"]
+[gd_scene load_steps=3 format=3 uid="uid://dihmncmu3hwns"]
 
-[ext_resource type="Script" uid="uid://v53nmmmukcug" path="res://dialoguesystem/DialoguePlayer.gd" id="1_oah3n"]
-[ext_resource type="Texture2D" uid="uid://dhk6gwfdikkme" path="res://assets/dialogue_box.png" id="1_snqsu"]
+[ext_resource type="Script" uid="uid://v53nmmmukcug" path="res://systems/dialoguesystem/DialoguePlayer.gd" id="1_4u0ds"]
+[ext_resource type="Texture2D" uid="uid://dhk6gwfdikkme" path="res://assets/dialogue_box.png" id="2_71t4a"]
 
 [node name="Dialogue" type="CanvasLayer"]
-script = ExtResource("1_oah3n")
+script = ExtResource("1_4u0ds")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_left = 90.0
 offset_top = 493.0
 offset_right = 1057.0
 offset_bottom = 620.0
-texture = ExtResource("1_snqsu")
+texture = ExtResource("2_71t4a")
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
@@ -41,3 +41,19 @@ scroll_active = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4
+
+[node name="Options" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 737.0
+offset_top = 244.0
+offset_right = 1043.0
+offset_bottom = 483.0
+
+[node name="SampleButton" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 173.0
+offset_right = 308.0
+offset_bottom = 222.0
+text = "Sample Button"
