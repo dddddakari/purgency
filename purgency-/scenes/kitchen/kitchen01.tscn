@@ -1727,6 +1727,14 @@ tile_set = SubResource("TileSet_of622")
 z_index = 1
 position = Vector2(138, 141)
 
+[node name="Inventory" parent="Player" instance=ExtResource("1_dnkgk")]
+offset_left = -64.0
+offset_top = -45.0
+offset_right = 317.0
+offset_bottom = 223.0
+scale = Vector2(0.312234, 0.279386)
+pivot_offset = Vector2(0, 0)
+
 [node name="Space" type="Label" parent="Player"]
 offset_left = -120.0
 offset_top = -70.0
@@ -1737,14 +1745,6 @@ text = "- Space for dialogue
 "
 script = ExtResource("8_0iy2g")
 
-[node name="Inventory" parent="Player" instance=ExtResource("1_dnkgk")]
-offset_left = -64.0
-offset_top = -45.0
-offset_right = 317.0
-offset_bottom = 223.0
-scale = Vector2(0.312234, 0.279386)
-pivot_offset = Vector2(0, 0)
-
 [node name="E" type="Label" parent="Player"]
 offset_left = -120.0
 offset_top = -57.0
@@ -1752,6 +1752,15 @@ offset_right = 23.0
 offset_bottom = -8.0
 theme_override_font_sizes/font_size = 10
 text = "- E to Interact"
+script = ExtResource("8_0iy2g")
+
+[node name="I" type="Label" parent="Player"]
+offset_left = -119.0
+offset_top = -44.0
+offset_right = 5.0
+offset_bottom = -21.0
+theme_override_font_sizes/font_size = 10
+text = "- I for Inventory"
 script = ExtResource("8_0iy2g")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -1856,6 +1865,7 @@ shape = SubResource("RectangleShape2D_0iy2g")
 [node name="ContainerCanvas" type="CanvasLayer" parent="."]
 
 [node name="Inventory" parent="ContainerCanvas" instance=ExtResource("15_b8gmo")]
+visible = false
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
