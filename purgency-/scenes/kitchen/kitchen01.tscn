@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bbquf0dq1psfa"]
+[gd_scene load_steps=45 format=4 uid="uid://bpgckbqg0nw5n"]
 
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
@@ -11,11 +11,10 @@
 [ext_resource type="Script" uid="uid://ckc4r340jkkwv" path="res://scripts/label.gd" id="8_0iy2g"]
 [ext_resource type="PackedScene" uid="uid://bqfmymrbtgbe6" path="res://entities/items/letter/Letter.tscn" id="9_d0mku"]
 [ext_resource type="Script" uid="uid://bs2armi551nx2" path="res://scenes/kitchen/area_2d.gd" id="10_mppru"]
-[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
+[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
 [ext_resource type="Script" uid="uid://c6nlguc53vuli" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
-[ext_resource type="Script" uid="uid://psmlnfdk422j" path="res://inventorysystem/ContainerUI.gd" id="14_b8gmo"]
-[ext_resource type="PackedScene" uid="uid://ccml1ssjsol35" path="res://inventorysystem/InventorySlot.tscn" id="15_6fhro"]
-[ext_resource type="Script" uid="uid://bqqte7yl6xgl3" path="res://inventorysystem/xinventory.gd" id="16_6fhro"]
+[ext_resource type="Script" uid="uid://psmlnfdk422j" path="res://systems/inventorysystem/ContainerUI.gd" id="14_b8gmo"]
+[ext_resource type="PackedScene" uid="uid://ccml1ssjsol35" path="res://systems/inventorysystem/InventorySlot.tscn" id="15_6fhro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
 texture = ExtResource("1_pkqpq")
@@ -1815,7 +1814,6 @@ offset_right = 938.0
 offset_bottom = 72.0
 theme_override_font_sizes/font_size = 15
 text = "X"
-script = ExtResource("16_6fhro")
 
 [node name="Fridge" parent="." instance=ExtResource("1_mal84")]
 position = Vector2(49, 80)
@@ -1895,7 +1893,7 @@ d_file = "res://dialoguesystem/json/sample.json"
 
 [node name="OPDialogue" parent="." instance=ExtResource("11_r4jl7")]
 layer = 5
-d_file = "res://dialoguesystem/json/op_dialogue.json"
+d_file = "res://systems/dialoguesystem/json/op_dialogue.json"
 
 [node name="KitchenArea" type="Area2D" parent="."]
 script = ExtResource("12_3imob")
