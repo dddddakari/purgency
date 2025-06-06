@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf65gdbth4qvo"
-path="res://.godot/imported/Sugestão de Mapas.jpg-0e8fbccfdec7b1e659c0727dabd1c239.ctex"
+uid="uid://b62q417nl6edf"
+path="res://.godot/imported/hospital_sample.png-c17de37c7e3ea2c0371bd46b25dd6370.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/outside/Sugestão de Mapas.jpg"
-dest_files=["res://.godot/imported/Sugestão de Mapas.jpg-0e8fbccfdec7b1e659c0727dabd1c239.ctex"]
+source_file="res://BGassets/hospital_sample.png"
+dest_files=["res://.godot/imported/hospital_sample.png-c17de37c7e3ea2c0371bd46b25dd6370.ctex"]
 
 [params]
 

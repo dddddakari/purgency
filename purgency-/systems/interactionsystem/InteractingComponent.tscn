@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuq3e8q041hyd"]
 
-[ext_resource type="Script" uid="uid://bot4163s5u1s0" path="res://interactionsystem/interactingcomponent.gd" id="1_ew3te"]
+[ext_resource type="Script" uid="uid://bot4163s5u1s0" path="res://systems/interactionsystem/interactingcomponent.gd" id="1_ew3te"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ew3te"]
 

@@ -1,6 +1,5 @@
-[gd_scene load_steps=45 format=4 uid="uid://bbquf0dq1psfa"]
+[gd_scene load_steps=46 format=4 uid="uid://bpgckbqg0nw5n"]
 
-[ext_resource type="PackedScene" uid="uid://le4evi2ue18i" path="res://inventorysystem/Inventory.tscn" id="1_dnkgk"]
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
 [ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://BGassets/TopDownHouse_FloorsAndWalls.png" id="2_mal84"]
@@ -12,9 +11,11 @@
 [ext_resource type="Script" uid="uid://ckc4r340jkkwv" path="res://scripts/label.gd" id="8_0iy2g"]
 [ext_resource type="PackedScene" uid="uid://bqfmymrbtgbe6" path="res://entities/items/letter/Letter.tscn" id="9_d0mku"]
 [ext_resource type="Script" uid="uid://bs2armi551nx2" path="res://scenes/kitchen/area_2d.gd" id="10_mppru"]
-[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
+[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
 [ext_resource type="Script" uid="uid://c6nlguc53vuli" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
-[ext_resource type="PackedScene" uid="uid://cuq1cvta81wlk" path="res://inventorysystem/Container/ContainerUI.tscn" id="15_b8gmo"]
+[ext_resource type="Script" uid="uid://dc1t35fj0fitp" path="res://systems/inventorysystem/Container/container_ui.gd" id="15_6fhro"]
+[ext_resource type="PackedScene" uid="uid://cuq1cvta81wlk" path="res://systems/inventorysystem/Container/ContainerUI.tscn" id="15_b8gmo"]
+[ext_resource type="PackedScene" uid="uid://le4evi2ue18i" path="res://systems/inventorysystem/Inventory.tscn" id="16_6fhro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
 texture = ExtResource("1_pkqpq")
@@ -1727,14 +1728,6 @@ tile_set = SubResource("TileSet_of622")
 z_index = 1
 position = Vector2(138, 141)
 
-[node name="Inventory" parent="Player" instance=ExtResource("1_dnkgk")]
-offset_left = -64.0
-offset_top = -45.0
-offset_right = 317.0
-offset_bottom = 223.0
-scale = Vector2(0.312234, 0.279386)
-pivot_offset = Vector2(0, 0)
-
 [node name="Space" type="Label" parent="Player"]
 offset_left = -120.0
 offset_top = -70.0
@@ -1858,11 +1851,11 @@ position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_mq4e7")
 
 [node name="Dialogue" parent="." instance=ExtResource("11_r4jl7")]
-d_file = "res://dialoguesystem/json/sample.json"
+d_file = "res://systems/dialoguesystem/json/sample.json"
 
 [node name="OPDialogue" parent="." instance=ExtResource("11_r4jl7")]
 layer = 5
-d_file = "res://dialoguesystem/json/op_dialogue.json"
+d_file = "res://systems/dialoguesystem/json/op_dialogue.json"
 
 [node name="KitchenArea" type="Area2D" parent="."]
 script = ExtResource("12_3imob")
@@ -1873,8 +1866,10 @@ shape = SubResource("RectangleShape2D_0iy2g")
 
 [node name="ContainerCanvas" type="CanvasLayer" parent="."]
 
-[node name="Inventory" parent="ContainerCanvas" instance=ExtResource("15_b8gmo")]
-visible = false
+[node name="ContainerUI" parent="ContainerCanvas" instance=ExtResource("15_b8gmo")]
+script = ExtResource("15_6fhro")
+
+[node name="Inventory" parent="ContainerCanvas" instance=ExtResource("16_6fhro")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

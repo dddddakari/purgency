@@ -9,12 +9,13 @@ var container_visible := false
 var selected_slot_index := -1
 var current_container = null
 
-const SLOT_SCENE = preload("res://inventorysystem/Slot.tscn")
+const SLOT_SCENE = preload("res://systems/inventorysystem/Slot.tscn")
 
 func _ready():
 	grid_container.columns = 4
 	margin_container.visible = false
 
+# In container_ui.gd, add these debug prints:
 func show_container_inventory(items: Array, container_ref):
 	current_container = container_ref
 	container_items = items.duplicate()
@@ -23,6 +24,7 @@ func show_container_inventory(items: Array, container_ref):
 	container_visible = true
 
 func hide_container():
+	print("Hiding container")
 	margin_container.visible = false
 	container_visible = false
 	current_container = null

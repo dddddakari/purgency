@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brol46wgc17iy" path="res://entities/items/letter/letter.gd" id="1_mr72c"]
 [ext_resource type="Texture2D" uid="uid://d1440o7a1fnwt" path="res://BGassets/TopDownHouse_SmallItems.png" id="2_dv88b"]
-[ext_resource type="PackedScene" uid="uid://balrieb8xarpl" path="res://interactionsystem/interactable.tscn" id="3_78erq"]
+[ext_resource type="PackedScene" uid="uid://balrieb8xarpl" path="res://systems/interactionsystem/interactable.tscn" id="3_78erq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kv1v"]
 size = Vector2(12, 13)

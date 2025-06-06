@@ -7,7 +7,7 @@ var inventory_items: Array = []
 var inventory_visible := false
 var selected_slot_index := -1
 
-const SLOT_SCENE = preload("res://inventorysystem/Slot.tscn")
+const SLOT_SCENE = preload("res://systems/inventorysystem/Slot.tscn")
 const INVENTORY_DATA_PATH = "res://entities/player/inventory_data.json"
 
 func _ready():
