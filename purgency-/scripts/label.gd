@@ -2,6 +2,7 @@ extends Label
 
 @onready var e: Label = $"../E"
 @onready var space: Label = $"../Space"
+@onready var I: Label = $"../I"
 
 
 
@@ -11,4 +12,7 @@ func _input(event: InputEvent) -> void:
 		return
 		
 	if event.is_action_pressed("ui_accept"):
+		space.hide()
+		
+	if event.is_action_pressed("inventory"):
 		space.hide()
