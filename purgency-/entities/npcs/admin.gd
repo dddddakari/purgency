@@ -12,7 +12,7 @@ func _on_interact():
 	
 func use_dialogue():
 	var dialogue = get_parent().get_node("../Admin")
-	var dialogue_file_path = "res://systems/dialoguesystem/json/administrator.json"
+	var dialogue_file_path = "res://json/administrator.json"
 
 
 	if dialogue:
