@@ -1,10 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://dqm0mk3hhq2c0"]
+[gd_scene load_steps=36 format=3 uid="uid://dqm0mk3hhq2c0"]
 
 [ext_resource type="Script" uid="uid://cy136o77vv0xn" path="res://entities/player/player.gd" id="1_abrql"]
 [ext_resource type="Texture2D" uid="uid://cs0ppsqod3klo" path="res://entities/player/Prototype_Character.png" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://dfg0hums245ty" path="res://entities/player/finneassprite.png" id="3_8fjmc"]
-[ext_resource type="PackedScene" uid="uid://cuq3e8q041hyd" path="res://systems/interactionsystem/InteractingComponent.tscn" id="3_sglur"]
-[ext_resource type="PackedScene" uid="uid://ccml1ssjsol35" path="res://systems/inventorysystem/InventorySlot.tscn" id="4_bls4j"]
+[ext_resource type="PackedScene" uid="uid://cuq3e8q041hyd" path="res://interactionsystem/InteractingComponent.tscn" id="3_sglur"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wq0jh"]
 atlas = ExtResource("3_8fjmc")
@@ -265,30 +264,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_abrql"]
 radius = 9.0
 
-[sub_resource type="GDScript" id="GDScript_7fes2"]
-script/source = "extends Node2D
-
-@onready var slots := $BackgroundPanel/ItemGrid.get_children()
-var container_inventory: Array = []
-var container_owner: Node = null
-
-func show_container_inventory(inventory: Array, owner: Node) -> void:
-	container_inventory = inventory
-	container_owner = owner
-	update_ui()
-	show()
-
-func update_ui() -> void:
-	for i in range(slots.size()):
-		if i < container_inventory.size():
-			slots[i].set_item(container_inventory[i])
-		else:
-			slots[i].clear_slot()
-
-func hide_container():
-	hide()
-"
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_abrql")
 
@@ -307,48 +282,3 @@ shape = SubResource("CircleShape2D_abrql")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("3_sglur")]
 position = Vector2(-41, -62)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="container_ui" type="Node2D" parent="CanvasLayer"]
-visible = false
-script = SubResource("GDScript_7fes2")
-
-[node name="BackgroundPanel" type="Panel" parent="CanvasLayer/container_ui"]
-offset_left = 517.0
-offset_top = 41.0
-offset_right = 938.0
-offset_bottom = 285.0
-
-[node name="ItemGrid" type="GridContainer" parent="CanvasLayer/container_ui/BackgroundPanel"]
-layout_mode = 0
-offset_left = -3.0
-offset_top = -1.0
-offset_right = 420.0
-offset_bottom = 245.0
-columns = 4
-
-[node name="InventorySlot" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
-layout_mode = 2
-
-[node name="InventorySlot2" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
-layout_mode = 2
-size_flags_stretch_ratio = 0.0
-
-[node name="InventorySlot3" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
-layout_mode = 2
-
-[node name="InventorySlot4" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
-layout_mode = 2
-
-[node name="InventorySlot5" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
-layout_mode = 2
-
-[node name="InventorySlot6" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
-layout_mode = 2
-
-[node name="InventorySlot7" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
-layout_mode = 2
-
-[node name="InventorySlot8" parent="CanvasLayer/container_ui/BackgroundPanel/ItemGrid" instance=ExtResource("4_bls4j")]
-layout_mode = 2

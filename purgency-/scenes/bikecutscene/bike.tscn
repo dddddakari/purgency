@@ -1,76 +1,80 @@
-[gd_scene load_steps=19 format=3 uid="uid://dqu34qk6ogv86"]
+[gd_scene load_steps=20 format=3 uid="uid://dqu34qk6ogv86"]
 
-[ext_resource type="Texture2D" uid="uid://6w8xqkn0xy8t" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_001.png" id="1_7fphc"]
 [ext_resource type="Script" uid="uid://dr55tlji8lyrp" path="res://scenes/bikecutscene/bike.gd" id="1_hgu6w"]
-[ext_resource type="Texture2D" uid="uid://cj2jantoo6l0" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_002.png" id="2_hgu6w"]
-[ext_resource type="Texture2D" uid="uid://c6cydu7jfdi31" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_003.png" id="3_ao5pf"]
-[ext_resource type="Texture2D" uid="uid://bcypra0vea0ao" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_004.png" id="4_2os0n"]
-[ext_resource type="Texture2D" uid="uid://50broxh5dwxd" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_005.png" id="5_heky6"]
-[ext_resource type="Texture2D" uid="uid://owoy11al3ltu" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_006.png" id="6_o5hc1"]
-[ext_resource type="Texture2D" uid="uid://bi61tnqrpl146" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_007.png" id="7_qeg6b"]
-[ext_resource type="Texture2D" uid="uid://dwogeiqakqog1" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_008.png" id="8_kq5a8"]
-[ext_resource type="Texture2D" uid="uid://cv7qi5m71u4k1" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_009.png" id="9_sle48"]
-[ext_resource type="Texture2D" uid="uid://c3eudwo56u1f0" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_010.png" id="10_h8s1f"]
-[ext_resource type="Texture2D" uid="uid://e7qcg1dnh0s" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_011.png" id="11_jr0rs"]
-[ext_resource type="Texture2D" uid="uid://b4uowdmkpdv5i" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_012.png" id="12_uejw8"]
-[ext_resource type="Texture2D" uid="uid://bnhh8axtimmj3" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_013.png" id="13_vkvq1"]
-[ext_resource type="Texture2D" uid="uid://x3osg028e5ib" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_014.png" id="14_53j5u"]
-[ext_resource type="Texture2D" uid="uid://hx23o5f1ay8w" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_015.png" id="15_5aojm"]
-[ext_resource type="Texture2D" uid="uid://gbuabk1px1ts" path="res://scenes/bikecutscene/sonic (1)/Layer 1_sprite_016.png" id="16_ti3sc"]
+[ext_resource type="Texture2D" uid="uid://cilih7lirod4k" path="res://scenes/bikecutscene/thelove/sprite_02.png" id="4_ar4jr"]
+[ext_resource type="Texture2D" uid="uid://c7n8n48666fhr" path="res://scenes/bikecutscene/thelove/sprite_03.png" id="5_fdfnn"]
+[ext_resource type="Texture2D" uid="uid://cehep3gvnl2et" path="res://scenes/bikecutscene/thelove/sprite_05.png" id="6_ny66b"]
+[ext_resource type="Texture2D" uid="uid://b7kgssspfgfe" path="res://scenes/bikecutscene/thelove/sprite_06.png" id="7_678uj"]
+[ext_resource type="Texture2D" uid="uid://0v8pm3liakxy" path="res://scenes/bikecutscene/thelove/sprite_07.png" id="8_sj2nk"]
+[ext_resource type="Texture2D" uid="uid://b0cpcks4i8uer" path="res://scenes/bikecutscene/thelove/sprite_08.png" id="9_qqa0i"]
+[ext_resource type="Texture2D" uid="uid://bsco1aoh0xrmx" path="res://scenes/bikecutscene/thelove/sprite_09.png" id="10_uub8x"]
+[ext_resource type="Texture2D" uid="uid://fyfmr751t6md" path="res://scenes/bikecutscene/thelove/sprite_10.png" id="11_x2hgf"]
+[ext_resource type="Texture2D" uid="uid://2tyxaps0fdx" path="res://scenes/bikecutscene/thelove/sprite_11.png" id="12_o81gb"]
+[ext_resource type="Texture2D" uid="uid://5u57r3i8653n" path="res://scenes/bikecutscene/thelove/sprite_12.png" id="13_fv2fy"]
+[ext_resource type="Texture2D" uid="uid://raa3c3chrryi" path="res://scenes/bikecutscene/thelove/sprite_13.png" id="14_vsvm1"]
+[ext_resource type="Texture2D" uid="uid://cessq5biwns08" path="res://scenes/bikecutscene/thelove/sprite_14.png" id="15_mkoov"]
+[ext_resource type="Texture2D" uid="uid://bc5ol3fdmg25v" path="res://scenes/bikecutscene/thelove/sprite_15.png" id="16_gth54"]
+[ext_resource type="Texture2D" uid="uid://bh6oqmracghoa" path="res://scenes/bikecutscene/thelove/sprite_16.png" id="17_ttjup"]
+[ext_resource type="Texture2D" uid="uid://c1o0n115cv4pd" path="res://scenes/bikecutscene/thelove/sprite_17.png" id="18_qbd3w"]
+[ext_resource type="Texture2D" uid="uid://dwr1w51i7foev" path="res://scenes/bikecutscene/thelove/sprite_18.png" id="19_rj7km"]
+[ext_resource type="Texture2D" uid="uid://dqa27303v7qu2" path="res://scenes/bikecutscene/thelove/sprite_19.png" id="20_p8kat"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wx3lb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7fphc")
+"texture": ExtResource("4_ar4jr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_hgu6w")
+"texture": ExtResource("5_fdfnn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ao5pf")
+"texture": ExtResource("6_ny66b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_2os0n")
+"texture": ExtResource("7_678uj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_heky6")
+"texture": ExtResource("8_sj2nk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_o5hc1")
+"texture": ExtResource("9_qqa0i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_qeg6b")
+"texture": ExtResource("10_uub8x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_kq5a8")
+"texture": ExtResource("11_x2hgf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_sle48")
+"texture": ExtResource("12_o81gb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_h8s1f")
+"texture": ExtResource("13_fv2fy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_jr0rs")
+"texture": ExtResource("14_vsvm1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_uejw8")
+"texture": ExtResource("15_mkoov")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_vkvq1")
+"texture": ExtResource("16_gth54")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_53j5u")
+"texture": ExtResource("17_ttjup")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_5aojm")
+"texture": ExtResource("18_qbd3w")
 }, {
-"duration": 1.5,
-"texture": ExtResource("16_ti3sc")
+"duration": 1.0,
+"texture": ExtResource("19_rj7km")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_p8kat")
 }],
 "loop": false,
-"name": &"SONIC",
+"name": &"Bike_Cutscene",
 "speed": 5.0
 }, {
 "frames": [],
@@ -83,16 +87,14 @@ animations = [{
 script = ExtResource("1_hgu6w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(580.5, 332.5)
-scale = Vector2(0.608854, 0.580556)
+position = Vector2(181, 371)
+scale = Vector2(0.724894, 0.810678)
 sprite_frames = SubResource("SpriteFrames_wx3lb")
-animation = &"SONIC"
-frame = 13
-frame_progress = 0.0314316
+animation = &"Bike_Cutscene"
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
-position = Vector2(2.46364, 23.2536)
-zoom = Vector2(1.03, 1.03)
+position = Vector2(-52.9062, 1.25983)
+zoom = Vector2(0.2, 0.2)
 
 [node name="InputBlocker" type="Control" parent="."]
 layout_mode = 3
