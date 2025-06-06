@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://c77rg3buw8bd0"]
+[gd_scene load_steps=2 format=3 uid="uid://le4evi2ue18i"]
 
-[ext_resource type="Script" uid="uid://cd8us0m24v6np" path="res://inventorysystem/inventory.gd" id="1_l5nn2"]
 [ext_resource type="PackedScene" uid="uid://cfggkb7xora7c" path="res://inventorysystem/Slot.tscn" id="2_l5nn2"]
 
 [node name="Inventory" type="PanelContainer"]
@@ -14,7 +13,6 @@ offset_bottom = -0.264023
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(1000, 1000)
-script = ExtResource("1_l5nn2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 visible = false
