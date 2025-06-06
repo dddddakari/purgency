@@ -28,6 +28,7 @@ func _ready():
 		push_error("Missing 'interactable' node in fridge!")
 
 func _on_interact():
+	print("fridge open!")
 	if container_ui == null:
 		container_ui = get_node_or_null("/root/Kitchen01/ContainerCanvas/Inventory")
 		if container_ui == null:

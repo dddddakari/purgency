@@ -1873,8 +1873,7 @@ shape = SubResource("RectangleShape2D_0iy2g")
 
 [node name="ContainerCanvas" type="CanvasLayer" parent="."]
 
-[node name="Inventory" parent="ContainerCanvas" instance=ExtResource("15_b8gmo")]
-visible = false
+[node name="ContainerUI" parent="ContainerCanvas" instance=ExtResource("15_b8gmo")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
