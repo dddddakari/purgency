@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bpgckbqg0nw5n"]
+[gd_scene load_steps=46 format=4 uid="uid://bbquf0dq1psfa"]
 
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
@@ -1728,6 +1728,18 @@ tile_set = SubResource("TileSet_of622")
 z_index = 1
 position = Vector2(138, 141)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-87, -51)
+scale = Vector2(5, 5)
+anchor_mode = 0
+zoom = Vector2(7, 7)
+limit_left = -25
+limit_top = -25
+limit_right = 1000
+limit_bottom = 1000
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
 [node name="Space" type="Label" parent="Player"]
 offset_left = -120.0
 offset_top = -70.0
@@ -1755,18 +1767,6 @@ offset_bottom = -21.0
 theme_override_font_sizes/font_size = 10
 text = "- I for Inventory"
 script = ExtResource("8_0iy2g")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-160, -105)
-scale = Vector2(5, 5)
-anchor_mode = 0
-zoom = Vector2(7, 7)
-limit_left = -25
-limit_top = -25
-limit_right = 1000
-limit_bottom = 1000
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 
 [node name="F" type="Label" parent="Player"]
 offset_left = -120.0
