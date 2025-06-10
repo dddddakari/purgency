@@ -2975,15 +2975,6 @@ theme_override_font_sizes/font_size = 10
 text = "- I for Inventory"
 script = ExtResource("8_0iy2g")
 
-[node name="F" type="Label" parent="Player"]
-offset_left = -120.0
-offset_top = -31.0
-offset_right = 1.0
-offset_bottom = -8.0
-theme_override_font_sizes/font_size = 10
-text = "- F At Door To Leave Area"
-script = ExtResource("8_0iy2g")
-
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-160, -105)
 scale = Vector2(5, 5)
@@ -3108,6 +3099,7 @@ shape = SubResource("RectangleShape2D_0iy2g")
 script = ExtResource("15_6fhro")
 
 [node name="Inventory" parent="ContainerCanvas" instance=ExtResource("16_6fhro")]
+visible = false
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
