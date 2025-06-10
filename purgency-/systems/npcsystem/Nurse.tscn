@@ -1,16 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwwoavnows5ub"]
+[gd_scene load_steps=5 format=3 uid="uid://dwwoavnows5ub"]
 
-[ext_resource type="Texture2D" path="res://assets/npcs/usagi.webp" id="1_gtklh"]
 [ext_resource type="Script" uid="uid://c0i8mibjg6kgp" path="res://systems/npcsystem/nurse.gd" id="1_y6ljr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6ljr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gtklh")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_gtklh")
+"texture": null
 }],
 "loop": true,
 "name": &"idle",
@@ -18,10 +17,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gtklh")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_gtklh")
+"texture": null
 }],
 "loop": true,
 "name": &"walk_e",
@@ -29,10 +28,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gtklh")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_gtklh")
+"texture": null
 }],
 "loop": true,
 "name": &"walk_n",
@@ -40,10 +39,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gtklh")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_gtklh")
+"texture": null
 }],
 "loop": true,
 "name": &"walk_s",
@@ -51,10 +50,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gtklh")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_gtklh")
+"texture": null
 }],
 "loop": true,
 "name": &"walk_w",
