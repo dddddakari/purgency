@@ -1,20 +1,20 @@
 [
   {
-	"id": "start",
+	"id": "adminStart",
 	"name": "Administrator",
 	"text": "Hello! Hospital's not open yet, please leave immediately or else I will explode!",
 	"options": [
-	  { "text": "Leave", "next_id": "hi_response" },
-	  { "text": "Ignore and sneak in", "next_id": "ignore_response" }
+	  { "text": "Leave", "next_id": "nice_response" },
+	  { "text": "Ignore and sneak in", "next_id": "mean_response" }
 	]
   },
   {
-	"id": "hi_response",
+	"id": "nice_response",
 	"name": "Administrator",
 	"text": "Good choice. Now leave!"
   },
   {
-	"id": "ignore_response",
+	"id": "mean_response",
 	"name": "Administrator",
 	"text": "You dare?! I warned you!!"
   }
