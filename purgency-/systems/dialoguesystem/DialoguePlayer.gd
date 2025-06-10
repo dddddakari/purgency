@@ -6,7 +6,7 @@ const SampleButtonScene = preload("res://systems/dialoguesystem/Button.tscn")
 var dialogue = []
 var curr_dialogue_id = 0
 var d_active = false
-var id_map = {} # maps string IDs to index in dialogue array
+var id_map = {} 
 
 
 func _ready():
@@ -46,9 +46,6 @@ func load_dialogue():
 
 	print("Dialogue loaded successfully.")
 	return data
-
-
-
 
 
 func _input(event):
