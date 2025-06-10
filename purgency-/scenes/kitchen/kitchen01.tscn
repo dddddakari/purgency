@@ -2975,15 +2975,6 @@ theme_override_font_sizes/font_size = 10
 text = "- I for Inventory"
 script = ExtResource("8_0iy2g")
 
-[node name="F" type="Label" parent="Player"]
-offset_left = -120.0
-offset_top = -31.0
-offset_right = 1.0
-offset_bottom = -8.0
-theme_override_font_sizes/font_size = 10
-text = "- F At Door To Leave Area"
-script = ExtResource("8_0iy2g")
-
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-160, -105)
 scale = Vector2(5, 5)
@@ -3096,7 +3087,6 @@ d_file = "res://json/sample.json"
 d_file = "res://json/op_dialogue.json"
 
 [node name="KitchenArea" type="Area2D" parent="."]
-visible = false
 script = ExtResource("12_3imob")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenArea"]
@@ -3104,7 +3094,6 @@ position = Vector2(112, 143.5)
 shape = SubResource("RectangleShape2D_0iy2g")
 
 [node name="ContainerCanvas" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ContainerUI" parent="ContainerCanvas" instance=ExtResource("15_b8gmo")]
 script = ExtResource("15_6fhro")

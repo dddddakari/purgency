@@ -4,13 +4,9 @@ var entered = false
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	entered = true
+	if _body.name == "Player":  # Optional: ensure it's the player
+		get_tree().change_scene_to_file.call_deferred("res://scenes/bikecutscene/bike.tscn")
 
 
 func _on_body_exited(_body: Node2D) -> void:
 	entered = false
-
-func _process(_delta):
-	if entered == true:
-		if Input.is_action_just_pressed("interact_area"):
-			get_tree().change_scene_to_file("res://scenes/bikecutscene/bike.tscn")
