@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfggkb7xora7c"]
 
-[ext_resource type="Script" path="res://systems/inventorysystem/slot_container.gd" id="1_7bhxk"]
+[ext_resource type="Script" uid="uid://dgeriqmh25r12" path="res://systems/inventorysystem/slot_container.gd" id="1_7bhxk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lxg0"]
 bg_color = Color(0.254024, 0.085507, 0.318009, 1)
@@ -8,9 +8,11 @@ bg_color = Color(0.254024, 0.085507, 0.318009, 1)
 [node name="Slot" type="PanelContainer"]
 z_index = 2
 custom_minimum_size = Vector2(64, 64)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 0.501
+anchor_bottom = 0.878
+offset_right = 0.559937
+offset_bottom = -0.179993
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(100, 1000)
