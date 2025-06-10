@@ -284,3 +284,7 @@ shape = SubResource("CapsuleShape2D_bls4j")
 [node name="InteractingComponent" parent="." instance=ExtResource("3_sglur")]
 visible = false
 position = Vector2(-41, -62)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1, 0.8985)
+zoom = Vector2(5, 5)

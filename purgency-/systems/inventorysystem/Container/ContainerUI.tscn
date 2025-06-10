@@ -76,19 +76,18 @@ func transfer_item(from_index: int, to_index: int):
 self_modulate = Color(1, 1, 1, 0)
 z_index = 1
 anchors_preset = -1
-anchor_right = 0.266
-anchor_bottom = 0.343
-offset_left = 156.0
-offset_top = 93.0
-offset_right = 357.568
-offset_bottom = 242.736
+anchor_right = 0.215
+anchor_bottom = 0.256
+offset_left = 12.0
+offset_top = 1.0
+offset_right = 53.4
+offset_bottom = 40.64
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(1000, 1000)
 script = SubResource("GDScript_1w18r")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 11
 theme_override_constants/margin_top = 11
@@ -106,37 +105,49 @@ theme_override_constants/v_separation = 10
 columns = 4
 
 [node name="Slot1" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot2" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot3" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot4" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot5" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot6" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot7" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot8" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot9" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot10" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot11" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot12" parent="MarginContainer/GridContainer" instance=ExtResource("2_ay8qj")]
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
