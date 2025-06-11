@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://bpgckbqg0nw5n"]
+[gd_scene load_steps=61 format=4 uid="uid://bpgckbqg0nw5n"]
 
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
@@ -13,8 +13,7 @@
 [ext_resource type="Script" uid="uid://bs2armi551nx2" path="res://scenes/kitchen/area_2d.gd" id="10_mppru"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
 [ext_resource type="Script" uid="uid://c6nlguc53vuli" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
-[ext_resource type="Script" uid="uid://dc1t35fj0fitp" path="res://systems/inventorysystem/Container/container_ui.gd" id="15_6fhro"]
-[ext_resource type="PackedScene" uid="uid://cuq1cvta81wlk" path="res://systems/inventorysystem/Container/ContainerUi.tscn" id="15_b8gmo"]
+[ext_resource type="PackedScene" uid="uid://dk0hu85586dvd" path="res://systems/inventorysystem/InventoryScreen.tscn" id="15_b8gmo"]
 [ext_resource type="PackedScene" uid="uid://le4evi2ue18i" path="res://systems/inventorysystem/Inventory.tscn" id="16_6fhro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
@@ -3092,16 +3091,7 @@ offset_top = 50.0
 offset_right = 990.0
 offset_bottom = 176.0
 
-[node name="ContainerUI" parent="ContainerCanvas" instance=ExtResource("15_b8gmo")]
-anchor_left = 0.044
-anchor_right = 0.088
-anchor_bottom = 0.194
-offset_left = 619.64
-offset_top = -58.0
-offset_right = 838.28
-offset_bottom = 68.0
-scale = Vector2(1.13275, 0.830418)
-script = ExtResource("15_6fhro")
+[node name="InventoryScreen" parent="ContainerCanvas" instance=ExtResource("15_b8gmo")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
