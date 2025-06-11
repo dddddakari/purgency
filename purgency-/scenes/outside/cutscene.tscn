@@ -39,7 +39,7 @@ shape = SubResource("RectangleShape2D_hl3hb")
 [node name="Player" parent="Area2D" instance=ExtResource("3_hl3hb")]
 position = Vector2(498, 188)
 
-[node name="Camera2D" type="Camera2D" parent="Area2D/Player"]
+[node name="Camera2D2" type="Camera2D" parent="Area2D/Player"]
 position = Vector2(-122, -74)
 scale = Vector2(5, 5)
 anchor_mode = 0

@@ -1715,7 +1715,7 @@ tile_set = SubResource("TileSet_of622")
 z_index = 1
 position = Vector2(138, 141)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(-122, -74)
 scale = Vector2(5, 5)
 anchor_mode = 0
