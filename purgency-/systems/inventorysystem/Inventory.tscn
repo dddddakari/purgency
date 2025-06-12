@@ -7,12 +7,12 @@
 self_modulate = Color(1, 1, 1, 0)
 z_index = 1
 anchors_preset = -1
-anchor_right = 0.225
-anchor_bottom = 0.285
+anchor_right = 0.146
+anchor_bottom = 0.17
 offset_left = 5.0
 offset_top = 4.0
-offset_right = -1.0
-offset_bottom = 0.149979
+offset_right = -1.24002
+offset_bottom = 21.3
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.999149, 1)

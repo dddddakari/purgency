@@ -8,18 +8,19 @@
 script = ExtResource("1_30uda")
 
 [node name="Player" parent="." instance=ExtResource("2_30uda")]
-offset_left = 628.0
-offset_top = 123.0
-offset_right = 1118.0
-offset_bottom = 476.0
+offset_left = 346.0
+offset_top = 3.0
+offset_right = 451.76
+offset_bottom = 108.3
 
 [node name="Container" parent="." instance=ExtResource("1_yiqln")]
-offset_left = 37.0
-offset_top = 121.0
-offset_right = 503.0
-offset_bottom = 485.0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 24.0
+offset_bottom = 61.08
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 57.0
 offset_top = 107.0
 offset_right = 418.0
@@ -27,6 +28,7 @@ offset_bottom = 136.0
 text = "Container"
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 offset_left = 657.0
 offset_top = 108.0
 offset_right = 1038.0
