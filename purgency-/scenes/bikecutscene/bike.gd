@@ -10,4 +10,4 @@ func _on_cutscene_finished():
 	# Re-enable input (optional, for debugging)
 	$InputBlocker.visible = false
 	# Transition to your next scene
-	get_tree().change_scene_to_file("res://scenes/outside/Hospital.tscn")
+	get_tree().change_scene_to_file("res://scenes/outside/receptionist.tscn")
