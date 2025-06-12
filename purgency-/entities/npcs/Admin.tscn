@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvaclcjg42xwn"]
 
-[ext_resource type="Texture2D" uid="uid://b474nd2262k6r" path="res://assets/npcs/noFilter.png" id="1_qe8si"]
+[ext_resource type="Texture2D" uid="uid://b474nd2262k6r" path="res://assets/noFilter.png" id="1_qe8si"]
 [ext_resource type="PackedScene" uid="uid://balrieb8xarpl" path="res://systems/interactionsystem/interactable.tscn" id="2_v2pum"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rymby"]
-radius = 36.1248
+radius = 50.636
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v2pum"]
 

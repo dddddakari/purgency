@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="3_a2g0y"]
 [ext_resource type="Script" uid="uid://1i5onfr3rnvk" path="res://entities/npcs/admin.gd" id="4_iulj1"]
 [ext_resource type="Texture2D" uid="uid://b474nd2262k6r" path="res://assets/noFilter.png" id="5_a2g0y"]
-[ext_resource type="Script" uid="uid://brktf8ur54vtd" path="res://scenes/outside/area_2d.gd" id="6_i5ocv"]
+[ext_resource type="Script" path="res://scenes/outside/area_2d.gd" id="6_i5ocv"]
 [ext_resource type="PackedScene" uid="uid://dihmncmu3hwns" path="res://scenes/outside/Dialogue.tscn" id="7_iulj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ow7i4"]
@@ -286,7 +286,7 @@ shape = SubResource("CircleShape2D_1k55b")
 position = Vector2(519, 305)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desk"]
-position = Vector2(1.5, 4)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_i5ocv")
 
 [node name="Black" type="Sprite2D" parent="."]

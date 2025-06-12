@@ -3073,6 +3073,7 @@ shape = SubResource("CircleShape2D_mq4e7")
 [node name="Dialogue" parent="." instance=ExtResource("11_r4jl7")]
 
 [node name="OPDialogue" parent="." instance=ExtResource("11_r4jl7")]
+script = null
 
 [node name="KitchenArea" type="Area2D" parent="."]
 script = ExtResource("12_3imob")

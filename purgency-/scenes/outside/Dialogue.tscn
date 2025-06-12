@@ -42,18 +42,16 @@ scroll_active = false
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4
 
-[node name="Options" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
+[node name="Options" type="VBoxContainer" parent="."]
 offset_left = 737.0
 offset_top = 244.0
 offset_right = 1043.0
 offset_bottom = 483.0
 
 [node name="SampleButton" type="Button" parent="Options"]
-layout_mode = 0
-offset_left = 627.0
-offset_top = 896.0
-offset_right = 980.0
-offset_bottom = 973.0
+layout_mode = 2
+text = "Sample Button"
+
+[node name="SampleButton2" type="Button" parent="Options"]
+layout_mode = 2
 text = "Sample Button"
