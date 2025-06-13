@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://bpgckbqg0nw5n"]
+[gd_scene load_steps=67 format=4 uid="uid://bpgckbqg0nw5n"]
 
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
@@ -2909,6 +2909,28 @@ b = Vector2(141, -1)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6wsy1"]
 b = Vector2(-1, 129)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8gmo"]
+size = Vector2(20, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fhro"]
+size = Vector2(21, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fes2"]
+size = Vector2(46, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxum3"]
+size = Vector2(14, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wsy1"]
+size = Vector2(28.75, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbm3f"]
+size = Vector2(15, 43)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b8gmo"]
+a = Vector2(87, 9)
+b = Vector2(-26, 7)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_mq4e7"]
 radius = 17.0
 
@@ -3062,6 +3084,38 @@ shape = SubResource("SegmentShape2D_y1lkx")
 position = Vector2(304, -42)
 shape = SubResource("SegmentShape2D_6wsy1")
 
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(216, -11.5)
+shape = SubResource("RectangleShape2D_b8gmo")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(216, -11.5)
+shape = SubResource("RectangleShape2D_b8gmo")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(289.5, -4.5)
+shape = SubResource("RectangleShape2D_6fhro")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(261, -51)
+shape = SubResource("RectangleShape2D_7fes2")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(294, -52)
+shape = SubResource("RectangleShape2D_dxum3")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(171.625, -89)
+shape = SubResource("RectangleShape2D_6wsy1")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(196.5, -50.5)
+shape = SubResource("RectangleShape2D_qbm3f")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(213, -52)
+shape = SubResource("SegmentShape2D_b8gmo")
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(129, 211)
 script = ExtResource("10_mppru")
@@ -3083,7 +3137,7 @@ script = ExtResource("12_3imob")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KitchenArea"]
 position = Vector2(2, -2)
-polygon = PackedVector2Array(15, 18, 254, 18, 258, -20, 402, -20, 405, 178, 258, 177, 257, 211, 14, 209, 14, 23, -27, 25, -24, 246, 300, 249, 296, 202, 447, 205, 452, -63, 215, -69, 210, -19, -34, -14, -30, 30, 14, 21)
+polygon = PackedVector2Array(15, 18, 254, 18, 255, -13, 398, -13, 398, 178, 255, 177, 255, 210, 14, 209, 14, 23, -27, 25, -24, 246, 300, 249, 296, 202, 447, 205, 452, -63, 215, -69, 210, -19, -34, -14, -30, 30, 14, 21)
 
 [node name="ContainerCanvas" type="CanvasLayer" parent="."]
 
