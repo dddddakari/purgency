@@ -7,7 +7,7 @@ var dialogue_player: Node = null
 
 func _ready() -> void:
 	# Connect the body_entered signal of the Area2D (make sure your Area2D has a CollisionShape2D)
-	self.body_entered.connect(_on_body_entered)
+	#self.body_entered.connect(_on_body_entered)
 	
 	# Get the dialogue player node from the scene tree using the provided path
 	dialogue_player = get_node_or_null(dialogue_player_path)
