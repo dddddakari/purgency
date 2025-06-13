@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://bpgckbqg0nw5n"]
+[gd_scene load_steps=67 format=4 uid="uid://bpgckbqg0nw5n"]
 
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
@@ -11,10 +11,10 @@
 [ext_resource type="Script" uid="uid://ckc4r340jkkwv" path="res://misc/label.gd" id="8_0iy2g"]
 [ext_resource type="PackedScene" uid="uid://bqfmymrbtgbe6" path="res://entities/items/letter/Letter.tscn" id="9_d0mku"]
 [ext_resource type="Script" uid="uid://bs2armi551nx2" path="res://scenes/kitchen/area_2d.gd" id="10_mppru"]
+[ext_resource type="PackedScene" uid="uid://cv06fbmr1s2b0" path="res://entities/items/newspaper/Newspaper.tscn" id="11_6fhro"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
 [ext_resource type="Script" uid="uid://c6nlguc53vuli" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
 [ext_resource type="PackedScene" uid="uid://dk0hu85586dvd" path="res://systems/inventorysystem/InventoryScreen.tscn" id="15_b8gmo"]
-[ext_resource type="PackedScene" uid="uid://le4evi2ue18i" path="res://systems/inventorysystem/Inventory.tscn" id="16_6fhro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
 texture = ExtResource("1_pkqpq")
@@ -2909,11 +2909,30 @@ b = Vector2(141, -1)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6wsy1"]
 b = Vector2(-1, 129)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8gmo"]
+size = Vector2(20, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fhro"]
+size = Vector2(21, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fes2"]
+size = Vector2(46, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxum3"]
+size = Vector2(14, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wsy1"]
+size = Vector2(28.75, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbm3f"]
+size = Vector2(15, 43)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b8gmo"]
+a = Vector2(87, 9)
+b = Vector2(-26, 7)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_mq4e7"]
 radius = 17.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0iy2g"]
-size = Vector2(194, 129)
 
 [node name="Kitchen01" type="Node2D"]
 
@@ -2924,7 +2943,7 @@ tile_map_data = PackedByteArray("AAABAAEAAQAJAAEAAAABAAIAAQAJAAIAAAABAAMAAQAJAAM
 tile_set = SubResource("TileSet_aw786")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Layers"]
-tile_map_data = PackedByteArray("AAAQAAEAAAAAAAcAAAAQAAIAAAAAAAgAAAAQAAMAAAAAAAkAAAARAAEAAAABAAcAAAARAAIAAAABAAgAAAARAAMAAAABAAkAAAAQAAAAAAAAAAYAAAARAAAAAAABAAYAAAAHAAIAAAAIAAMAAAAHAAMAAAAIAAQAAAAIAAIAAAAJAAMAAAAIAAMAAAAJAAQAAAAYAAEABAAGAAcAAAAYAAIABAAGAAgAAAAYAAMABAAGAAkAAAASAAEABAADAAcAAAASAAIABAADAAgAAAASAAMABAADAAkAAAAVAAEABAAGAAQAAAAVAAIABAAGAAUAAAAVAAMABAAGAAYAAAAWAAEABAAHAAQAAAAWAAIABAAHAAUAAAAWAAMABAAHAAYAAAAXAAEABAAIAAQAAAAXAAIABAAIAAUAAAAXAAMABAAIAAYAAAAVAAQABAAFAAIAAAAVAAUABAAFAAMAAAAWAAQABAAGAAIAAAAWAAUABAAGAAMAAAAVAAYABAALAAoAAAAVAAcABAALAAsAAAAWAAYABAAMAAoAAAAWAAcABAAMAAsAAAA=")
+tile_map_data = PackedByteArray("AAAQAAEAAAAAAAcAAAAQAAIAAAAAAAgAAAAQAAMAAAAAAAkAAAARAAEAAAABAAcAAAARAAIAAAABAAgAAAARAAMAAAABAAkAAAAQAAAAAAAAAAYAAAARAAAAAAABAAYAAAAHAAIAAAAIAAMAAAAHAAMAAAAIAAQAAAAIAAIAAAAJAAMAAAAIAAMAAAAJAAQAAAAYAAEABAAGAAcAAAAYAAIABAAGAAgAAAAYAAMABAAGAAkAAAASAAEABAADAAcAAAASAAIABAADAAgAAAASAAMABAADAAkAAAAVAAEABAAGAAQAAAAVAAIABAAGAAUAAAAVAAMABAAGAAYAAAAWAAEABAAHAAQAAAAWAAIABAAHAAUAAAAWAAMABAAHAAYAAAAXAAEABAAIAAQAAAAXAAIABAAIAAUAAAAXAAMABAAIAAYAAAAVAAQABAAFAAIAAAAVAAUABAAFAAMAAAAWAAQABAAGAAIAAAAWAAUABAAGAAMAAAAXAAQABAAMAAcAABAXAAUABAAMAAgAABAXAAYABAAMAAkAABAYAAQABAALAAcAABAYAAUABAALAAgAABAYAAYABAALAAkAABA=")
 tile_set = SubResource("TileSet_dxum3")
 
 [node name="furniture" type="TileMapLayer" parent="Layers"]
@@ -2944,7 +2963,7 @@ tile_set = SubResource("TileSet_6fhro")
 
 [node name="Player" parent="." instance=ExtResource("7_f7jwb")]
 z_index = 1
-position = Vector2(139, 142)
+position = Vector2(275, 73)
 
 [node name="Space" type="Label" parent="Player"]
 offset_left = -120.0
@@ -2982,6 +3001,9 @@ position = Vector2(50, 81)
 
 [node name="Letter" parent="." instance=ExtResource("9_d0mku")]
 position = Vector2(104, 154)
+
+[node name="Newspaper" parent="." instance=ExtResource("11_6fhro")]
+position = Vector2(359, 82)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(99, 92)
@@ -3062,6 +3084,38 @@ shape = SubResource("SegmentShape2D_y1lkx")
 position = Vector2(304, -42)
 shape = SubResource("SegmentShape2D_6wsy1")
 
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(216, -11.5)
+shape = SubResource("RectangleShape2D_b8gmo")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(216, -11.5)
+shape = SubResource("RectangleShape2D_b8gmo")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(289.5, -4.5)
+shape = SubResource("RectangleShape2D_6fhro")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(261, -51)
+shape = SubResource("RectangleShape2D_7fes2")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(294, -52)
+shape = SubResource("RectangleShape2D_dxum3")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(171.625, -89)
+shape = SubResource("RectangleShape2D_6wsy1")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(196.5, -50.5)
+shape = SubResource("RectangleShape2D_qbm3f")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(213, -52)
+shape = SubResource("SegmentShape2D_b8gmo")
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(129, 211)
 script = ExtResource("10_mppru")
@@ -3074,20 +3128,18 @@ shape = SubResource("CircleShape2D_mq4e7")
 
 [node name="OPDialogue" parent="." instance=ExtResource("11_r4jl7")]
 
+[node name="LetterDialogue" parent="." instance=ExtResource("11_r4jl7")]
+
+[node name="NewspaperDialogue" parent="." instance=ExtResource("11_r4jl7")]
+
 [node name="KitchenArea" type="Area2D" parent="."]
 script = ExtResource("12_3imob")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenArea"]
-position = Vector2(113, 144.5)
-shape = SubResource("RectangleShape2D_0iy2g")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KitchenArea"]
+position = Vector2(2, -2)
+polygon = PackedVector2Array(15, 18, 254, 18, 255, -13, 398, -13, 398, 178, 255, 177, 255, 210, 14, 209, 14, 23, -27, 25, -24, 246, 300, 249, 296, 202, 447, 205, 452, -63, 215, -69, 210, -19, -34, -14, -30, 30, 14, 21)
 
 [node name="ContainerCanvas" type="CanvasLayer" parent="."]
-
-[node name="Inventory2" parent="ContainerCanvas" instance=ExtResource("16_6fhro")]
-offset_left = 736.0
-offset_top = -7.0
-offset_right = 836.0
-offset_bottom = 119.0
 
 [node name="InventoryScreen" parent="ContainerCanvas" instance=ExtResource("15_b8gmo")]
 visible = false

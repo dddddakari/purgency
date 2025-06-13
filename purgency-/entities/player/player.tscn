@@ -1,9 +1,10 @@
-[gd_scene load_steps=36 format=3 uid="uid://dqm0mk3hhq2c0"]
+[gd_scene load_steps=37 format=3 uid="uid://dqm0mk3hhq2c0"]
 
 [ext_resource type="Script" uid="uid://cy136o77vv0xn" path="res://entities/player/player.gd" id="1_abrql"]
 [ext_resource type="Texture2D" uid="uid://cs0ppsqod3klo" path="res://entities/player/Prototype_Character.png" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://dfg0hums245ty" path="res://entities/player/finneassprite.png" id="3_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://cuq3e8q041hyd" path="res://systems/interactionsystem/InteractingComponent.tscn" id="3_sglur"]
+[ext_resource type="PackedScene" uid="uid://le4evi2ue18i" path="res://systems/inventorysystem/Inventory.tscn" id="5_fkugw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wq0jh"]
 atlas = ExtResource("3_8fjmc")
@@ -275,6 +276,17 @@ sprite_frames = SubResource("SpriteFrames_vewsg")
 animation = &"walking_left"
 autoplay = "default"
 frame_progress = 0.617748
+
+[node name="Inventory" parent="Sprite2D" instance=ExtResource("5_fkugw")]
+anchor_top = -0.537
+anchor_right = 0.0
+anchor_bottom = 0.835
+offset_left = -246.186
+offset_top = -76.7374
+offset_right = 272.814
+offset_bottom = -117.757
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 12)

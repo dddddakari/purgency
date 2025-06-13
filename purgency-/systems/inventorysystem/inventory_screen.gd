@@ -16,20 +16,34 @@ func open_inventories(container_inventory: Array, container_node: Node) -> void:
 	show()
 
 func close_inventories() -> void:
+	if current_container_node and current_container_node.has_method("set_inventory"):
+		# Update with the current container_items
+		current_container_node.set_inventory(container_inventory_ui.container_items)
+		if current_container_node.has_method("save_inventory"):
+			current_container_node.save_inventory()
+	
+	# Rest of your existing close logic...
+	# Save container inventory if applicable
+	if current_container_node and current_container_node.has_method("set_inventory") and current_container_node.has_method("save_inventory"):
+		# Update container node's inventory with current UI container items before saving
+		if container_inventory_ui:
+			# You must write the container's current container_items back to the container node
+			current_container_node.set_inventory(container_inventory_ui.container_items)
+			current_container_node.save_inventory()
+	
+	# Save player inventory as well
+	if player_inventory_ui:
+		player_inventory_ui.save_inventory_to_json()
+
 	current_container_node = null
 	container_inventory_ui.hide_container()
 	player_inventory_ui.hide_inventory()
 	hide()
-
-func transfer_between_inventories(from_inventory_ui, from_index: int, to_inventory_ui, to_index: int) -> void:
-	if from_index < 0 or to_index < 0:
-		return
 	
-	var from_items = from_inventory_ui.inventory_items if from_inventory_ui.has_method("inventory_items") else from_inventory_ui.container_items
-	var to_items = to_inventory_ui.inventory_items if to_inventory_ui.has_method("inventory_items") else to_inventory_ui.container_items
-
-	if from_items == null or to_items == null:
-		return
+func transfer_between_inventories(from_ui, from_index: int, to_ui, to_index: int) -> void:
+	# Get the correct item arrays
+	var from_items = from_ui.container_items if from_ui.has_method("show_container_inventory") else from_ui.inventory_items
+	var to_items = to_ui.container_items if to_ui.has_method("show_container_inventory") else to_ui.inventory_items
 
 	# Ensure arrays are large enough
 	while from_items.size() <= from_index:
@@ -37,28 +51,39 @@ func transfer_between_inventories(from_inventory_ui, from_index: int, to_invento
 	while to_items.size() <= to_index:
 		to_items.append(null)
 
-	var source_item = from_items[from_index]
-	if source_item == null:
+	print("Transferring from:", from_ui.name, " slot:", from_index, " to:", to_ui.name, " slot:", to_index)
+	print("From item:", from_items[from_index])
+	print("To item:", to_items[to_index])
+
+	# Perform the transfer
+	if from_items[from_index] == null:
 		return
 
-	var target_item = to_items[to_index]
-
-	if target_item == null:
-		to_items[to_index] = source_item
+	if to_items[to_index] == null:
+		# Move item
+		to_items[to_index] = from_items[from_index]
 		from_items[from_index] = null
-	elif target_item.name == source_item.name:
-		target_item.quantity += source_item.quantity
+	elif to_items[to_index].name == from_items[from_index].name:
+		# Stack items
+		to_items[to_index].quantity += from_items[from_index].quantity
 		from_items[from_index] = null
 	else:
-		to_items[to_index] = source_item
-		from_items[from_index] = target_item
+		# Swap items
+		var temp = to_items[to_index]
+		to_items[to_index] = from_items[from_index]
+		from_items[from_index] = temp
 
-	from_inventory_ui.update_specific_slots(from_index, from_index)
-	to_inventory_ui.update_specific_slots(to_index, to_index)
+	# Force update both UIs
+	if from_ui.has_method("populate_container_ui"):
+		from_ui.populate_container_ui()
+	elif from_ui.has_method("populate_inventory_ui"):
+		from_ui.populate_inventory_ui()
 
-	# Save changes
-	if from_inventory_ui == player_inventory_ui or to_inventory_ui == player_inventory_ui:
-		player_inventory_ui.save_inventory_to_json()
+	if to_ui.has_method("populate_container_ui"):
+		to_ui.populate_container_ui()
+	elif to_ui.has_method("populate_inventory_ui"):
+		to_ui.populate_inventory_ui()
 
-	if current_container_node and current_container_node.has_method("save_inventory"):
-		current_container_node.save_inventory()
+	# Clear selections
+	from_ui.selected_slot_index = -1
+	to_ui.selected_slot_index = -1

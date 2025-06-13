@@ -13,8 +13,12 @@ var slot_index: int = -1
 var is_selected := false
 var slot_owner: Node = null  # inventory or container_ui
 
+
 func _ready():
 	custom_minimum_size = Vector2(64, 64)
+	print("Slot ready - current item: ", current_item)
+	
+	# Initialize highlight if it doesn't exist
 	if !highlight:
 		highlight = ColorRect.new()
 		highlight.name = "Highlight"
@@ -26,7 +30,7 @@ func _ready():
 	else:
 		highlight.color = highlight_color
 		highlight.hide()
-
+	
 	update_display()
 
 func set_item(item):
@@ -34,9 +38,19 @@ func set_item(item):
 	update_display()
 
 func update_display():
+	# Safe debug printing
+	var owner_name = slot_owner.name if slot_owner else "No Owner"
+	print("Updating display for slot ", slot_index, " | Owner:", owner_name, " | Item:", current_item)
+	
 	if current_item != null:
-		texture_rect.texture = current_item.texture
-		quantity_label.text = str(current_item.quantity)
+		# Safely access item properties - no need for has() since Item class defines these
+		var item_name = current_item.name if current_item.name else "No Name"
+		var item_quantity = current_item.quantity
+		var item_texture = current_item.texture if current_item.texture else null
+		
+		print("→ Item details - Name:", item_name, " Qty:", item_quantity, " Tex:", item_texture)
+		texture_rect.texture = item_texture
+		quantity_label.text = str(item_quantity)
 	else:
 		texture_rect.texture = empty_texture
 		quantity_label.text = ""
