@@ -16,7 +16,6 @@ scale = Vector2(0.243452, 0.238691)
 texture = ExtResource("1_qe8si")
 
 [node name="interactable" parent="." instance=ExtResource("2_v2pum")]
-interact_name = "Talk to admin"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
 position = Vector2(2, 12)
