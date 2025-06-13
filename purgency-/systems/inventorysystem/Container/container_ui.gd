@@ -64,47 +64,77 @@ func update_specific_slots(index1: int, index2: int):
 		slot2.set_item(container_items[index2])
 
 func handle_slot_click(clicked_index: int):
+	print("--- Slot Clicked ---")
+	print("UI:", name, " Slot:", clicked_index)
+	print("Current selection:", selected_slot_index)
+	# ... rest of your existing code ...
 	if clicked_index < 0 or clicked_index >= grid_container.get_child_count():
+		print("Clicked index out of range.")
 		return
-	
+
+	var player_ui = inventory_screen.player_inventory_ui
+
 	if selected_slot_index == -1:
+		# Select slot in container
 		if clicked_index < container_items.size() and container_items[clicked_index] != null:
 			selected_slot_index = clicked_index
-			var slot = get_slot(clicked_index)
-			if slot:
-				slot.set_highlight(true)
+			get_slot(clicked_index).set_highlight(true)
+			print("Container UI selected slot:", clicked_index)
 	else:
-		if inventory_screen and inventory_screen.player_inventory_ui:
-			var player_ui = inventory_screen.player_inventory_ui
-			if player_ui.selected_slot_index != -1:
+		# If we have a selection in this container
+		if clicked_index < container_items.size():
+			# If player has a selection, transfer between inventories
+			if player_ui and player_ui.selected_slot_index != -1:
 				inventory_screen.transfer_between_inventories(self, selected_slot_index, player_ui, player_ui.selected_slot_index)
-				var container_slot = player_ui.get_slot(player_ui.selected_slot_index)
-				if container_slot:
-					container_slot.set_highlight(false)
-				player_ui.selected_slot_index = -1
 			else:
+				# Transfer within container
 				transfer_item(selected_slot_index, clicked_index)
-		else:
-			transfer_item(selected_slot_index, clicked_index)
+			
+			# Clear selection
+			get_slot(selected_slot_index).set_highlight(false)
+			selected_slot_index = -1
 
-		var prev_slot = get_slot(selected_slot_index)
-		if prev_slot:
-			prev_slot.set_highlight(false)
-		selected_slot_index = -1
-
+			
 func transfer_item(from_index: int, to_index: int):
 	if from_index == to_index or from_index < 0 or to_index < 0:
 		return
-
+	
+	# Ensure array size
 	while container_items.size() <= max(from_index, to_index):
 		container_items.append(null)
-
+	
+	# Use the item transfer system
 	item_transfer.transfer_item_between(container_items, from_index, container_items, to_index)
+	
+	# Update specific slots
 	update_specific_slots(from_index, to_index)
+	
+	# Save if needed
+	if current_container and current_container.has_method("save_inventory"):
+		current_container.save_inventory()
 
-func set_inventory(new_inventory: Array):
-	container_items = new_inventory.duplicate()
-	populate_container_ui()
+# Update set_inventory to use container_items:
+func set_inventory(new_items: Array) -> void:
+	container_items = new_items.duplicate()
+	
+func save_inventory() -> void:
+	# Save container inventory to file or wherever you want
+	var save_path = "user://container_inventory.json"  # Change as needed per container
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	if file:
+		var data = []
+		for item in container_items:  # CHANGED FROM inventory_items TO container_items
+			if item != null:
+				data.append({
+					"name": item.name,
+					"quantity": item.quantity,
+					"texture": item.texture.resource_path if item.texture else ""
+				})
+		file.store_string(JSON.stringify(data))
+		file.close()
+		print("Container inventory saved to ", save_path)
+	else:
+		push_error("Failed to open container inventory save file.")
 
 func update_slots():
 	populate_container_ui()

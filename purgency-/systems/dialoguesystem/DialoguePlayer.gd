@@ -114,33 +114,21 @@ func next_script(optional_id = null):
 
 	var current_line = dialogue[curr_dialogue_id]
 
-	# Display current line...
 	var name_label = $NinePatchRect.get_node("name")
 	var text_label = $NinePatchRect.get_node("text")
+
 	name_label.text = current_line.get("name", "")
 	text_label.text = current_line.get("text", "")
+
+	print("Displaying:", name_label.text, "-", text_label.text)
 
 	if current_line.has("options") and current_line["options"].size() > 0:
 		show_options(current_line["options"])
 		waiting_for_input = false
 		can_advance = false
 	else:
-		# Check if next dialogue is logically continuous or end
-		# If advancing linearly leads to unrelated dialogue, end instead
-		var next_index = curr_dialogue_id + 1
-		if optional_id == null and (next_index >= dialogue.size()):
-			# No next line, end dialogue
-			end_dialogue()
-			return
-		elif optional_id == null:
-			# You can decide if linear advance is allowed or not
-			# For your use case, better to stop at terminal lines:
-			end_dialogue()
-			return
-		else:
-			# When jumped by option, allow waiting for input to advance (or end on next)
-			waiting_for_input = true
-			can_advance = true
+		waiting_for_input = true
+		can_advance = true
 
 
 func show_options(options_array):
@@ -181,11 +169,11 @@ func _on_option_selected(next_id: String) -> void:
 	if next_dialogue.has("action") and next_dialogue["action"] == "change_scene":
 		var scene_path = next_dialogue.get("scene_path", "")
 		if scene_path != "":
-			print("🚪 Changing scene to:", scene_path)
+			print("Changing scene to:", scene_path)
 			get_tree().change_scene_to_file(scene_path)
 			return  # Stop dialogue flow here
 		else:
-			print("❌ scene_path is empty!")
+			print("scene_path is empty!")
 			end_dialogue()
 			return
 

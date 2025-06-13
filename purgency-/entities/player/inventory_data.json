@@ -1,1 +1,4 @@
-{"items":[{"name":"Wine","quantity":1,"texture":"res://assets/icons/Food/Wine.png"},{"name":"Shimp","quantity":39,"texture":"res://assets/icons/Food/Shrimp.png"}]}
+[
+		{"name":"Wine","quantity":1,"texture":"res://assets/icons/Food/Wine.png"},
+		{"name":"Shimp","quantity":39,"texture":"res://assets/icons/Food/Shrimp.png"}
+]
