@@ -65,10 +65,8 @@ func save_inventory_to_json():
 	var file = FileAccess.open(INVENTORY_DATA_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(data))
 	file.close()
+
 func handle_slot_click(clicked_index: int):
-	print("--- Slot Clicked ---")
-	print("UI:", name, " Slot:", clicked_index)
-	print("Current selection:", selected_slot_index)
 	if clicked_index < 0 or clicked_index >= grid_container.get_child_count():
 		return
 

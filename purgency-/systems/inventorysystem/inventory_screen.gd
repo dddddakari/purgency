@@ -40,46 +40,50 @@ func close_inventories() -> void:
 	player_inventory_ui.hide_inventory()
 	hide()
 	
-	
 func transfer_between_inventories(from_ui, from_index: int, to_ui, to_index: int) -> void:
 	# Get the correct item arrays
 	var from_items = from_ui.container_items if from_ui.has_method("show_container_inventory") else from_ui.inventory_items
 	var to_items = to_ui.container_items if to_ui.has_method("show_container_inventory") else to_ui.inventory_items
-	
-	print("Attempting transfer:")
-	print("From UI:", from_ui.name, " Slot:", from_index, " Item:", from_items[from_index] if from_index < from_items.size() else "null")
-	print("To UI:", to_ui.name, " Slot:", to_index, " Item:", to_items[to_index] if to_index < to_items.size() else "null")
-	
-	# Create a new ItemTransfer instance for this operation
-	var transfer = ItemTransfer.new()
-	transfer.transfer_item_between(from_items, from_index, to_items, to_index)
-	
-	# Update both UIs
-	if from_ui.has_method("update_slots"):
-		from_ui.update_slots()
-	elif from_ui.has_method("populate_container_ui"):
+
+	# Ensure arrays are large enough
+	while from_items.size() <= from_index:
+		from_items.append(null)
+	while to_items.size() <= to_index:
+		to_items.append(null)
+
+	print("Transferring from:", from_ui.name, " slot:", from_index, " to:", to_ui.name, " slot:", to_index)
+	print("From item:", from_items[from_index])
+	print("To item:", to_items[to_index])
+
+	# Perform the transfer
+	if from_items[from_index] == null:
+		return
+
+	if to_items[to_index] == null:
+		# Move item
+		to_items[to_index] = from_items[from_index]
+		from_items[from_index] = null
+	elif to_items[to_index].name == from_items[from_index].name:
+		# Stack items
+		to_items[to_index].quantity += from_items[from_index].quantity
+		from_items[from_index] = null
+	else:
+		# Swap items
+		var temp = to_items[to_index]
+		to_items[to_index] = from_items[from_index]
+		from_items[from_index] = temp
+
+	# Force update both UIs
+	if from_ui.has_method("populate_container_ui"):
 		from_ui.populate_container_ui()
 	elif from_ui.has_method("populate_inventory_ui"):
 		from_ui.populate_inventory_ui()
-	
-	if to_ui.has_method("update_slots"):
-		to_ui.update_slots()
-	elif to_ui.has_method("populate_container_ui"):
+
+	if to_ui.has_method("populate_container_ui"):
 		to_ui.populate_container_ui()
 	elif to_ui.has_method("populate_inventory_ui"):
 		to_ui.populate_inventory_ui()
-	
+
 	# Clear selections
 	from_ui.selected_slot_index = -1
 	to_ui.selected_slot_index = -1
-	
-	# Save changes
-	if from_ui.has_method("save_inventory_to_json"):
-		from_ui.save_inventory_to_json()
-	elif from_ui.has_method("save_inventory"):
-		from_ui.save_inventory()
-	
-	if to_ui.has_method("save_inventory_to_json"):
-		to_ui.save_inventory_to_json()
-	elif to_ui.has_method("save_inventory"):
-		to_ui.save_inventory()

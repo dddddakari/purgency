@@ -64,10 +64,7 @@ func update_specific_slots(index1: int, index2: int):
 		slot2.set_item(container_items[index2])
 
 func handle_slot_click(clicked_index: int):
-	print("--- Slot Clicked ---")
-	print("UI:", name, " Slot:", clicked_index)
-	print("Current selection:", selected_slot_index)
-	# ... rest of your existing code ...
+	print("Container UI: Slot clicked:", clicked_index)
 	if clicked_index < 0 or clicked_index >= grid_container.get_child_count():
 		print("Clicked index out of range.")
 		return
