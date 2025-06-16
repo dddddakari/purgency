@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm5ckeb8fc35s"]
+
+[ext_resource type="PackedScene" uid="uid://bycdrnily5wnx" path="res://minigames/heartbeat/Heartbeat_Moving.tscn" id="1_18pmp"]
+
+[node name="HeartbeatMap" type="Node2D"]
+
+[node name="HeartbeatMoving" parent="." instance=ExtResource("1_18pmp")]
+position = Vector2(1270, 211)

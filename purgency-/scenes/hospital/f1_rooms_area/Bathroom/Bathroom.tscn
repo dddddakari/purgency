@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://devhnba3eqgyn"]
+[gd_scene load_steps=10 format=4 uid="uid://devhnba3eqgyn"]
 
 [ext_resource type="Texture2D" uid="uid://dedlxmj0f001d" path="res://BGassets/3_Bathroom_48x48.png" id="1_1crol"]
 [ext_resource type="Texture2D" uid="uid://cgbnj7khw0j7l" path="res://BGassets/Room_Builder_Floors_48x48.png" id="2_bpcvd"]
@@ -17430,6 +17430,9 @@ sources/0 = SubResource("TileSetAtlasSource_j7v42")
 sources/1 = SubResource("TileSetAtlasSource_jvje0")
 sources/2 = SubResource("TileSetAtlasSource_7fidr")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpcvd"]
+size = Vector2(399, 124)
+
 [node name="Bathroom" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -17465,3 +17468,7 @@ scale = Vector2(2, 2)
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(0.5, -8)
 zoom = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(534.5, 245)
+shape = SubResource("RectangleShape2D_bpcvd")
