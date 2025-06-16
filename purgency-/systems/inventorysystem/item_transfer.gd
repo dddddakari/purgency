@@ -1,3 +1,4 @@
+# item_transfer.gd
 extends Node
 class_name ItemTransfer
 
@@ -7,6 +8,7 @@ func transfer_item_between(
 	target_items: Array,
 	target_index: int
 ) -> void:
+	# Transfer items between arrays with index safety checks
 	if source_index < 0 or target_index < 0:
 		return
 	
@@ -23,16 +25,17 @@ func transfer_item_between(
 	
 	var target_item = target_items[target_index]
 	
+	# Handle different transfer cases
 	if target_item == null:
-		# Move item
+		# Move item to empty slot
 		target_items[target_index] = source_item
 		source_items[source_index] = null
 	elif target_item.name == source_item.name:
-		# Stack items
+		# Stack items of same type
 		target_item.quantity += source_item.quantity
 		source_items[source_index] = null
 	else:
-		# Swap items
+		# Swap different items
 		var temp = target_items[target_index]
 		target_items[target_index] = source_item
 		source_items[source_index] = temp

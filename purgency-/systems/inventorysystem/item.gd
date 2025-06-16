@@ -2,11 +2,12 @@
 extends Resource
 class_name Item
 
-@export var name: String
-@export var quantity: int
-@export var texture: Texture2D
+# Item properties
+@export var name: String  # Item name
+@export var quantity: int  # Stack quantity
+@export var texture: Texture2D  # Visual representation
 
-# Add this constructor function
+# Static constructor function
 static func create(p_name: String, p_quantity: int, p_texture: Texture2D) -> Item:
 	var item = Item.new()
 	item.name = p_name
