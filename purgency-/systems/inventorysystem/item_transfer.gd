@@ -2,15 +2,10 @@
 extends Node
 class_name ItemTransfer
 
-func transfer_item_between(
-	source_items: Array,
-	source_index: int,
-	target_items: Array,
-	target_index: int
-) -> void:
-	# Transfer items between arrays with index safety checks
+func transfer_item_between(source_items: Array, source_index: int, target_items: Array, target_index: int) -> bool:
+	# Validate indices
 	if source_index < 0 or target_index < 0:
-		return
+		return false
 	
 	# Ensure arrays are large enough
 	var max_index = max(source_index, target_index)
@@ -21,21 +16,25 @@ func transfer_item_between(
 	
 	var source_item = source_items[source_index]
 	if source_item == null:
-		return
+		return false
 	
 	var target_item = target_items[target_index]
 	
-	# Handle different transfer cases
+	# Case 1: Target slot is empty
 	if target_item == null:
-		# Move item to empty slot
 		target_items[target_index] = source_item
 		source_items[source_index] = null
+		return true
+	
+	# Case 2: Items are the same type - stack them
 	elif target_item.name == source_item.name:
-		# Stack items of same type
 		target_item.quantity += source_item.quantity
 		source_items[source_index] = null
+		return true
+	
+	# Case 3: Items are different - swap them
 	else:
-		# Swap different items
 		var temp = target_items[target_index]
-		target_items[target_index] = source_item
+		target_items[target_index] = source_items[source_index]
 		source_items[source_index] = temp
+		return true
