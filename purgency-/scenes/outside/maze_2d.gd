@@ -8,8 +8,6 @@ extends Area2D
 var dialogue_player: Node = null  # Reference to dialogue system
 
 func _ready() -> void:
-	# Set up signals and dialogue player
-	self.body_entered.connect(_on_body_entered)
 	
 	# Get dialogue player node
 	dialogue_player = get_node_or_null(dialogue_player_path)

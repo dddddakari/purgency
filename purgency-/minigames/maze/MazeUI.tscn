@@ -1,14 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://3bcdl84lll0"]
+[gd_scene load_steps=8 format=3 uid="uid://gnqqvbdpxyck"]
 
 [ext_resource type="Script" uid="uid://beb07h4cbtw05" path="res://minigames/maze/maze_ui.gd" id="1_m2url"]
-[ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="2_fpce0"]
 [ext_resource type="Texture2D" uid="uid://bc0k0n713404e" path="res://assets/maze.png" id="2_m2url"]
 [ext_resource type="Texture2D" uid="uid://cl3xusiebmnb8" path="res://scenes/outside/black.jpg" id="3_a40ik"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_fpce0"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a40ik"]
-size = Vector2(18, 20)
+[ext_resource type="PackedScene" uid="uid://8l53ov4mf11v" path="res://entities/finn8-bit/Finn8-Bit.tscn" id="4_fpce0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmi00"]
 size = Vector2(11796.4, 13818.2)
@@ -31,17 +26,6 @@ texture = ExtResource("3_a40ik")
 position = Vector2(722, 403.5)
 scale = Vector2(11.2031, 12.5156)
 texture = ExtResource("2_m2url")
-
-[node name="Player" parent="." instance=ExtResource("2_fpce0")]
-position = Vector2(17, 280)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, -12)
-shape = SubResource("CircleShape2D_fpce0")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player"]
-position = Vector2(-1, 5)
-shape = SubResource("RectangleShape2D_a40ik")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-240, 589)
@@ -85,6 +69,9 @@ polygon = PackedVector2Array(42432, -45454.5, 42384, -38272.7, 54768, -38363.6, 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
 position = Vector2(1464, 419)
 shape = SubResource("CircleShape2D_a40ik")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_fpce0")]
+position = Vector2(45, 297)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
