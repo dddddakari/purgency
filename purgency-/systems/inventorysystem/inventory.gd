@@ -161,11 +161,33 @@ func _input(event):
 func update_display():
 	for i in range(grid_container.get_child_count()):
 		var slot = grid_container.get_child(i)
-		if i < inventory_items.size():  # or container_items.size() for container_ui
-			slot.set_item(inventory_items[i])  # or container_items[i]
+		if i < inventory_items.size():
+			slot.set_item(inventory_items[i])  # Always sync from main array
 		else:
 			slot.set_item(null)
 			
 # Add to both scripts
 func get_items_array() -> Array:
 	return inventory_items  # or container_items for container_ui
+	
+# inventory.gd
+
+# Ensure the inventory is accessible
+func get_inventory() -> Array:
+	return inventory_items  # Direct reference (no copy)
+
+# Force UI update when inventory changes
+func update_ui_after_change():
+	if margin_container.visible:  # Only if inventory is open
+		populate_inventory_ui()  # Rebuild slots to match current data
+	
+# inventory.gd
+func refresh_inventory():
+	for i in range(inventory_items.size()):
+		var slot = get_slot(i)
+		if slot:
+			slot.set_item(inventory_items[i])
+			
+# Add to inventory.gd - nothing else needs to change
+func get_live_inventory() -> Array:
+	return inventory_items

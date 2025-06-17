@@ -42,5 +42,21 @@ func get_container_items() -> Array:
 		updated_items.append(child.current_item)
 	return updated_items
 	
+func update_display():
+	for i in range(container_slot_container.get_child_count()):
+		var slot = container_slot_container.get_child(i)
+		if i < container_items.size():
+			slot.set_item(container_items[i])  # Sync from main array
+		else:
+			slot.set_item(null)
+			
+	
 func get_items_array() -> Array:
 	return container_items
+	
+# container_ui.gd
+func refresh_inventory():
+	for i in range(container_items.size()):
+		var slot = get_slot(i)
+		if slot:
+			slot.set_item(container_items[i])

@@ -33,8 +33,8 @@ func _ready():
 	update_display()
 
 func set_item(item):
-	current_item = item
-	update_display()
+	current_item = item  # This is okay as it's just a reference
+	update_display()  # Make sure this always shows current state
 
 func update_display():
 	if current_item != null:

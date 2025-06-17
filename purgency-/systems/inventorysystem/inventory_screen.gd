@@ -9,6 +9,7 @@ var selected_ui: Node = null
 var selected_slot_index: int = -1
 var current_container_node = null
 
+# inventory_screen.gd
 func open_inventories(container_inventory: Array, container_node: Node) -> void:
 	if not container_node:
 		return
