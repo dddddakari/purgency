@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://bqfmymrbtgbe6" path="res://entities/items/letter/Letter.tscn" id="9_d0mku"]
 [ext_resource type="Script" uid="uid://bs2armi551nx2" path="res://scenes/kitchen/area_2d.gd" id="10_mppru"]
 [ext_resource type="PackedScene" uid="uid://cv06fbmr1s2b0" path="res://entities/items/newspaper/Newspaper.tscn" id="11_6fhro"]
-[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_r4jl7"]
+[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://minigames/heartbeat/Dialogue.tscn" id="11_r4jl7"]
 [ext_resource type="Script" uid="uid://c6nlguc53vuli" path="res://scenes/kitchen/kitchen_area.gd" id="12_3imob"]
-[ext_resource type="PackedScene" path="res://systems/inventorysystem/InventoryScreen.tscn" id="15_b8gmo"]
+[ext_resource type="PackedScene" uid="uid://d33wejrtayarj" path="res://systems/inventorysystem/InventoryScreen.tscn" id="15_b8gmo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo3te"]
 texture = ExtResource("1_pkqpq")
@@ -2995,6 +2995,9 @@ theme_override_font_sizes/font_size = 10
 text = "- I for Inventory"
 script = ExtResource("8_0iy2g")
 metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(5, 5)
 
 [node name="Fridge" parent="." instance=ExtResource("1_mal84")]
 position = Vector2(50, 81)

@@ -273,9 +273,7 @@ script = ExtResource("1_abrql")
 position = Vector2(-3, -8)
 scale = Vector2(-0.142169, 0.152318)
 sprite_frames = SubResource("SpriteFrames_vewsg")
-animation = &"walking_left"
 autoplay = "default"
-frame_progress = 0.617748
 
 [node name="Inventory1" parent="Sprite2D" instance=ExtResource("5_fkugw")]
 offset_left = -302.457
@@ -291,7 +289,3 @@ shape = SubResource("CapsuleShape2D_bls4j")
 [node name="InteractingComponent" parent="." instance=ExtResource("3_sglur")]
 visible = false
 position = Vector2(-41, -62)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(1, 0.8985)
-zoom = Vector2(5, 5)

@@ -1,3 +1,5 @@
+# reference: https://youtu.be/pQINWFKc9_k?si=Zvoeen96w5BuHBYm
+
 extends Node2D
 
 var current_interactions := []
