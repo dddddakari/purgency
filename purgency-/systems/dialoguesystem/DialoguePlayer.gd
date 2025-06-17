@@ -5,15 +5,15 @@ extends CanvasLayer
 @export_file("*.json") var d_file: String
 const SampleButtonScene = preload("res://systems/dialoguesystem/Button.tscn")
 
-var dialogue: Array = []
-var curr_dialogue_id: int = -1
-var d_active: bool = false
-var id_map: Dictionary = {}
+var dialogue := []
+var curr_dialogue_id := -1
+var d_active := false
+var id_map := {}
 
 var player: CharacterBody2D = null
-var waiting_for_input: bool = false
+var waiting_for_input := false
 
-var can_advance: bool = true  # Controls if input can advance dialogue
+var can_advance := true  # Controls if input can advance dialogue
 
 
 func _ready():

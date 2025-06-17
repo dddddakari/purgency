@@ -1,3 +1,5 @@
+#reference: https://www.youtube.com/watch?v=rd4qApLPg1Y
+
 extends Area2D
 
 var speed = 5

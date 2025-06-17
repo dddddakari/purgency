@@ -63,17 +63,19 @@ script = SubResource("GDScript_2d8fw")
 position = Vector2(-9, -9.5)
 scale = Vector2(4.5, 4.4375)
 texture = ExtResource("2_v1ms7")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-22.5, -23)
+position = Vector2(5, -22)
 shape = SubResource("RectangleShape2D_v1ms7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-22, -16)
-zoom = Vector2(5, 5)
+position = Vector2(4, -20)
+zoom = Vector2(3, 3)
 
 [node name="interactable" parent="." instance=ExtResource("3_v1ms7")]
+position = Vector2(5, -21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
-position = Vector2(-22.25, -22.5)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_66hk4")

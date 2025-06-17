@@ -273,9 +273,7 @@ script = ExtResource("1_abrql")
 position = Vector2(-3, -8)
 scale = Vector2(-0.142169, 0.152318)
 sprite_frames = SubResource("SpriteFrames_vewsg")
-animation = &"walking_left"
 autoplay = "default"
-frame_progress = 0.617748
 
 [node name="Inventory1" parent="Sprite2D" instance=ExtResource("5_fkugw")]
 offset_left = -302.457
