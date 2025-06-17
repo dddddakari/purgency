@@ -1,4 +1,3 @@
-# slot_container.gd (updated)
 extends PanelContainer
 class_name Slot
 
@@ -16,20 +15,21 @@ var slot_owner: Node = null
 
 func _ready():
 	custom_minimum_size = Vector2(64, 64)
-	
-	# Initialize highlight if missing
+
+	# Initialize highlight if it's not present in the scene
 	if !highlight:
 		highlight = ColorRect.new()
 		highlight.name = "Highlight"
+		highlight.color = highlight_color
+		highlight.size_flags_horizontal = SIZE_EXPAND_FILL
+		highlight.size_flags_vertical = SIZE_EXPAND_FILL
+		highlight.anchor_right = 1.0
+		highlight.anchor_bottom = 1.0
+		highlight.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		add_child(highlight)
 		move_child(highlight, 0)
-		highlight.color = highlight_color
-		highlight.size = size
-		highlight.hide()
-	else:
-		highlight.color = highlight_color
-		highlight.hide()
-	
+	highlight.visible = false
+
 	update_display()
 
 func set_item(item):
@@ -46,43 +46,29 @@ func update_display():
 
 func set_highlight(should_highlight: bool):
 	is_selected = should_highlight
-	if highlight:
+	if is_instance_valid(highlight):
 		highlight.visible = should_highlight
 	else:
 		modulate = highlight_color if should_highlight else Color.WHITE
+	queue_redraw()
 
-# Optional: Long-press functionality (remove if not needed)
-var press_timer := 0.0
-const LONG_PRESS_DURATION := 0.5
-
-func _unhandled_input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			press_timer = 0.0
-		elif press_timer >= LONG_PRESS_DURATION and slot_owner:
-			slot_owner.handle_long_press(slot_index)
-			
 func _gui_input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		get_viewport().set_input_as_handled()
-		
-		# Find the InventoryScreen in the scene
+
 		var inventory_screen = get_tree().root.find_child("InventoryScreen", true, false)
-		if !inventory_screen:
+		if not inventory_screen:
 			return
-		
-		# If we have a selected slot, attempt transfer
-		if inventory_screen.selected_ui && inventory_screen.selected_slot_index >= 0:
-			inventory_screen.transfer_between_inventories(
-				inventory_screen.selected_ui,
-				inventory_screen.selected_slot_index,
-				slot_owner,
-				slot_index
-			)
+
+		# Handle transfer if there's already a selected slot
+		if inventory_screen.selected_ui and inventory_screen.selected_slot_index >= 0:
+			# Prevent transfer to same slot
+			if inventory_screen.selected_ui != slot_owner or inventory_screen.selected_slot_index != slot_index:
+				inventory_screen.transfer_between_inventories(
+					inventory_screen.selected_ui,
+					inventory_screen.selected_slot_index,
+					slot_owner,
+					slot_index
+				)
 		else:
-			# Otherwise select this slot
 			inventory_screen.handle_global_slot_click(slot_owner, slot_index)
-				
-func _process(delta):
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		press_timer += delta

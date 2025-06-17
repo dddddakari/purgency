@@ -79,11 +79,6 @@ func populate_inventory_ui():
 		else:
 			slot.set_item(null)
 
-func get_slot(index: int) -> Slot:
-	if index < 0 or index >= grid_container.get_child_count():
-		return null
-	return grid_container.get_child(index)
-
 func handle_slot_click(index: int):
 	if get_parent().has_method("handle_global_slot_click"):
 		# If we already have a selection, attempt transfer
@@ -104,26 +99,44 @@ func transfer_item(from_index: int, to_index: int):
 	if from_index == to_index or from_index < 0 or to_index < 0:
 		return
 	
-	var max_index = max(from_index, to_index)
-	while inventory_items.size() <= max_index:
+	# Ensure arrays are large enough
+	while inventory_items.size() <= max(from_index, to_index):
 		inventory_items.append(null)
 	
+	# Perform the transfer
 	item_transfer.transfer_item_between(inventory_items, from_index, inventory_items, to_index)
-	update_specific_slots(from_index, to_index)
+	
+	# Update the specific slots that changed
+	var slot1 = get_slot(from_index)
+	var slot2 = get_slot(to_index)
+	if slot1:
+		slot1.set_item(inventory_items[from_index])
+	if slot2:
+		slot2.set_item(inventory_items[to_index])
+	
 	save_inventory()
+
+# Add this helper function
+func get_slot(index: int) -> Slot:
+	if index >= 0 and index < grid_container.get_child_count():
+		return grid_container.get_child(index)
+	return null
 	
 # Add to both inventory.gd and container_ui.gd
 func update_slots():
 	populate_inventory_ui()
 
-func update_specific_slots(index1: int, index2: int):
-	var slot1 = get_slot(index1)
-	var slot2 = get_slot(index2)
-	if slot1:
-		slot1.set_item(inventory_items[index1] if index1 < inventory_items.size() else null)
-	if slot2:
-		slot2.set_item(inventory_items[index2] if index2 < inventory_items.size() else null)
-
+# Add this to both files
+func update_specific_slot(index: int):
+	if index < 0 or index >= grid_container.get_child_count():
+		return
+	
+	var slot = grid_container.get_child(index)
+	if index < inventory_items.size():  # or container_items.size() for container_ui
+		slot.set_item(inventory_items[index])  # or container_items[index]
+	else:
+		slot.set_item(null)
+		
 func toggle_inventory():
 	inventory_visible = !inventory_visible
 	margin_container.visible = inventory_visible
@@ -138,6 +151,7 @@ func show_inventory():
 func hide_inventory():
 	inventory_visible = false
 	margin_container.visible = false
+	# Don't repopulate here - just save the current state
 	save_inventory()
 
 func _input(event):
@@ -151,3 +165,7 @@ func update_display():
 			slot.set_item(inventory_items[i])  # or container_items[i]
 		else:
 			slot.set_item(null)
+			
+# Add to both scripts
+func get_items_array() -> Array:
+	return inventory_items  # or container_items for container_ui

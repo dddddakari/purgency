@@ -277,16 +277,11 @@ animation = &"walking_left"
 autoplay = "default"
 frame_progress = 0.617748
 
-[node name="Inventory" parent="Sprite2D" instance=ExtResource("5_fkugw")]
-anchor_top = -0.537
-anchor_right = 0.0
-anchor_bottom = 0.835
-offset_left = -246.186
-offset_top = -76.7374
-offset_right = 272.814
-offset_bottom = -117.757
-grow_horizontal = 1
-grow_vertical = 1
+[node name="Inventory1" parent="Sprite2D" instance=ExtResource("5_fkugw")]
+offset_left = -302.457
+offset_top = -236.348
+offset_right = 162.243
+offset_bottom = 70.9274
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 12)
