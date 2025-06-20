@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://xvukllumh5ao"]
+
+[ext_resource type="Texture2D" uid="uid://d24ci1skwk6n2" path="res://assets/button/NEW_GAME.PNG" id="1_vjd07"]
+[ext_resource type="Script" uid="uid://ct7w1r5k4orfn" path="res://menus/start_screen.gd" id="2_rjscj"]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1442.0
+offset_bottom = 817.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1438.0
+offset_bottom = 824.0
+text = "YOU DIED, YOURE BADDD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="New Game" type="TextureButton" parent="."]
+offset_left = 351.0
+offset_top = 334.0
+offset_right = 1119.0
+offset_bottom = 718.0
+texture_normal = ExtResource("1_vjd07")
+script = ExtResource("2_rjscj")

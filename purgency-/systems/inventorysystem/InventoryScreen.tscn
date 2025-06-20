@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dk0hu85586dvd"]
 
 [ext_resource type="Script" uid="uid://ds0glxkmews01" path="res://systems/inventorysystem/inventory_screen.gd" id="1_30uda"]
-[ext_resource type="PackedScene" uid="uid://cuq1cvta81wlk" path="res://systems/inventorysystem/Container/ContainerUI.tscn" id="1_yiqln"]
+[ext_resource type="PackedScene" uid="uid://cuq1cvta81wlk" path="res://systems/Container/ContainerUI.tscn" id="1_yiqln"]
 [ext_resource type="PackedScene" uid="uid://le4evi2ue18i" path="res://systems/inventorysystem/Inventory.tscn" id="2_30uda"]
 
 [node name="InventoryScreen" type="CanvasLayer"]

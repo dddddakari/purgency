@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://dg51ck14oj1gb"]
+[gd_scene load_steps=11 format=4 uid="uid://dg51ck14oj1gb"]
 
 [ext_resource type="Texture2D" uid="uid://b3e1w5jat02ut" path="res://BGassets/pixil-frame-0 (2).png" id="1_tul68"]
 [ext_resource type="Texture2D" uid="uid://igr6e5jf2xfs" path="res://BGassets/pixil-frame-0 (3).png" id="2_d0uyo"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="3_msxy7"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="4_c4yw3"]
 [ext_resource type="PackedScene" uid="uid://dwwoavnows5ub" path="res://systems/npcsystem/Nurse.tscn" id="5_d0uyo"]
+[ext_resource type="PackedScene" uid="uid://bxxq6psd6bhwx" path="res://systems/npcsystem/Hostile_Lebron.tscn" id="5_msxy7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uf3dw"]
 texture = ExtResource("1_tul68")
@@ -369,7 +370,12 @@ tile_map_data = PackedByteArray("AAAPAAkAAQABAAUAAAAPAAoAAQABAAYAAAAPAAsAAQABAAc
 tile_set = SubResource("TileSet_elwg5")
 
 [node name="npc" parent="Node" instance=ExtResource("5_d0uyo")]
+visible = false
 position = Vector2(928, 477)
+
+[node name="HostileLebron" parent="Node" instance=ExtResource("5_msxy7")]
+position = Vector2(947, 528)
+collision_mask = 3
 
 [node name="Player" parent="." instance=ExtResource("4_c4yw3")]
 z_index = 1

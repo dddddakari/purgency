@@ -7,7 +7,7 @@ func _on_body_entered(_body: Node2D) -> void:
 	# Handle player entering area
 	if _body.name == "Player":  # Check if it's the player
 		# Transition to maze scene
-		get_tree().change_scene_to_file.call_deferred("res://minigames/maze/MazeUI.tscn")
+		get_tree().change_scene_to_file.call_deferred("res://scenes/outside/receptionist.tscn")
 
 func _on_body_exited(_body: Node2D) -> void:
 	# Handle player exiting area
