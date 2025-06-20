@@ -1,5 +1,5 @@
 extends Node
-class_name NPCStateMachine
+class_name NPCState
 
 ## Handles state transitions and behaviors
 
