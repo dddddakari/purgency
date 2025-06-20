@@ -1,5 +1,5 @@
 extends NPCBase
-
+class_name NPC_Hostile
 # Movement
 @export var speed: float = 150
 @export var min_follow_distance: float = 30  # Stops this close to player
@@ -14,9 +14,6 @@ func _ready():
 		set_physics_process(false)  # Disable if no player
 
 func _physics_process(delta):
-	if !player_ref or !player_ref.can_move:  # Don't follow if player is dead
-		velocity = Vector2.ZERO
-		return
 	
 	var direction = (player_ref.global_position - global_position).normalized()
 	var distance_to_player = global_position.distance_to(player_ref.global_position)
@@ -31,4 +28,4 @@ func _physics_process(delta):
 	
 	# Face the player (optional visual)
 	if direction.x != 0:
-		$Sprite2D.flip_h = direction.x < 0
+		$AnimatedSprite2D.flip_h = direction.x < 0

@@ -1,11 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://dqm0mk3hhq2c0"]
+[gd_scene load_steps=38 format=3 uid="uid://dqm0mk3hhq2c0"]
 
 [ext_resource type="Script" uid="uid://cy136o77vv0xn" path="res://entities/player/player.gd" id="1_abrql"]
 [ext_resource type="Texture2D" uid="uid://cs0ppsqod3klo" path="res://entities/player/Prototype_Character.png" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://dfg0hums245ty" path="res://entities/player/finneassprite.png" id="3_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://cuq3e8q041hyd" path="res://systems/interactionsystem/InteractingComponent.tscn" id="3_sglur"]
 [ext_resource type="PackedScene" uid="uid://le4evi2ue18i" path="res://systems/inventorysystem/Inventory.tscn" id="5_fkugw"]
-[ext_resource type="PackedScene" uid="uid://cxyawlarpyqu0" path="res://systems/health/healtcomponent.tscn" id="6_8fjmc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wq0jh"]
 atlas = ExtResource("3_8fjmc")
@@ -297,8 +296,6 @@ position = Vector2(-41, -62)
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(1, 0.8985)
 zoom = Vector2(5, 5)
-
-[node name="HealthComponent" parent="." groups=["player"] instance=ExtResource("6_8fjmc")]
 
 [node name="InteractionArea" type="Area2D" parent="." groups=["player"]]
 collision_mask = 0
