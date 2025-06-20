@@ -46,7 +46,7 @@ func update_display():
 	for i in range(container_slot_container.get_child_count()):
 		var slot = container_slot_container.get_child(i)
 		if i < container_items.size():
-			slot.set_item(container_items[i])  # Sync from main array
+			slot.set_item(container_items[i])  
 		else:
 			slot.set_item(null)
 			

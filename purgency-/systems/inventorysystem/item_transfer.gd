@@ -29,7 +29,7 @@ func transfer_item_between(source_items: Array, source_index: int, target_items:
 	
 	# Case 2: Same item type - STACK
 	elif target_item.name == source_item.name:
-		target_item.quantity += source_item.quantity
+		target_item.quantity += source_item.quantity 
 		source_items[source_index] = null
 		return true
 	
