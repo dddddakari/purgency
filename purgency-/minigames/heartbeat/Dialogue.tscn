@@ -18,6 +18,17 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.027
+anchor_bottom = 0.049
+offset_left = 3.0
+offset_top = -91.0
+offset_right = 310.552
+offset_bottom = -21.544
+color = Color(0.105536, 0.106282, 0.101065, 1)
+
 [node name="name" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 18.0
@@ -35,6 +46,7 @@ offset_left = 23.0
 offset_top = 26.0
 offset_right = 1394.0
 offset_bottom = 220.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 text = "Dialogue Text blah "
 fit_content = true
