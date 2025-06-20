@@ -1,15 +1,14 @@
 [gd_scene load_steps=18 format=4 uid="uid://b30im6gw1jsbd"]
 
-[ext_resource type="TileSet" path="res://scenes/outside/receptionist.tres" id="1_f1sf5"]
+[ext_resource type="TileSet" uid="uid://3u7x6qwnbj0a" path="res://scenes/outside/receptionist.tres" id="1_f1sf5"]
 [ext_resource type="Texture2D" uid="uid://bugbxoug022co" path="res://assets/admin_desk.png" id="2_an1l2"]
 [ext_resource type="PackedScene" uid="uid://dvaclcjg42xwn" path="res://entities/npcs/Admin.tscn" id="3_exwjl"]
 [ext_resource type="Script" uid="uid://1i5onfr3rnvk" path="res://entities/npcs/admin.gd" id="4_n0sui"]
 [ext_resource type="Texture2D" uid="uid://b474nd2262k6r" path="res://assets/noFilter.png" id="5_fxqvf"]
 [ext_resource type="Script" uid="uid://brktf8ur54vtd" path="res://scenes/outside/area_2d.gd" id="6_kcnfd"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_nmxwb"]
-[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://minigames/heartbeat/Dialogue.tscn" id="8_an1l2"]
+[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="8_an1l2"]
 [ext_resource type="Script" uid="uid://c83wm85rle1y5" path="res://scenes/outside/maze_2d.gd" id="9_an1l2"]
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iulj1"]
 texture = ExtResource("2_an1l2")

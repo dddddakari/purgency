@@ -280,6 +280,8 @@ offset_left = -302.457
 offset_top = -236.348
 offset_right = 162.243
 offset_bottom = 70.9274
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 12)

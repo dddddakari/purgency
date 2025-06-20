@@ -5,4 +5,4 @@
 [node name="HeartbeatMap" type="Node2D"]
 
 [node name="HeartbeatMoving" parent="." instance=ExtResource("1_18pmp")]
-position = Vector2(1270, 211)
+position = Vector2(1284, 414)

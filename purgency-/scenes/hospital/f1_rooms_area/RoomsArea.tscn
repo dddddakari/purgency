@@ -368,10 +368,18 @@ sources/2 = SubResource("TileSetAtlasSource_6qaem")
 script = ExtResource("1_msxy7")
 
 [node name="Bathroom" type="Area2D" parent="."]
+z_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bathroom"]
 position = Vector2(415, 266)
 shape = SubResource("CircleShape2D_d0uyo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bathroom"]
+z_index = 2
+position = Vector2(417, 266)
+texture = ExtResource("3_msxy7")
+region_enabled = true
+region_rect = Rect2(225, 80, 30, 50)
 
 [node name="Node" type="Node" parent="."]
 

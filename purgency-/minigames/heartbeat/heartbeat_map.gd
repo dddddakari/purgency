@@ -5,5 +5,6 @@ extends Node2D
 
 var loop_amount := 10
 
-func_ loop():
-	$Heart
+func moving_comp():
+	while loop_amount >= 0:
+		$HeartbeatMoving
