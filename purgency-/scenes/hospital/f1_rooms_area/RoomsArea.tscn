@@ -1,7 +1,6 @@
+[gd_scene load_steps=13 format=4 uid="uid://dg51ck14oj1gb"]
 
-[gd_scene load_steps=11 format=4 uid="uid://dg51ck14oj1gb"]
-
-[ext_resource type="Script" uid="uid://ynytnyndo86q" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_msxy7"]
+[ext_resource type="Script" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_msxy7"]
 [ext_resource type="Texture2D" uid="uid://b3e1w5jat02ut" path="res://BGassets/pixil-frame-0 (2).png" id="1_tul68"]
 [ext_resource type="Texture2D" uid="uid://igr6e5jf2xfs" path="res://BGassets/pixil-frame-0 (3).png" id="2_d0uyo"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="3_msxy7"]
@@ -382,8 +381,7 @@ tile_map_data = PackedByteArray("AAAPAAkAAQABAAUAAAAPAAoAAQABAAYAAAAPAAsAAQABAAc
 tile_set = SubResource("TileSet_elwg5")
 
 [node name="npc" parent="Node" instance=ExtResource("5_d0uyo")]
-visible = false
-position = Vector2(928, 477)
+position = Vector2(533, 470)
 
 [node name="HostileLebron" parent="Node" instance=ExtResource("5_msxy7")]
 position = Vector2(947, 528)
@@ -393,7 +391,7 @@ collision_mask = 3
 z_index = 1
 position = Vector2(539, 333)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(-1, 7)
 zoom = Vector2(5, 5)
 
