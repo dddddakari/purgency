@@ -1,5 +1,4 @@
 #reference: https://www.youtube.com/watch?v=7CCofjq_dHM
-
 extends CanvasLayer
 
 @export_file("*.json") var d_file: String

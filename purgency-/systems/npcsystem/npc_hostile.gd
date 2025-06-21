@@ -2,7 +2,7 @@ extends NPCBase
 class_name NPC_Hostile
 # Movement
 @export var speed: float = 150
-@export var min_follow_distance: float = 30  # Stops this close to player
+@export var min_follow_distance: int = 2 # Stops this close to player
 
 func _ready():
 	# Find player by group (make sure your player is in "player" group)
@@ -25,7 +25,3 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 		
 	move_and_slide()
-	
-	# Face the player (optional visual)
-	if direction.x != 0:
-		$AnimatedSprite2D.flip_h = direction.x < 0

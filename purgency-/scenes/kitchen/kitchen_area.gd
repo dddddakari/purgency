@@ -1,6 +1,6 @@
 extends Area2D
 
-var entered = true
+var entered = false 
 
 func _on_body_entered(body: Node2D) -> void:
 	if entered == true:

@@ -64,7 +64,7 @@ func _gui_input(event):
 		if inventory_screen.selected_ui and inventory_screen.selected_slot_index >= 0:
 			# Prevent transfer to same slot
 			if inventory_screen.selected_ui != slot_owner or inventory_screen.selected_slot_index != slot_index:
-				inventory_screen.transfer_between_inventories(
+				inventory_screen.transfer_between_inventories( 
 					inventory_screen.selected_ui,
 					inventory_screen.selected_slot_index,
 					slot_owner,
