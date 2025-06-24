@@ -11,6 +11,9 @@ func _ready():
 	print("Player group membership after adding:", is_in_group("player"))
 	# ... rest of your existing code ...
 
+func set_movement_enabled(body):
+	player_movement(true)
+
 func _on_interaction_area_body_entered(body):
 	print("Player entered area:", body.name)
 	if body.has_method("_on_interaction_area_body_entered"):

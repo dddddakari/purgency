@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://uvaa25nd6iqg" path="res://systems/npcsystem/npc_hostile.gd" id="1_sw0jy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8x4hh"]
-radius = 64.846
+radius = 22.8473
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8x4hh"]
 animations = [{
@@ -54,5 +54,4 @@ position = Vector2(75.9942, 9.42664)
 rotation = 0.000111889
 scale = Vector2(0.0982557, 0.244947)
 sprite_frames = SubResource("SpriteFrames_8x4hh")
-animation = &"idle"
-frame_progress = 0.237216
+animation = &"death"

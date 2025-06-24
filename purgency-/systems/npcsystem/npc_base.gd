@@ -26,8 +26,7 @@ enum State {
 ### --- Node References --- ###
 # These will be automatically set to the child nodes
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D      # Visual representation
-@onready var state_machine: Node = $StateMachine               # State management
-@onready var interaction_area: Area2D = $InteractionArea       # Player detection zone
+
 
 ### --- Member Variables --- ###
 var current_state: State = State.IDLE      # Current behavior state
@@ -44,7 +43,7 @@ func _ready():
 	start_position = global_position       # Remember starting position
 	destination = start_position           # Initialize destination
 	initialize_npc()                       # Custom initialization
-	setup_interaction_area()               # Configure player detection
+	
 
 # Placeholder for NPC-specific initialization
 # Override this in inherited classes
@@ -52,9 +51,6 @@ func initialize_npc():
 	pass
 
 # Sets up signals for player entering/exiting interaction area
-func setup_interaction_area():
-	interaction_area.body_entered.connect(_on_interaction_area_body_entered)
-	interaction_area.body_exited.connect(_on_interaction_area_body_exited)
 
 # Main physics processing called every frame
 func _physics_process(delta):
