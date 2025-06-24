@@ -23,9 +23,11 @@ enum State {
 @export var wander_radius: float = 100.0    # How far from start position the NPC can wander
 @export var detection_radius: float = 150.0 # How close player needs to be to detect
 
+### --- Node References --- ###
+# These will be automatically set to the child nodes
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D      # Visual representation
-@onready var state_machine: Node = $StateMachine               # State management
-@onready var interaction_area: Area2D = $InteractionArea 
+
+
 ### --- Member Variables --- ###
 var current_state: State = State.IDLE      # Current behavior state
 var player_ref: Node2D = null              # Reference to player when detected
@@ -40,7 +42,8 @@ var destination: Vector2 = Vector2.ZERO    # Current movement target position
 func _ready():
 	start_position = global_position       # Remember starting position
 	destination = start_position           # Initialize destination
-	initialize_npc()                       # Custom initialization              # Configure player detection
+	initialize_npc()                       # Custom initialization
+	
 
 # Placeholder for NPC-specific initialization
 # Override this in inherited classes

@@ -1,11 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://dqm0mk3hhq2c0"]
+[gd_scene load_steps=38 format=3 uid="uid://dqm0mk3hhq2c0"]
 
 [ext_resource type="Script" uid="uid://cy136o77vv0xn" path="res://entities/player/player.gd" id="1_abrql"]
 [ext_resource type="Texture2D" uid="uid://cs0ppsqod3klo" path="res://entities/player/Prototype_Character.png" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://dfg0hums245ty" path="res://entities/player/finneassprite.png" id="3_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://cuq3e8q041hyd" path="res://systems/interactionsystem/InteractingComponent.tscn" id="3_sglur"]
 [ext_resource type="PackedScene" uid="uid://le4evi2ue18i" path="res://systems/inventorysystem/Inventory.tscn" id="5_fkugw"]
-[ext_resource type="PackedScene" uid="uid://bh8644eptx0ws" path="res://systems/healthsystem/HealthBar.tscn" id="6_8fjmc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wq0jh"]
 atlas = ExtResource("3_8fjmc")
@@ -263,14 +262,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bls4j"]
-radius = 3.01367
-height = 14.0266
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkugw"]
+size = Vector2(36.9545, 20.1806)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8fjmc"]
-radius = 8.94427
+radius = 346.733
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_abrql")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -280,17 +280,20 @@ sprite_frames = SubResource("SpriteFrames_vewsg")
 autoplay = "default"
 
 [node name="Inventory1" parent="Sprite2D" instance=ExtResource("5_fkugw")]
-offset_left = -302.457
-offset_top = -236.348
-offset_right = 162.243
-offset_bottom = 70.9274
+offset_left = -675.253
+offset_top = -190.391
+offset_right = -210.553
+offset_bottom = 116.884
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 12)
+position = Vector2(-1.1538, -5.4769)
 rotation = 1.55683
-shape = SubResource("CapsuleShape2D_bls4j")
+shape = SubResource("RectangleShape2D_fkugw")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("3_sglur")]
+visible = false
 position = Vector2(-41, -62)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -298,16 +301,9 @@ scale = Vector2(1, 0.8985)
 zoom = Vector2(5, 5)
 
 [node name="InteractionArea" type="Area2D" parent="." groups=["player"]]
-position = Vector2(0, 2)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-1, -11)
+visible = false
+position = Vector2(55, 14)
 shape = SubResource("CircleShape2D_8fjmc")
-
-[node name="HealthBar" parent="." instance=ExtResource("6_8fjmc")]
-offset_left = -9.0
-offset_top = -31.0
-offset_right = 245.0
-offset_bottom = 23.0
-scale = Vector2(0.0677733, 0.103654)

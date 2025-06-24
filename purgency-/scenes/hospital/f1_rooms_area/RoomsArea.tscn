@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://dg51ck14oj1gb"]
 
-[ext_resource type="Script" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_msxy7"]
+[ext_resource type="Script" uid="uid://ynytnyndo86q" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_msxy7"]
 [ext_resource type="Texture2D" uid="uid://b3e1w5jat02ut" path="res://BGassets/pixil-frame-0 (2).png" id="1_tul68"]
 [ext_resource type="Texture2D" uid="uid://igr6e5jf2xfs" path="res://BGassets/pixil-frame-0 (3).png" id="2_d0uyo"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="3_msxy7"]
@@ -369,10 +369,18 @@ sources/2 = SubResource("TileSetAtlasSource_6qaem")
 script = ExtResource("1_msxy7")
 
 [node name="Bathroom" type="Area2D" parent="."]
+z_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bathroom"]
 position = Vector2(415, 266)
 shape = SubResource("CircleShape2D_d0uyo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bathroom"]
+z_index = 2
+position = Vector2(417, 266)
+texture = ExtResource("3_msxy7")
+region_enabled = true
+region_rect = Rect2(225, 80, 30, 50)
 
 [node name="Node" type="Node" parent="."]
 
