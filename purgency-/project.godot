@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="purgency"
+<<<<<<< Updated upstream
 run/main_scene="uid://bpgckbqg0nw5n"
+=======
+run/main_scene="uid://dg51ck14oj1gb"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
