@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b30im6gw1jsbd"]
+[gd_scene load_steps=18 format=4 uid="uid://bvtfuydopbjq"]
 
 [ext_resource type="TileSet" uid="uid://3u7x6qwnbj0a" path="res://scenes/outside/receptionist.tres" id="1_f1sf5"]
 [ext_resource type="Texture2D" uid="uid://bugbxoug022co" path="res://assets/admin_desk.png" id="2_an1l2"]
