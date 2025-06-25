@@ -18,3 +18,14 @@ res://scenes/outside/receptionist.gd
 res://minigames/maze/MazeUI.tscn
 res://minigames/maze/Jumpscare.tscn
 res://entities/items/newspaper/Newspaper.tscn
+res://entities/player/player.gd
+res://scenes/kitchen/kitchen_area.gd
+res://systems/dialoguesystem/DialoguePlayer.gd
+res://systems/inventorysystem/inventory.gd
+res://systems/inventorysystem/Inventory.tscn
+res://systems/inventorysystem/inventory_screen.gd
+res://systems/inventorysystem/item.gd
+res://systems/inventorysystem/slot_container.gd
+res://systems/inventorysystem/Container/container_ui.gd
+res://systems/npcsystem/npc_nurse.gd
+res://systems/inventorysystem/InventoryScreen.tscn
