@@ -1,4 +1,4 @@
-# inventory_screen.gd (updated)
+# inventory_screen.gd (FIXED)
 extends CanvasLayer
 class_name InventoryScreen
 
@@ -9,26 +9,44 @@ var selected_ui: Node = null
 var selected_slot_index: int = -1
 var current_container_node = null
 
-# inventory_screen.gd
+func _ready():
+	add_to_group("inventory_screen")
+
 func open_inventories(container_inventory: Array, container_node: Node) -> void:
 	if not container_node:
 		return
 	
 	current_container_node = container_node
-	player_inventory_ui.show_inventory()
+	
+	# FIX: Get reference to the actual player inventory in the game world
+	var main_inventory = get_tree().get_first_node_in_group("inventory")
+	if main_inventory:
+		# Sync the inventory screen's inventory with the main game inventory
+		player_inventory_ui.inventory_items = main_inventory.inventory_items
+		player_inventory_ui.show_inventory()
+	else:
+		# Fallback to loading from file if no main inventory found
+		if player_inventory_ui.has_method("load_inventory"):
+			player_inventory_ui.load_inventory()
+		player_inventory_ui.show_inventory()
+	
 	container_inventory_ui.show_container_inventory(container_inventory, container_node)
 	show()
 
 func close_inventories() -> void:
-	# Save container inventory
-	if is_instance_valid(current_container_node) and current_container_node.has_method("set_inventory"):
-		current_container_node.set_inventory(container_inventory_ui.get_container_items())
-		if current_container_node.has_method("save_inventory"):
-			current_container_node.save_inventory()
+	# FIX: Sync back to main inventory and save both
+	var main_inventory = get_tree().get_first_node_in_group("inventory")
+	if main_inventory:
+		# Copy changes back to the main game inventory
+		main_inventory.inventory_items = player_inventory_ui.inventory_items
+		main_inventory.save_inventory()
+	else:
+		# Fallback to saving through the UI
+		if is_instance_valid(player_inventory_ui) and player_inventory_ui.has_method("save_inventory"):
+			player_inventory_ui.save_inventory()
 	
-	# Save player inventory
-	if is_instance_valid(player_inventory_ui) and player_inventory_ui.has_method("save_inventory_to_json"):
-		player_inventory_ui.save_inventory_to_json()
+	if is_instance_valid(container_inventory_ui) and container_inventory_ui.has_method("save_container"):
+		container_inventory_ui.save_container()
 	
 	# Clear selection FIRST before hiding
 	handle_global_slot_click(null, -1)
@@ -63,6 +81,7 @@ func handle_global_slot_click(from_ui: Node, slot_index: int) -> void:
 func transfer_between_inventories(from_ui, from_index: int, to_ui, to_index: int) -> void:
 	if !from_ui || !to_ui:
 		return
+		
 	# Get the correct item arrays
 	var from_items = from_ui.inventory_items if from_ui.has_method("show_inventory") else from_ui.container_items
 	var to_items = to_ui.inventory_items if to_ui.has_method("show_inventory") else to_ui.container_items
@@ -104,6 +123,31 @@ func transfer_between_inventories(from_ui, from_index: int, to_ui, to_index: int
 		if to_slot:
 			to_slot.set_item(to_items[to_index])
 	
+	# FIX: Auto-save both inventories AND sync back to main inventory
+	if from_ui.has_method("save_inventory"):
+		from_ui.save_inventory()
+		# Also sync to main inventory if this is the player inventory UI
+		if from_ui.has_method("show_inventory"):  # This identifies it as player inventory
+			var main_inventory = get_tree().get_first_node_in_group("inventory")
+			if main_inventory:
+				main_inventory.inventory_items = from_ui.inventory_items
+				main_inventory.save_inventory()
+	elif from_ui.has_method("save_container"):
+		from_ui.save_container()
+	
+	if to_ui != from_ui:
+		if to_ui.has_method("save_inventory"):
+			to_ui.save_inventory()
+			# Also sync to main inventory if this is the player inventory UI
+			if to_ui.has_method("show_inventory"):  # This identifies it as player inventory
+				var main_inventory = get_tree().get_first_node_in_group("inventory")
+				if main_inventory:
+					main_inventory.inventory_items = to_ui.inventory_items
+					main_inventory.save_inventory()
+		elif to_ui.has_method("save_container"):
+			to_ui.save_container()
+	
+	# Clear selection
 	if is_instance_valid(selected_ui) and selected_slot_index >= 0:
 		var prev_slot = selected_ui.get_slot(selected_slot_index)
 		if is_instance_valid(prev_slot):
