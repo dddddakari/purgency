@@ -1,0 +1,14 @@
+ColorRect
+AcceptDialog
+CollisionShape2D
+CollisionPolygon2D
+Area2D
+CharacterBody2D
+StaticBody2D
+Node2D
+TileMapLayer
+DirectionalLight2D
+Sprite2D
+TileMap
+Button
+Camera2D
