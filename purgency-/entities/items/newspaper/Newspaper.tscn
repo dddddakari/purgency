@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cv06fbmr1s2b0"]
 
 [ext_resource type="Script" uid="uid://brtrpf71rxdr0" path="res://entities/items/newspaper/newspaper.gd" id="1_isads"]
-[ext_resource type="Texture2D" uid="uid://b62cnuc1xrn0m" path="res://assets/newspaper.png" id="1_t007h"]
+[ext_resource type="Texture2D" uid="uid://u41qaqykntji" path="res://assets/newspaper.png" id="1_t007h"]
 [ext_resource type="PackedScene" uid="uid://balrieb8xarpl" path="res://systems/interactionsystem/interactable.tscn" id="2_jkgbv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jkgbv"]

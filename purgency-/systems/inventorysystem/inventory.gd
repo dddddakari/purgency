@@ -1,4 +1,4 @@
-# inventory.gd (updated)
+# inventory.gd
 extends PanelContainer
 
 @onready var grid_container: GridContainer = $MarginContainer/GridContainer

@@ -41,6 +41,7 @@ custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="Slot2" parent="MarginContainer/GridContainer" instance=ExtResource("2_l5nn2")]
+z_index = 1
 custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 

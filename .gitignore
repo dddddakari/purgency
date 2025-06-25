@@ -1,4 +1,7 @@
-.import/
-.godot/
-export.cfg
-export_presets.cfg
+purgency-/project.godot
+*.godot
+*.godot
+/purgency-
+purgency-/project.godot
+purgency-/project.godot
+purgency-/project.godot
