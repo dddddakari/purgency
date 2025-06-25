@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://bvtfuydopbjq"]
+[gd_scene load_steps=22 format=4 uid="uid://bvtfuydopbjq"]
 
 [ext_resource type="TileSet" uid="uid://3u7x6qwnbj0a" path="res://scenes/outside/receptionist.tres" id="1_f1sf5"]
+[ext_resource type="Script" uid="uid://c1k1vgpumw22u" path="res://scenes/outside/receptionist.gd" id="1_kcnfd"]
 [ext_resource type="Texture2D" uid="uid://bugbxoug022co" path="res://assets/admin_desk.png" id="2_an1l2"]
 [ext_resource type="PackedScene" uid="uid://dvaclcjg42xwn" path="res://entities/npcs/Admin.tscn" id="3_exwjl"]
 [ext_resource type="Script" uid="uid://1i5onfr3rnvk" path="res://entities/npcs/admin.gd" id="4_n0sui"]
@@ -8,7 +9,10 @@
 [ext_resource type="Script" uid="uid://brktf8ur54vtd" path="res://scenes/outside/area_2d.gd" id="6_kcnfd"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="7_nmxwb"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="8_an1l2"]
+[ext_resource type="AudioStream" uid="uid://q34cii45y5io" path="res://audio/music/SwitchWithMeTheme.wav" id="8_fxqvf"]
 [ext_resource type="Script" uid="uid://c83wm85rle1y5" path="res://scenes/outside/maze_2d.gd" id="9_an1l2"]
+[ext_resource type="Texture2D" uid="uid://ccecwl6cmli85" path="res://assets/button/SPEAKER_ON.png" id="9_kcnfd"]
+[ext_resource type="Script" uid="uid://btlohi51um8lb" path="res://audio/music/muteButton.gd" id="10_nmxwb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iulj1"]
 texture = ExtResource("2_an1l2")
@@ -78,6 +82,7 @@ size = Vector2(956.124, 701.049)
 size = Vector2(210, 25)
 
 [node name="Hospital" type="Node2D"]
+script = ExtResource("1_kcnfd")
 
 [node name="Layers" type="Node2D" parent="."]
 
@@ -140,6 +145,20 @@ position = Vector2(760, 304)
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(-4, -8)
 zoom = Vector2(7, 7)
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="Player/Camera2D2"]
+position = Vector2(-275, -73)
+stream = ExtResource("8_fxqvf")
+autoplay = true
+
+[node name="MuteButton" type="TextureButton" parent="Player/Camera2D2"]
+offset_left = 116.0
+offset_top = 59.0
+offset_right = 276.0
+offset_bottom = 219.0
+scale = Vector2(0.203661, 0.188203)
+texture_normal = ExtResource("9_kcnfd")
+script = ExtResource("10_nmxwb")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
 position = Vector2(-1, 4)

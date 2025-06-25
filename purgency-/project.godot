@@ -23,6 +23,7 @@ buses/default_bus_layout=""
 [autoload]
 
 inventory_screen="*res://systems/inventorysystem/inventory_screen.gd"
+AudioManager="*res://audio/music/AudioManager.gd"
 
 [display]
 
