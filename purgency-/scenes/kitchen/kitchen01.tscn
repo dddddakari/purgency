@@ -2051,7 +2051,6 @@ tile_set = SubResource("TileSet_of622")
 tile_set = SubResource("TileSet_6fhro")
 
 [node name="Player" parent="." instance=ExtResource("7_f7jwb")]
-visible = false
 z_index = 1
 position = Vector2(275, 73)
 
