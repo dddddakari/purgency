@@ -1,3 +1,4 @@
+
 extends TextureButton
 
 func _ready():
@@ -7,6 +8,8 @@ func _ready():
 	texture_normal = AudioManager.get_speaker_texture()
 	# Connect button press
 	pressed.connect(_on_pressed)
+	# Prevent space key from triggering button
+	focus_mode = Control.FOCUS_NONE
 
 func _on_pressed():
 	AudioManager.toggle_music()

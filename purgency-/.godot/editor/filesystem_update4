@@ -13,3 +13,6 @@ res://entities/items/newspaper/Newspaper.tscn
 res://systems/interactionsystem/interactingcomponent.gd
 res://entities/items/newspaper/newspaper.gd
 res://entities/items/letter/letter.gd
+res://minigames/maze/maze_ui.gd
+res://scenes/kitchen/kitchen_01.gd
+res://audio/music/muteButton.gd
