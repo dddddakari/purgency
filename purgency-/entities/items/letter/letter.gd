@@ -11,7 +11,7 @@ func _on_interact():
 	use_dialogue()
 	
 func use_dialogue():
-	var dialogue = get_parent().get_node("/root/Kitchen01/LetterDialogue")
+	var dialogue = get_parent().get_node("/root/Kitchen01/Dialogue")
 	var dialogue_file_path = "res://json/letter.json"
 
 

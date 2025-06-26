@@ -7,7 +7,19 @@ res://systems/npcsystem/Nurse.tscn
 res://systems/npcsystem/Hostile_Lebron.tscn
 res://systems/inventorysystem/Slot.tscn
 res://systems/inventorysystem/Container/ContainerUI.tscn
+<<<<<<< HEAD
 res://scenes/outside/receptionist.tscn
 res://minigames/maze/Jumpscare.tscn
 res://minigames/maze/MazeUI.tscn
 res://entities/items/newspaper/Newspaper.tscn
+=======
+res://minigames/maze/Jumpscare.tscn
+res://minigames/maze/MazeUI.tscn
+res://entities/items/newspaper/Newspaper.tscn
+res://systems/interactionsystem/interactingcomponent.gd
+res://entities/items/newspaper/newspaper.gd
+res://entities/items/letter/letter.gd
+res://minigames/maze/maze_ui.gd
+res://scenes/kitchen/kitchen_01.gd
+res://audio/music/muteButton.gd
+>>>>>>> main

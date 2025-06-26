@@ -15,7 +15,7 @@ func _on_interact():
 	
 func use_dialogue():
 	# Find and start newspaper dialogue
-	var dialogue = get_parent().get_node("/root/Kitchen01//NewspaperDialogue")
+	var dialogue = get_parent().get_node("/root/Kitchen01/Dialogue")
 	var dialogue_file_path = "res://json/newspaper.json"
 
 	if dialogue:
