@@ -13,3 +13,7 @@ res://entities/finn8-bit/Finn8-Bit.tscn
 res://scenes/hospital/f1_rooms_area/Rooms.tscn
 res://minigames/maze/maze_ui.gd
 res://scenes/hospital/f1_rooms_area/Room_Area.tscn
+res://entities/items/newspaper/newspaper.gd
+res://entities/player/player.gd
+res://entities/player/player.tscn
+res://scenes/hospital/f1_rooms_area/rooms_area.gd
