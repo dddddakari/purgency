@@ -24,6 +24,7 @@ buses/default_bus_layout=""
 
 inventory_screen="*res://systems/inventorysystem/inventory_screen.gd"
 AudioManager="*res://audio/music/AudioManager.gd"
+Global="*res://misc/global.gd"
 
 [display]
 

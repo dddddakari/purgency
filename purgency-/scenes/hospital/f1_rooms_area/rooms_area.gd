@@ -19,3 +19,9 @@ func _ready():
 
 func _on_music_toggled(is_muted: bool):
 	AudioManager.set_audio_stream_state(audioStream)
+
+
+func _on_security_area_trigger_body_entered(body: Node2D) -> void:
+	if body.name == "Player":  # Check if it's the player
+		# Transition to maze scene
+		get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_security/SecurityArea.tscn")
