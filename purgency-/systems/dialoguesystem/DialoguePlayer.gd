@@ -90,10 +90,27 @@ func _process(delta):
 		return
 
 	if waiting_for_input and not $Options.visible and can_advance and Input.is_action_just_pressed("ui_accept"):
-		print("Input detected to end dialogue")
-		can_advance = false  # Lock input immediately
-		waiting_for_input = false
-		end_dialogue()
+		# Check if this dialogue system has IDs (option-based) or is sequential
+		var has_ids = not id_map.is_empty()
+		
+		if has_ids:
+			# For ID-based dialogues (with options), always end dialogue on terminal nodes
+			print("Input detected to end dialogue")
+			can_advance = false
+			waiting_for_input = false
+			end_dialogue()
+		else:
+			# For sequential dialogues (no IDs), advance to next or end
+			if curr_dialogue_id + 1 >= dialogue.size():
+				print("Input detected to end dialogue")
+				can_advance = false
+				waiting_for_input = false
+				end_dialogue()
+			else:
+				print("Input detected to advance sequential dialogue")
+				can_advance = false
+				waiting_for_input = false
+				next_script()
 
 
 func next_script(optional_id = null):

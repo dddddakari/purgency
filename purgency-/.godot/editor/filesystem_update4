@@ -7,5 +7,9 @@ res://entities/items/bathroomdoor/BathroomDoor.tscn
 res://entities/items/cabinet/Cabinet.tscn
 res://entities/items/letter/Letter.tscn
 res://systems/dialoguesystem/DialoguePlayer.gd
-res://entities/items/cabinet/cabinet.gd
+res://minigames/maze/MazeUI.tscn
+res://minigames/maze/exit.gd
+res://entities/finn8-bit/Finn8-Bit.tscn
+res://scenes/hospital/f1_rooms_area/Rooms.tscn
 res://minigames/maze/maze_ui.gd
+res://scenes/hospital/f1_rooms_area/Room_Area.tscn

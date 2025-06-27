@@ -70,7 +70,7 @@ polygon = PackedVector2Array(42432, -45454.5, 42384, -38272.7, 54768, -38363.6, 
 [node name="Exit" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
-position = Vector2(1464, 419)
+position = Vector2(1441, 419)
 shape = SubResource("CircleShape2D_a40ik")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_fpce0")]
@@ -93,3 +93,4 @@ script = ExtResource("7_wwipl")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
+[connection signal="body_exited" from="Exit" to="Exit" method="_on_body_exited"]
