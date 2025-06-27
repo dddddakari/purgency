@@ -1,7 +1,7 @@
 [gd_scene load_steps=64 format=4 uid="uid://bpgckbqg0nw5n"]
 
 [ext_resource type="TileSet" uid="uid://r1du6y3s73lq" path="res://scenes/kitchen/kitchen01.tres" id="1_6fhro"]
-[ext_resource type="Script" uid="uid://c6cwekcutkd2n" path="res://scenes/kitchen/kitchen_01.gd" id="1_7fes2"]
+[ext_resource type="Script" path="res://scenes/kitchen/kitchen_01.gd" id="1_7fes2"]
 [ext_resource type="PackedScene" uid="uid://jicmp1ue2x5v" path="res://entities/items/fridge/Fridge.tscn" id="1_mal84"]
 [ext_resource type="Texture2D" uid="uid://deojvv3m13ruu" path="res://BGassets/TopDownHouse_DoorsAndWindows.png" id="1_pkqpq"]
 [ext_resource type="Texture2D" uid="uid://tcrjlu6oagh0" path="res://BGassets/TopDownHouse_FloorsAndWalls.png" id="2_mal84"]
@@ -2051,7 +2051,6 @@ tile_set = SubResource("TileSet_of622")
 tile_set = SubResource("TileSet_6fhro")
 
 [node name="Player" parent="." instance=ExtResource("7_f7jwb")]
-visible = false
 z_index = 1
 position = Vector2(275, 73)
 
