@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgbnj7khw0j7l"
-path="res://.godot/imported/Room_Builder_Floors_48x48.png-73acc8ecf4f81777039f0ecff8981d53.ctex"
+uid="uid://b62q417nl6edf"
+path="res://.godot/imported/hospital_sample.png-12b021c1d40fca16ce20a9465cec2c45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BGassets/Room_Builder_Floors_48x48.png"
-dest_files=["res://.godot/imported/Room_Builder_Floors_48x48.png-73acc8ecf4f81777039f0ecff8981d53.ctex"]
+source_file="res://BGassets/RoomsArea/hospital_sample.png"
+dest_files=["res://.godot/imported/hospital_sample.png-12b021c1d40fca16ce20a9465cec2c45.ctex"]
 
 [params]
 
