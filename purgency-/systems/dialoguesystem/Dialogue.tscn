@@ -6,6 +6,7 @@
 
 [node name="Dialogue" type="CanvasLayer"]
 script = ExtResource("1_oah3n")
+d_file = null
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_left = 11.0

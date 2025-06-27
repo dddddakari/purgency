@@ -1,7 +1,7 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://vyo4aepu636k"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dvyck2pougfbt"]
 
 [ext_resource type="Texture2D" uid="uid://dedlxmj0f001d" path="res://BGassets/3_Bathroom_48x48.png" id="1_a5w8d"]
-[ext_resource type="Texture2D" uid="uid://cgbnj7khw0j7l" path="res://BGassets/Room_Builder_Floors_48x48.png" id="2_ikela"]
+[ext_resource type="Texture2D" uid="uid://cgbnj7khw0j7l" path="res://BGassets/RoomsArea/Room_Builder_Floors_48x48.png" id="2_ikela"]
 [ext_resource type="Texture2D" uid="uid://b2uquptlc06cw" path="res://BGassets/Room_Builder_Walls_48x48.png" id="3_k8vcf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7v42"]

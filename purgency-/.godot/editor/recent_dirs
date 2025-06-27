@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 res://misc
+=======
+res://entities/items/bathroomdoor
+res://scenes/hospital/f1_rooms_area
+res://BGassets/RoomsArea
+res://BGassets
+res://assets/icons/save
+D:/purgency/purgency-/json
+>>>>>>> main
 res://assets/npcs
 res://json
-C:/SEM4/PROJ309/purgency/purgency-/json
 res://entities/npcs/npcs_sprite
 res://scenes/hospital/f1_rooms_area/Bathroom
-C:/SEM4/PROJ309/purgency/purgency-/systems/weaponsystem
-res://BGassets
 res://assets
 res://entities/finn8-bit
 res://entities/player

@@ -66,7 +66,7 @@ radius = 7.00206
 height = 65.9979
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gtklh"]
-radius = 111.072
+radius = 74.0068
 
 [node name="npc" type="CharacterBody2D"]
 script = ExtResource("1_y6ljr")

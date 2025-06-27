@@ -35,3 +35,9 @@ res://misc/global.gd
 res://systems/npcsystem/npc_base.gd
 res://scenes/hospital/f1_security/security_area.gd
 res://systems/dialoguesystem/DialoguePlayer.gd
+res://audio/music/muteButton.gd
+res://entities/items/letter/letter.gd
+res://entities/items/newspaper/newspaper.gd
+res://minigames/maze/maze_ui.gd
+res://scenes/hospital/f1_rooms_area/rooms_area.gd
+res://scenes/kitchen/kitchen_01.gd

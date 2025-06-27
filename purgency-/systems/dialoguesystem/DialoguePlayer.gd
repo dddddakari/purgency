@@ -107,10 +107,10 @@ func _process(delta):
 		return
 
 	if waiting_for_input and not $Options.visible and can_advance and Input.is_action_just_pressed("ui_accept"):
-		print("Input detected to advance dialogue")
+		print("Input detected to end dialogue")
 		can_advance = false  # Lock input immediately
 		waiting_for_input = false
-		next_script()
+		end_dialogue()
 
 
 func next_script(optional_id = null):
@@ -126,14 +126,18 @@ func next_script(optional_id = null):
 	else:
 		curr_dialogue_id += 1
 
+	# Check if we've reached the end of the dialogue
 	if curr_dialogue_id < 0 or curr_dialogue_id >= dialogue.size():
 		end_dialogue()
 		return
 
 	var current_line = dialogue[curr_dialogue_id]
+<<<<<<< HEAD
 
 	_handle_action(current_line)
 
+=======
+>>>>>>> main
 	var name_label = $NinePatchRect.get_node("name")
 	var text_label = $NinePatchRect.get_node("text")
 
@@ -147,6 +151,7 @@ func next_script(optional_id = null):
 		waiting_for_input = false
 		can_advance = false
 	else:
+		# This is a terminal node - wait for input to end dialogue
 		waiting_for_input = true
 		can_advance = true
 
@@ -179,7 +184,7 @@ func _on_option_selected(next_id: String) -> void:
 	# Find next dialogue entry from id_map
 	var next_index = id_map.get(next_id, -1)
 	if next_index == -1:
-		print("❌ next_id not found:", next_id)
+		print("next_id not found:", next_id)
 		end_dialogue()
 		return
 
@@ -187,14 +192,13 @@ func _on_option_selected(next_id: String) -> void:
 
 	_handle_action(next_dialogue)
 
-	next_script(next_id)
-	can_advance = true
+	# Use call_deferred to prevent immediate input detection
+	call_deferred("_deferred_next_script", next_id)
 
 
 func _deferred_next_script(next_id: String) -> void:
 	next_script(next_id)
-	await get_tree().create_timer(0.1).timeout
-	can_advance = true
+
 
 func clear_options():
 	var count = $Options.get_child_count()
