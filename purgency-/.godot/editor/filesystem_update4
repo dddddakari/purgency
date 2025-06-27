@@ -12,3 +12,10 @@ res://BGassets/RoomsArea/Rooms_Area.tres
 res://minigames/maze/maze_ui.gd
 res://scenes/hospital/f1_rooms_area/rooms_area.gd
 res://scenes/hospital/f1_security/security_area.gd
+res://entities/items/fridge/Fridge.tscn
+res://entities/items/bathroomdoor/BathroomDoor.tscn
+res://entities/items/cabinet/Cabinet.tscn
+res://entities/items/letter/Letter.tscn
+res://systems/dialoguesystem/DialoguePlayer.gd
+res://entities/items/cabinet/cabinet.gd
+res://minigames/maze/maze_ui.gd
