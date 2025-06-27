@@ -1,9 +1,6 @@
 #reference: https://www.youtube.com/watch?v=7CCofjq_dHM
 extends CanvasLayer
 
-#custom signal for controlling combat
-signal start_combat
-
 @export_file("*.json") var d_file: String
 const SampleButtonScene = preload("res://systems/dialoguesystem/Button.tscn")
 
@@ -29,20 +26,6 @@ func _ready():
 	else:
 		print("Player found:", player)
 
-#updated action handler
-func _handle_action(line: Dictionary) -> void:
-	if not line.has("action"):
-		return
-
-	match line["action"]:
-		"start_combat":
-			emit_signal("start_combat")     
-		"change_scene":
-			var scene_path = line.get("scene_path", "")
-			if scene_path != "":
-				get_tree().change_scene_to_file(scene_path)
-			else:
-				print("scene_path is empty!")
 
 func start():
 	print("DialoguePlayer: start() called")
@@ -110,7 +93,7 @@ func _process(delta):
 		print("Input detected to end dialogue")
 		can_advance = false  # Lock input immediately
 		waiting_for_input = false
-		end_dialogue()
+		next_script()
 
 
 func next_script(optional_id = null):
@@ -132,12 +115,6 @@ func next_script(optional_id = null):
 		return
 
 	var current_line = dialogue[curr_dialogue_id]
-<<<<<<< HEAD
-
-	_handle_action(current_line)
-
-=======
->>>>>>> main
 	var name_label = $NinePatchRect.get_node("name")
 	var text_label = $NinePatchRect.get_node("text")
 
@@ -190,7 +167,17 @@ func _on_option_selected(next_id: String) -> void:
 
 	var next_dialogue = dialogue[next_index]
 
-	_handle_action(next_dialogue)
+	# Check for scene change action
+	if next_dialogue.has("action") and next_dialogue["action"] == "change_scene":
+		var scene_path = next_dialogue.get("scene_path", "")
+		if scene_path != "":
+			print("Changing scene to:", scene_path)
+			get_tree().change_scene_to_file(scene_path)
+			return  # Stop dialogue flow here
+		else:
+			print("scene_path is empty!")
+			end_dialogue()
+			return
 
 	# Use call_deferred to prevent immediate input detection
 	call_deferred("_deferred_next_script", next_id)

@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://k4lcbyedwgq1"]
+[gd_scene load_steps=7 format=4 uid="uid://k4lcbyedwgq1"]
 
 [ext_resource type="TileSet" uid="uid://3u7x6qwnbj0a" path="res://scenes/outside/receptionist.tres" id="1_dhmbf"]
-[ext_resource type="Script" uid="uid://b0ejkqwaw18cs" path="res://scenes/hospital/f1_security/security_area.gd" id="1_sgfwt"]
 [ext_resource type="Script" uid="uid://ddgfypoyff81m" path="res://scenes/hospital/f1_security/dialogue_trigger.gd" id="3_1ch0w"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="3_2s4hn"]
 [ext_resource type="PackedScene" uid="uid://cavlfqqc5cnml" path="res://entities/npcs/Lebron.tscn" id="3_dhmbf"]
@@ -11,7 +10,6 @@
 size = Vector2(123, 141)
 
 [node name="SecurityArea" type="Node2D"]
-script = ExtResource("1_sgfwt")
 
 [node name="TileMap" type="Node2D" parent="."]
 

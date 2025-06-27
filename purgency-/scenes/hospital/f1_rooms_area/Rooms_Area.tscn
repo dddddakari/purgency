@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dpoq0tdsswajq"]
+[gd_scene load_steps=16 format=4 uid="uid://dpoq0tdsswajq"]
 
 [ext_resource type="TileSet" uid="uid://gubk0tyb1lfj" path="res://BGassets/RoomsArea/Rooms_Area.tres" id="1_3grdv"]
 [ext_resource type="Script" uid="uid://ynytnyndo86q" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_lcc1e"]
@@ -22,6 +22,9 @@ size = Vector2(344.5, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vo3ct"]
 size = Vector2(349, 122)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcc1e"]
+radius = 46.3249
 
 [node name="RoomsArea" type="Node2D"]
 position = Vector2(-3, 0)
@@ -146,3 +149,11 @@ shape = SubResource("RectangleShape2D_lcc1e")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(578.5, 310)
 shape = SubResource("RectangleShape2D_vo3ct")
+
+[node name="SecurityAreaTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecurityAreaTrigger"]
+position = Vector2(698, 176)
+shape = SubResource("CircleShape2D_lcc1e")
+
+[connection signal="body_entered" from="SecurityAreaTrigger" to="." method="_on_security_area_trigger_body_entered"]
