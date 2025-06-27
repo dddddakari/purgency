@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6o1e7vmthsqo"
-path="res://.godot/imported/hospital_tile.png-b09250eb8ae2606d49612df676873d8a.ctex"
+uid="uid://cvf0pap57ratp"
+path="res://.godot/imported/manualsave_icon.png-7c02747790cc22a0fcfc4be5e62c0a69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BGassets/hospital_tile.png"
-dest_files=["res://.godot/imported/hospital_tile.png-b09250eb8ae2606d49612df676873d8a.ctex"]
+source_file="res://assets/icons/save/manualsave_icon.png"
+dest_files=["res://.godot/imported/manualsave_icon.png-7c02747790cc22a0fcfc4be5e62c0a69.ctex"]
 
 [params]
 

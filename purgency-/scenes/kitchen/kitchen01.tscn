@@ -2238,7 +2238,7 @@ script = ExtResource("12_3imob")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KitchenArea"]
 position = Vector2(2, -2)
-polygon = PackedVector2Array(15, 18, 254, 18, 255, -13, 398, -13, 398, 178, 255, 177, 255, 210, 14, 209, 14, 23, -27, 25, -24, 246, 300, 249, 296, 202, 447, 205, 452, -63, 215, -69, 210, -19, -34, -14, -30, 30, 14, 21)
+polygon = PackedVector2Array(15, 18, 254, 18, 255, -13, 398, -13, 398, 178, 255, 177, 255, 210, 14, 209, 14, 23, -27, 25, -24, 246, 300, 249, 296, 202, 447, 205, 452, -63, 215, -69, 213, -16, -34, -14, -30, 30, 14, 21)
 
 [node name="ContainerCanvas" type="CanvasLayer" parent="."]
 
