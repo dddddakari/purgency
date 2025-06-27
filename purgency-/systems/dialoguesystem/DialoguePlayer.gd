@@ -93,7 +93,7 @@ func _process(delta):
 		print("Input detected to end dialogue")
 		can_advance = false  # Lock input immediately
 		waiting_for_input = false
-		end_dialogue()
+		next_script()
 
 
 func next_script(optional_id = null):

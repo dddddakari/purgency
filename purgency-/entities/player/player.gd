@@ -13,6 +13,11 @@ var is_dealing_damage: bool = false
 var can_take_damage = false
 var dead: bool = false
 
+#for combat
+var enemy_inatk_range = false
+var enemy_atk_cd = true
+var attack_ip = false
+
 func _ready():
 	add_to_group("player")
 	print("Player group membership after adding:", is_in_group("player"))
@@ -30,6 +35,14 @@ func _on_interaction_area_body_exited(body):
 
 func _physics_process(delta):
 	player_movement(delta)
+	enemy_atk()
+	attack()
+	
+	if health <= 0:
+		dead = true
+		#game over screen here
+		health = 0
+		print("dead")
 
 func player_movement(delta):
 	if not can_move:
@@ -126,3 +139,37 @@ func can_heal() -> bool:
 # Get health percentage (useful for UI)
 func get_health_percentage() -> float:
 	return float(health) / float(health_max)
+
+#combat
+func player():
+	pass
+
+func _on_player_hitbox_body_entered(body: Node2D) -> void:
+	if body.has_method("enemy"):
+		enemy_inatk_range = true
+
+func _on_player_hitbox_body_exited(body: Node2D) -> void:
+	if body.has_method("enemy"):
+		enemy_inatk_range = false
+
+func enemy_atk():
+	if enemy_inatk_range and enemy_atk_cd == true:
+		health = health - 10
+		enemy_atk_cd = false
+		$attack_cd.start()
+		print(health)
+
+func _on_attack_cd_timeout() -> void:
+	enemy_atk_cd = true
+
+
+func attack():
+	if Input.is_action_just_pressed("attack"):
+		Global.player_curr_atk = true
+		#add anim code here
+
+
+func _on_deal_atk_timer_timeout() -> void:
+	$deal_atk_timer.start()
+	Global.player_curr_atk = false
+	attack_ip = false

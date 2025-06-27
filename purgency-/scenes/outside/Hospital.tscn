@@ -254,7 +254,7 @@ func _process(_delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4gf8"]
 size = Vector2(956.124, 701.049)
 
-[node name="Hospital" type="Node2D"]
+[node name="Hospital2" type="Node2D"]
 
 [node name="Layers" type="Node2D" parent="."]
 

@@ -1,9 +1,13 @@
+res://misc
+<<<<<<< HEAD
+=======
 res://entities/items/bathroomdoor
 res://scenes/hospital/f1_rooms_area
 res://BGassets/RoomsArea
 res://BGassets
 res://assets/icons/save
 D:/purgency/purgency-/json
+>>>>>>> main
 res://assets/npcs
 res://json
 res://entities/npcs/npcs_sprite
