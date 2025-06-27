@@ -17,6 +17,6 @@ func _on_exit_body_entered(_body: Node2D) -> void:
 	if _body.name == "CharacterBody2D":
 		get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/RoomsArea.tscn")
 
-func _on_music_toggled(is_muted: bool):
+func _on_music_toggled(_is_muted: bool):
 	if audioStream != null:
 		AudioManager.set_audio_stream_state(audioStream)
