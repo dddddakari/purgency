@@ -2,6 +2,7 @@
   {
 	"id": "RecepStart",
 	"name": "Receptionist",
+	"text": "Hello, Young Man! die.",
 	"text": "Hello, Young Man! Visiting Hours haven't begun, please leave.",
 	"options": [
 	  { "text": "Leave", "next_id": "nice_response" },
