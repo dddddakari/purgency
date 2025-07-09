@@ -1,3 +1,7 @@
+Button
+TextEdit
+TextureRect
+ColorRect
 Sprite2D
 CollisionShape2D
 Area2D
@@ -6,9 +10,5 @@ CollisionPolygon2D
 Node2D
 TileMapLayer
 TileMap
-TextureRect
 Label
 VBoxContainer
-MarginContainer
-PanelContainer
-ColorRect

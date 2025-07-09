@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfggkb7xora7c"]
+[gd_scene load_steps=4 format=3 uid="uid://cfggkb7xora7c"]
 
 [ext_resource type="Script" uid="uid://dgeriqmh25r12" path="res://systems/inventorysystem/slot_container.gd" id="1_7bhxk"]
+[ext_resource type="PackedScene" uid="uid://evaiigjjckuu" path="res://systems/inventorysystem/usebutton.tscn" id="2_vhw2f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lxg0"]
 bg_color = Color(0.254024, 0.085507, 0.318009, 1)
@@ -22,11 +23,17 @@ focus_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0lxg0")
 script = ExtResource("1_7bhxk")
 
+[node name="Usebutton" parent="." instance=ExtResource("2_vhw2f")]
+visible = false
+layout_mode = 2
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 2
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 2
 mouse_filter = 0
 theme_override_font_sizes/font_size = 20
@@ -38,3 +45,5 @@ vertical_alignment = 2
 visible = false
 layout_mode = 2
 color = Color(0.333333, 0.384314, 0.796078, 0.117647)
+
+[connection signal="pressed" from="Usebutton" to="." method="_on_usebutton_pressed"]

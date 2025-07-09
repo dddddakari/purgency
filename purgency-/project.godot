@@ -34,7 +34,7 @@ window/size/viewport_height=810
 
 folder_colors={
 "res://assets/": "red",
-"res://entities/player/": "blue",
+"res://entities/player/": "orange",
 "res://scenes/": "purple",
 "res://systems/": "green"
 }
