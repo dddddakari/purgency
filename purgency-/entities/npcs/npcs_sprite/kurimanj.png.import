@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcms2ni4khkp6"
-path="res://.godot/imported/usagi.webp-9acb087b548c46032ee87455d783cc0a.ctex"
+uid="uid://ulhyhvs7tsab"
+path="res://.godot/imported/kurimanj.png-98ab7d85f5d2df8d4b4db360ec9211e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/npcs/usagi.webp"
-dest_files=["res://.godot/imported/usagi.webp-9acb087b548c46032ee87455d783cc0a.ctex"]
+source_file="res://entities/npcs/npcs_sprite/kurimanj.png"
+dest_files=["res://.godot/imported/kurimanj.png-98ab7d85f5d2df8d4b4db360ec9211e6.ctex"]
 
 [params]
 

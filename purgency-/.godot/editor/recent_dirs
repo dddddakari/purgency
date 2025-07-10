@@ -1,3 +1,4 @@
+res://entities/npcs/npcs_sprite
 res://assets/button
 res://entities/items/bathroomdoor
 res://scenes/hospital/f1_rooms_area
@@ -7,7 +8,6 @@ res://assets/icons/save
 D:/purgency/purgency-/json
 res://assets/npcs
 res://json
-res://entities/npcs/npcs_sprite
 res://scenes/hospital/f1_rooms_area/Bathroom
 res://assets
 res://entities/finn8-bit

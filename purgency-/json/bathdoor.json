@@ -16,8 +16,7 @@
   {
 	"id": "teleport",
 	"name": "Finneas",
-	"text": "Ugh GROSS! The Janitor doesn't clean in here properly.",
 	"action": "change_scene",
-	"scene_path": "res://scenes/hospital/f1_rooms_area/Room_Area.tscn"
+	"scene_path": "res://scenes/hospital/f1_rooms_area/Room_AreaBlocked.tscn"
   }
 ]

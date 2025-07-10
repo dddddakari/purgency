@@ -1,7 +1,6 @@
 extends Area2D
 # Node references
 @onready var interactable: Area2D = $interactable
-@onready var sprite_2d: Sprite2D = $Cabinet
 @onready var container_ui: CanvasLayer = get_node_or_null("/root/RoomsArea/ContainerCanvas/InventoryScreen")
 @onready var player_inventory = get_tree().get_first_node_in_group("inventory")
 # State variables

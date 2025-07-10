@@ -1,9 +1,8 @@
-
 extends Area2D
 
 # Dialogue configuration
-@export_file("*.json") var dialogue_file: String = "res://json/bathdoor.json"
-@export var dialogue_player_path: NodePath = "/root/Bathroom/Dialogue"
+@export_file("*.json") var dialogue_file: String = "res://json/janitor_stop.json"
+@export var dialogue_player_path: NodePath = "/root/RoomsArea/Dialogue"
 
 var dialogue_player: Node = null  # Reference to dialogue system
 
@@ -22,7 +21,7 @@ func _ready() -> void:
 		if dialogue_player.has_signal("dialogue_finished"):
 			dialogue_player.connect("dialogue_finished", Callable(self, "_on_dialogue_finished"))
 
-func _on_body_entered(body: Node) -> void:
+func  _on_detection_area_body_entered(body: Node) -> void:
 	# Trigger dialogue when player enters
 	if not body.is_in_group("player"):
 		return

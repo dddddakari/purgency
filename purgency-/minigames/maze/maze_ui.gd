@@ -15,7 +15,7 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 
 func _on_exit_body_entered(_body: Node2D) -> void:
 	if _body.name == "CharacterBody2D":
-		get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Room_Area.tscn")
+		get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/res://scenes/hospital/f1_rooms_area/Room_AreaBlocked.tscn")
 
 func _on_music_toggled(_is_muted: bool):
 	if audioStream != null:

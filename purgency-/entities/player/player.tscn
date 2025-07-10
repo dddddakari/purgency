@@ -262,8 +262,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkugw"]
-size = Vector2(37.0523, 9.85937)
+[sub_resource type="CircleShape2D" id="CircleShape2D_fkugw"]
+radius = 15.5011
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8fjmc"]
 radius = 346.733
@@ -290,7 +290,7 @@ grow_vertical = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.18793, -4.45547)
 rotation = 1.55683
-shape = SubResource("RectangleShape2D_fkugw")
+shape = SubResource("CircleShape2D_fkugw")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("3_sglur")]
 visible = false
