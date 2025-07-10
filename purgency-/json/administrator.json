@@ -2,11 +2,18 @@
   {
 	"id": "RecepStart",
 	"name": "Receptionist",
-	"text": "Hello, Young Man! die.",
 	"text": "Hello, Young Man! Visiting Hours haven't begun, please leave.",
 	"options": [
-	  { "text": "Leave", "next_id": "nice_response" },
-	  { "text": "Ignore and Walk In", "next_id": "mean_response" }
+	  {
+		"text": "Leave",
+		"next_id": "nice_response",
+		"points": { "good": 1, "bad": 0 }
+	  },
+	  {
+		"text": "Ignore and Walk In",
+		"next_id": "mean_response",
+		"points": { "good": 0, "bad": 1 }
+	  }
 	]
   },
   {

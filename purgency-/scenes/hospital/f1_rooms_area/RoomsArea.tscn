@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://46st0tjgyu7a"]
+[gd_scene load_steps=13 format=4 uid="uid://c4yut28wx4rvi"]
 
 [ext_resource type="Script" uid="uid://ynytnyndo86q" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_msxy7"]
 [ext_resource type="Texture2D" uid="uid://b3e1w5jat02ut" path="res://BGassets/pixil-frame-0 (2).png" id="1_tul68"]

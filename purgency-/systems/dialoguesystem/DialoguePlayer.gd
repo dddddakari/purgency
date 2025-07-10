@@ -8,6 +8,8 @@ var dialogue := []
 var curr_dialogue_id := -1
 var d_active := false
 var id_map := {}
+var good_points = 0
+var bad_points = 0
 
 var player: CharacterBody2D = null
 var waiting_for_input := false
@@ -25,6 +27,11 @@ func _ready():
 		print("[Warning] Player not found in group 'player'.")
 	else:
 		print("Player found:", player)
+
+func apply_points(option):
+	if option.has("points"):
+		good_points += option["points"].get("good", 0)
+		bad_points += option["points"].get("bad", 0)
 
 
 func start():

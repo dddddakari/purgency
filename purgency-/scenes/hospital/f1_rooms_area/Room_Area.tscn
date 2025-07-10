@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dipiquihjch46"]
+[gd_scene load_steps=16 format=4 uid="uid://dipiquihjch46"]
 
 [ext_resource type="Script" uid="uid://ynytnyndo86q" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_lx1jt"]
 [ext_resource type="TileSet" uid="uid://gubk0tyb1lfj" path="res://BGassets/RoomsArea/Rooms_Area.tres" id="2_k33ee"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dwwoavnows5ub" path="res://systems/npcsystem/Nurse.tscn" id="8_c05m2"]
 [ext_resource type="PackedScene" uid="uid://b1ajd3pr8b3ig" path="res://entities/items/cabinet/Cabinet.tscn" id="9_hlhtv"]
 [ext_resource type="PackedScene" uid="uid://d33wejrtayarj" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_fourk"]
+[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_k33ee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbnea"]
 size = Vector2(300, 115.5)
@@ -146,3 +147,5 @@ shape = SubResource("RectangleShape2D_lcc1e")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(578.5, 310)
 shape = SubResource("RectangleShape2D_vo3ct")
+
+[node name="Dialogue" parent="." instance=ExtResource("11_k33ee")]
