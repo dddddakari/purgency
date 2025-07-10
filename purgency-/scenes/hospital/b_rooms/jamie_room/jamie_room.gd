@@ -1,16 +1,16 @@
 extends Node2D
 
 @onready var player: CharacterBody2D = $Player
-@onready var lebron: CharacterBody2D = $Lebron
-@onready var hitbox_area   : Area2D = $Lebron/enemy_hitbox        # adjust if different
-@onready var detect_area   : Area2D = $Lebron/detection_area      # adjust if different
-@onready var hitbox_shape  : CollisionShape2D = $Lebron/enemy_hitbox/CollisionShape2D
-@onready var detect_shape  : CollisionShape2D = $Lebron/detection_area/CollisionShape2D
+@onready var lebron: CharacterBody2D = $Jamie
+@onready var hitbox_area   : Area2D = $Jamie/enemy_hitbox        # adjust if different
+@onready var detect_area   : Area2D = $Jamie/detection_area      # adjust if different
+@onready var hitbox_shape  : CollisionShape2D = $Jamie/enemy_hitbox/CollisionShape2D
+@onready var detect_shape  : CollisionShape2D = $Jamie/detection_area/CollisionShape2D
 
 var lebron_hostile = false   
 var can_get_attacked = false
 
-@export_node_path("CanvasLayer") var dialogue_player_path: NodePath = "SecurityDialogue"
+@export_node_path("CanvasLayer") var dialogue_player_path: NodePath = "Dialogue"
 var dialogue_player : CanvasLayer
 
 func _ready() -> void:

@@ -3,6 +3,7 @@
 		"id": "security_start",
 		"name": "Security",
 		"text": "HEY KID!! How did you get here?!? This area is OFF-LIMITS. Leave. NOW!!",
+		"next_id": "finn_response"
 	},
 	{
 		"id": "finn_response",

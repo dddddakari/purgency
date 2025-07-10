@@ -11,7 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 		entered = true
 		
 func use_dialogue():
-	var dialogue = get_parent().get_node("SecurityDialogue")
+	var dialogue = get_parent().get_node("Dialogue")
 	if dialogue:
-		dialogue.d_file = "res://json/security.json"
+		dialogue.d_file = "res://json/jamie.json"
 		dialogue.start()

@@ -17,6 +17,7 @@ var dead: bool = false
 var enemy_inatk_range = false
 var enemy_atk_cd = true
 var attack_ip = false
+var can_be_attacked := false
 
 func _ready():
 	add_to_group("player")
@@ -152,12 +153,15 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("enemy"):
 		enemy_inatk_range = false
 
+func set_player_attackable(state: bool) -> void:
+	can_be_attacked = state
+
 func enemy_atk():
-	if enemy_inatk_range and enemy_atk_cd == true:
-		health = health - 10
+	if enemy_inatk_range and enemy_atk_cd and can_be_attacked == true:
+		health = health - 5
 		enemy_atk_cd = false
 		$attack_cd.start()
-		print(health)
+		print("Finn health: ", health)
 
 func _on_attack_cd_timeout() -> void:
 	enemy_atk_cd = true
