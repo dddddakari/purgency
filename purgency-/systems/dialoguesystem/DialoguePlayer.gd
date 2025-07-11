@@ -1,6 +1,8 @@
 #reference: https://www.youtube.com/watch?v=7CCofjq_dHM
 extends CanvasLayer
 
+signal start_combat  
+
 @export_file("*.json") var d_file: String
 const SampleButtonScene = preload("res://systems/dialoguesystem/Button.tscn")
 
@@ -13,7 +15,8 @@ var player: CharacterBody2D = null
 var waiting_for_input := false
 
 var can_advance := true  # Controls if input can advance dialogue
-
+#default state not hostile
+var hostile = false
 
 func _ready():
 	print("DialoguePlayer: _ready called")
@@ -88,29 +91,31 @@ func load_dialogue() -> Array:
 func _process(delta):
 	if not d_active:
 		return
-
-	if waiting_for_input and not $Options.visible and can_advance and Input.is_action_just_pressed("ui_accept"):
-		# Check if this dialogue system has IDs (option-based) or is sequential
-		var has_ids = not id_map.is_empty()
 		
-		if has_ids:
-			# For ID-based dialogues (with options), always end dialogue on terminal nodes
-			print("Input detected to end dialogue")
-			can_advance = false
+	if waiting_for_input \
+		and not $Options.visible \
+		and can_advance \
+		and Input.is_action_just_pressed("ui_accept"):
+
+		var line = dialogue[curr_dialogue_id]
+
+	# 1) If the line points somewhere explicit, follow it
+		if line.has("next_id") and line["next_id"] != "":
 			waiting_for_input = false
-			end_dialogue()
-		else:
-			# For sequential dialogues (no IDs), advance to next or end
-			if curr_dialogue_id + 1 >= dialogue.size():
-				print("Input detected to end dialogue")
-				can_advance = false
-				waiting_for_input = false
-				end_dialogue()
-			else:
-				print("Input detected to advance sequential dialogue")
-				can_advance = false
-				waiting_for_input = false
-				next_script()
+			can_advance = false
+			next_script(line["next_id"])
+			return
+
+	# 2) Otherwise fall back to sequential order if there *is* a next entry
+		if curr_dialogue_id + 1 < dialogue.size():
+			waiting_for_input = false
+			can_advance = false
+			next_script()           # go to the next array element
+			return
+
+	# 3) No next_id *and* no more lines – we’re at the real end
+		end_dialogue()
+
 
 
 func next_script(optional_id = null):
@@ -132,6 +137,26 @@ func next_script(optional_id = null):
 		return
 
 	var current_line = dialogue[curr_dialogue_id]
+
+# Handle actions (regardless of whether there's text)
+	if current_line.has("action"):
+		match current_line["action"]:
+			"change_scene":
+				var scene_path = current_line.get("scene_path", "")
+				if scene_path != "":
+					print("Action: Changing scene to:", scene_path)
+					get_tree().change_scene_to_file(scene_path)
+					return
+				else:
+					print("scene_path is empty!")
+					end_dialogue()
+					return
+			"start_combat":
+				print("Action: Starting combat")
+				hostile = true
+				emit_signal("start_combat")
+
+# Display text and name if present
 	var name_label = $NinePatchRect.get_node("name")
 	var text_label = $NinePatchRect.get_node("text")
 
@@ -145,7 +170,6 @@ func next_script(optional_id = null):
 		waiting_for_input = false
 		can_advance = false
 	else:
-		# This is a terminal node - wait for input to end dialogue
 		waiting_for_input = true
 		can_advance = true
 
@@ -181,21 +205,7 @@ func _on_option_selected(next_id: String) -> void:
 		print("next_id not found:", next_id)
 		end_dialogue()
 		return
-
-	var next_dialogue = dialogue[next_index]
-
-	# Check for scene change action
-	if next_dialogue.has("action") and next_dialogue["action"] == "change_scene":
-		var scene_path = next_dialogue.get("scene_path", "")
-		if scene_path != "":
-			print("Changing scene to:", scene_path)
-			get_tree().change_scene_to_file(scene_path)
-			return  # Stop dialogue flow here
-		else:
-			print("scene_path is empty!")
-			end_dialogue()
-			return
-
+	
 	# Use call_deferred to prevent immediate input detection
 	call_deferred("_deferred_next_script", next_id)
 

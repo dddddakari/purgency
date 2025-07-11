@@ -1,5 +1,12 @@
 extends CharacterBody2D
 
+var lebron_hostile = false    
+
+@export_node_path("CanvasLayer") var dialogue_player_path : NodePath = "SecurityDialogue"
+
+var dialogue_player : CanvasLayer
+
+
 var speed = 35
 var player_chase = false
 var player = null
@@ -8,8 +15,10 @@ var health = 80
 var player_inatk_zone = false
 var can_take_dmg = true
 var dead = false
+var player_base_atk = 8
 
-func _physics_process(delta: float) -> void:
+
+func _physics_process(delta: float):
 	deal_with_dmg()
 	
 	if player_chase:
@@ -44,7 +53,7 @@ func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 func deal_with_dmg():
 	if player_inatk_zone and Global.player_curr_atk == true:
 		if can_take_dmg == true:
-			health = health - 20
+			health = health - player_base_atk
 			$take_dmg_cd.start()
 			can_take_dmg = false
 			print("lebron health = ", health)

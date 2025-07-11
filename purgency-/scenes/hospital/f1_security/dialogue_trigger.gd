@@ -9,8 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 		use_dialogue()
 	else:
 		entered = true
-
-
+		
 func use_dialogue():
 	var dialogue = get_parent().get_node("SecurityDialogue")
 	if dialogue:
