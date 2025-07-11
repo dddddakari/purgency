@@ -3,6 +3,7 @@
 		"id": "security_start",
 		"name": "Security",
 		"text": "HEY KID!! How did you get here?!? This area is OFF-LIMITS. Leave. NOW!!",
+		"next_id": "finn_response"
 	},
 	{
 		"id": "finn_response",
@@ -36,12 +37,18 @@
 	{
 		"id": "security_nice_response",
 		"name": "Security",
-		"text": "Oh and your sister might be in room B11-"
+		"text": "Oh and your sister might be in room B_01"
 	},
 	{
 		"id": "security_nice_response",
 		"name": "Security",
 		"text": "Go now. I hear someone approaching.",
+		"next_id": "teleport_basement"
+	},
+	{
+		"id": "teleport_basement",
+		"action": "change_scene",
+		"scene_path": "res://scenes/hospital/b_hallway_area/B_HallwayArea.tscn",
 		"next_id": "teleport_basement"
 	},
 	{

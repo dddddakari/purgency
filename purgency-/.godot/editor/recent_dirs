@@ -1,13 +1,23 @@
+<<<<<<< HEAD
 res://entities/npcs/npcs_sprite
 res://assets/button
+=======
+C:/SEM4/PROJ309/purgency/purgency-/json
+res://scenes/hospital/b_rooms/jamie_room
+res://BGassets/RoomsArea
+res://json
+res://misc
+>>>>>>> main
 res://entities/items/bathroomdoor
 res://scenes/hospital/f1_rooms_area
-res://BGassets/RoomsArea
 res://BGassets
 res://assets/icons/save
-D:/purgency/purgency-/json
 res://assets/npcs
+<<<<<<< HEAD
 res://json
+=======
+res://entities/npcs/npcs_sprite
+>>>>>>> main
 res://scenes/hospital/f1_rooms_area/Bathroom
 res://assets
 res://entities/finn8-bit
