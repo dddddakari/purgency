@@ -24,7 +24,7 @@ size = Vector2(344.5, 130)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vo3ct"]
 size = Vector2(349, 122)
 
-[node name="RoomsArea" type="Node2D"]
+[node name="RoomsArea2" type="Node2D"]
 position = Vector2(-3, 0)
 script = ExtResource("1_lcc1e")
 
