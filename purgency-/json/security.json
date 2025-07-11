@@ -46,6 +46,12 @@
 		"next_id": "teleport_basement"
 	},
 	{
+		"id": "teleport_basement",
+		"action": "change_scene",
+		"scene_path": "res://scenes/hospital/b_hallway_area/B_HallwayArea.tscn",
+		"next_id": "teleport_basement"
+	},
+	{
 		"id": "bad_response",
 		"name": "Finneas",
 		"text": "I'm really sorry about this..",

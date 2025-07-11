@@ -174,7 +174,6 @@ func next_script(optional_id = null):
 		can_advance = true
 
 
-
 func show_options(options_array):
 	print("show_options called with %d options" % options_array.size())
 	$Options.visible = true
@@ -206,24 +205,6 @@ func _on_option_selected(next_id: String) -> void:
 		print("next_id not found:", next_id)
 		end_dialogue()
 		return
-
-	var next_dialogue = dialogue[next_index]
-
-	# Check for scene change action
-	if next_dialogue.has("action") and next_dialogue["action"] == "change_scene":
-		var scene_path = next_dialogue.get("scene_path", "")
-		if scene_path != "":
-			print("Changing scene to:", scene_path)
-			get_tree().change_scene_to_file(scene_path)
-			return  # Stop dialogue flow here
-		else:
-			print("scene_path is empty!")
-			end_dialogue()
-			return
-	# check for combat
-	if next_dialogue.has("action") and next_dialogue["action"] == "start_combat":
-		hostile = true
-		emit_signal("start_combat")
 	
 	# Use call_deferred to prevent immediate input detection
 	call_deferred("_deferred_next_script", next_id)

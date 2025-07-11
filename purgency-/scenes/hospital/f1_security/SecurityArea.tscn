@@ -48,6 +48,7 @@ build_mode = 1
 polygon = PackedVector2Array(113, 496, 176, 496, 176, 207, 433, 208, 433, 256, 577, 257, 577, 111, 431, 113, 431, 160, 112, 161)
 
 [node name="Basement_Trigger" type="Area2D" parent="."]
+visible = false
 script = ExtResource("7_1ch0w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basement_Trigger"]
