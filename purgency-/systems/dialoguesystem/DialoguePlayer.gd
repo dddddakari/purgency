@@ -137,6 +137,26 @@ func next_script(optional_id = null):
 		return
 
 	var current_line = dialogue[curr_dialogue_id]
+
+# Handle actions (regardless of whether there's text)
+	if current_line.has("action"):
+		match current_line["action"]:
+			"change_scene":
+				var scene_path = current_line.get("scene_path", "")
+				if scene_path != "":
+					print("Action: Changing scene to:", scene_path)
+					get_tree().change_scene_to_file(scene_path)
+					return
+				else:
+					print("scene_path is empty!")
+					end_dialogue()
+					return
+			"start_combat":
+				print("Action: Starting combat")
+				hostile = true
+				emit_signal("start_combat")
+
+# Display text and name if present
 	var name_label = $NinePatchRect.get_node("name")
 	var text_label = $NinePatchRect.get_node("text")
 
@@ -150,9 +170,9 @@ func next_script(optional_id = null):
 		waiting_for_input = false
 		can_advance = false
 	else:
-		# This is a terminal node - wait for input to end dialogue
 		waiting_for_input = true
 		can_advance = true
+
 
 
 func show_options(options_array):
