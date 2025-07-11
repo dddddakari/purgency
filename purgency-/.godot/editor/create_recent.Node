@@ -1,5 +1,6 @@
 CollisionShape2D
 Area2D
+ColorRect
 Sprite2D
 CharacterBody2D
 TileMapLayer
@@ -11,4 +12,3 @@ TextureRect
 Label
 VBoxContainer
 MarginContainer
-PanelContainer

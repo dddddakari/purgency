@@ -37,7 +37,7 @@
 	{
 		"id": "security_nice_response",
 		"name": "Security",
-		"text": "Oh and your sister might be in room B11-"
+		"text": "Oh and your sister might be in room B_01"
 	},
 	{
 		"id": "security_nice_response",

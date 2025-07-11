@@ -1,7 +1,7 @@
 [
 	{
 		"id": "jamie_door_start",
-		"name": "Room B111",
+		"name": "Room B101",
 		"text": "hrrGHH h-elp...please...",
 		"next_id": "finn_response"
 	},
@@ -17,6 +17,6 @@
 	{
 		"id": "open_door",
 		"action": "change_scene",
-		"scene_path": "",
+		"scene_path": "res://scenes/hospital/b_rooms/jamie_room/JamieRoom.tscn",
 	},
 ]

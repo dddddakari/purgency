@@ -23,16 +23,19 @@
 		"text": "(He doesn't seem to be in his right mind.. And he looks.. off.)",
 		"options": [
 		  { "text": "Help him.", "next_id": "bad_response" },
-		  { "text": "Ignore him and keep searching for Penelope's room.", "next_id": "nice_response" }
+		  { "text": "I still have to find Penelope's room.", "next_id": "good_response" }
 		]
   	},
 	{
-		"id": "nice_response",
+		"id": "good_response",
 		"name": "Finneas",
-		"text": "I'm sorry.. I have to find my sister. I promise to come back later."
+		"text": "I'm sorry.. I have to find my sister. I promise to come back later.",
+		"next_id": "leave_room",
 	},
 	{
 		"id": "bad_response",
+		"name": "Finneas",
+		"text": "OW! Why would you bite me you MANIAC.",
 		"action": "start_combat",
-	}
+	},
 ]

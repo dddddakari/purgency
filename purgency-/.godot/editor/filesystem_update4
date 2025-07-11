@@ -35,3 +35,9 @@ res://entities/items/newspaper/Newspaper.tscn
 res://scenes/hospital/b_rooms/jamie_room/jamie_dia_trigger.gd
 res://entities/npcs/Admin.tscn
 res://scenes/hospital/b_rooms/jamie_room/Jamie.tscn
+res://scenes/hospital/b_rooms/jamie_room/exit.gd
+res://scenes/hospital/b_hallway_area/door3.gd
+res://scenes/hospital/b_hallway_area/door4.gd
+res://json/jamie_door.json
+res://json/security.json
+res://scenes/hospital/f1_security/basement_trigger.gd
