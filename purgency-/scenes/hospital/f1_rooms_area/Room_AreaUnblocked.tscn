@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dipiquihjch46"]
+[gd_scene load_steps=16 format=4 uid="uid://dipiquihjch46"]
 
 [ext_resource type="Script" uid="uid://ynytnyndo86q" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_pwr14"]
 [ext_resource type="TileSet" uid="uid://gubk0tyb1lfj" path="res://BGassets/RoomsArea/Rooms_Area.tres" id="2_yocmc"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://b1ajd3pr8b3ig" path="res://entities/items/cabinet/Cabinet.tscn" id="9_j3o57"]
 [ext_resource type="PackedScene" uid="uid://d33wejrtayarj" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_bd5ws"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_og2ou"]
-[ext_resource type="PackedScene" uid="uid://bfbh0ln8t5v78" path="res://entities/npcs/Janitor.tscn" id="12_frmvn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbnea"]
 size = Vector2(300, 115.5)
@@ -123,7 +122,8 @@ position = Vector2(1005, 357)
 [node name="RoomsArea2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomsArea2D"]
-polygon = PackedVector2Array(215, 140, 211, 603, 1125, 616, 1112, 112, 267, 121, 270, 176, 1042, 175, 1042, 530, 268, 531, 270, 174)
+build_mode = 1
+polygon = PackedVector2Array(270, 170, 1042, 176, 1039, 564, 267, 564)
 
 [node name="ContainerCanvas" type="CanvasLayer" parent="."]
 
@@ -150,6 +150,3 @@ position = Vector2(578.5, 310)
 shape = SubResource("RectangleShape2D_vo3ct")
 
 [node name="Dialogue" parent="." instance=ExtResource("11_og2ou")]
-
-[node name="Janitor" parent="." instance=ExtResource("12_frmvn")]
-position = Vector2(469, 379)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwwoavnows5ub"]
+[gd_scene load_steps=7 format=3 uid="uid://dwwoavnows5ub"]
 
 [ext_resource type="Script" uid="uid://c0i8mibjg6kgp" path="res://entities/npcs/npc_nurse.gd" id="1_y6ljr"]
 [ext_resource type="Texture2D" uid="uid://dr2lccu8q4pil" path="res://assets/npcs/pats.png" id="2_y6ljr"]
+[ext_resource type="Script" uid="uid://dufcbb5yntp8p" path="res://entities/npcs/chat_detection.gd" id="3_fhnal"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6ljr"]
 animations = [{
@@ -66,7 +67,7 @@ radius = 7.00206
 height = 65.9979
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gtklh"]
-radius = 38.833
+radius = 72.1734
 
 [node name="npc" type="CharacterBody2D"]
 script = ExtResource("1_y6ljr")
@@ -83,9 +84,12 @@ rotation = 1.57183
 shape = SubResource("CapsuleShape2D_gtklh")
 
 [node name="chat_detection" type="Area2D" parent="."]
+script = ExtResource("3_fhnal")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection"]
 position = Vector2(1, 14)
 shape = SubResource("CircleShape2D_gtklh")
 
 [node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="chat_detection" to="chat_detection" method="_on_body_entered"]

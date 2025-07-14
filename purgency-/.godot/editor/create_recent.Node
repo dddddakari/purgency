@@ -1,27 +1,14 @@
+CollisionPolygon2D
+TileMapLayer
 CollisionShape2D
 Area2D
-<<<<<<< HEAD
 Sprite2D
 Button
 TextEdit
 TextureRect
 ColorRect
 StaticBody2D
-CollisionPolygon2D
 Node2D
-=======
 ColorRect
 Sprite2D
 CharacterBody2D
->>>>>>> main
-TileMapLayer
-Node2D
-CollisionPolygon2D
-StaticBody2D
-TileMap
-Label
-VBoxContainer
-<<<<<<< HEAD
-=======
-MarginContainer
->>>>>>> main
