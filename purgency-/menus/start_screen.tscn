@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://vy26xihmmn3m" path="res://menus/main screen.png" id="2_4ttyr"]
 [ext_resource type="Texture2D" uid="uid://d24ci1skwk6n2" path="res://assets/button/NEW_GAME.PNG" id="2_lumme"]
 [ext_resource type="Texture2D" uid="uid://bjo7su05273pd" path="res://assets/button/CONTINUE.PNG" id="3_l3mcm"]
-[ext_resource type="Texture2D" uid="uid://c6td31vir28kn" path="res://assets/button/SETTINGS.PNG" id="4_ybcfl"]
+[ext_resource type="Texture2D" uid="uid://c7iscvwu83ysv" path="res://assets/button/Settings.png" id="4_ybcfl"]
 [ext_resource type="Texture2D" uid="uid://becllrjxgayyp" path="res://assets/button/QUIT.PNG" id="5_j0xya"]
 [ext_resource type="AudioStream" uid="uid://q34cii45y5io" path="res://audio/music/SwitchWithMeTheme.wav" id="7_n21s3"]
 [ext_resource type="Texture2D" uid="uid://ccecwl6cmli85" path="res://assets/button/SPEAKER_ON.png" id="8_rfu7b"]

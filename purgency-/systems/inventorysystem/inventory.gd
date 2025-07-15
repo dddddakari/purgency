@@ -16,17 +16,38 @@ func _ready():
 	add_to_group("inventory")
 	grid_container.columns = 4
 	margin_container.visible = false
+	
+	print("Loading inventory...")
 	load_inventory()
+	print("Inventory loaded with ", inventory_items.size(), " items")
+	
+	# Print first few items for debugging
+	for i in range(min(4, inventory_items.size())):
+		var item = inventory_items[i]
+		if item:
+			print("Item ", i, ": ", item.name, " x", item.quantity)
+		else:
+			print("Item ", i, ": null")
+	
 	populate_inventory_ui()
 
 func load_inventory():
 	inventory_items.clear()
 	var file = FileAccess.open(INVENTORY_DATA_PATH, FileAccess.READ)
 	if not file:
-		inventory_items.resize(12) # Default empty inventory
+		inventory_items.resize(12)
 		return
 	
-	var data = JSON.parse_string(file.get_as_text())
+	var json = JSON.new()
+	var parse_result = json.parse(file.get_as_text())
+	file.close()
+	
+	if parse_result != OK:
+		print("Error parsing inventory JSON")
+		inventory_items.resize(12)
+		return
+	
+	var data = json.data
 	if typeof(data) != TYPE_DICTIONARY or not data.has("items"):
 		inventory_items.resize(12)
 		return
@@ -35,12 +56,14 @@ func load_inventory():
 		if item_data == null:
 			inventory_items.append(null)
 			continue
-			
-		var item = Item.create(
-			item_data.get("name", ""),
-			item_data.get("quantity", 1),
-			load(item_data.get("texture", ""))
-		)
+		
+		var texture_path = item_data.get("texture", "")
+		var texture = null
+		if texture_path != "" and ResourceLoader.exists(texture_path):
+			texture = load(texture_path)
+		
+		var item = Item.create_full(item_data)  # Use the full constructor
+		item.texture = texture  # Set texture separately
 		inventory_items.append(item)
 
 func save_inventory():
@@ -62,11 +85,14 @@ func save_inventory():
 		file.close()
 
 func populate_inventory_ui():
+	# Clear existing slots
 	for child in grid_container.get_children():
 		child.queue_free()
 	
+	# Wait for nodes to be actually freed
 	await get_tree().process_frame
 	
+	# Create new slots
 	var slot_count = max(inventory_items.size(), 12)
 	for i in range(slot_count):
 		var slot = SLOT_SCENE.instantiate()
@@ -74,6 +100,7 @@ func populate_inventory_ui():
 		slot.slot_owner = self
 		grid_container.add_child(slot)
 		
+		# Set item data
 		if i < inventory_items.size() and inventory_items[i] != null:
 			slot.set_item(inventory_items[i])
 		else:
