@@ -1,23 +1,19 @@
-[gd_scene load_steps=4 format=4 uid="uid://devhnba3eqgyn"]
+[gd_scene load_steps=9 format=4 uid="uid://b23j5102gax4c"]
 
 [ext_resource type="TileSet" uid="uid://dvyck2pougfbt" path="res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom.tres" id="1_gdpcq"]
-<<<<<<< HEAD
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="4_bpcvd"]
-=======
-=======
->>>>>>> maxim2
 [ext_resource type="Script" path="res://scenes/hospital/f1_rooms_area/Bathroom/bathroom_door.gd" id="3_1crol"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="4_bpcvd"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="4_fioul"]
 [ext_resource type="Script" path="res://scenes/hospital/f1_rooms_area/Bathroom/toilet_game.gd" id="5_fioul"]
-<<<<<<< HEAD
->>>>>>> dakari2
-=======
->>>>>>> maxim2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpcvd"]
 size = Vector2(399, 124)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gdpcq"]
+radius = 120.634
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpcvd"]
+radius = 49.0102
 
 [node name="Bathroom" type="Node2D"]
 
@@ -49,9 +45,29 @@ position = Vector2(534.5, 244)
 shape = SubResource("RectangleShape2D_bpcvd")
 
 [node name="Player" parent="." instance=ExtResource("4_bpcvd")]
-position = Vector2(719, 442)
+position = Vector2(711, 413)
 scale = Vector2(2, 2)
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(0.5, -8)
 zoom = Vector2(3, 3)
+
+[node name="Bathroom Door" type="Area2D" parent="."]
+position = Vector2(540, 547)
+scale = Vector2(0.507067, 0.557473)
+script = ExtResource("3_1crol")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bathroom Door"]
+shape = SubResource("CircleShape2D_gdpcq")
+
+[node name="Dialogue" parent="." instance=ExtResource("4_fioul")]
+
+[node name="GameStart" type="Area2D" parent="."]
+script = ExtResource("5_fioul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameStart"]
+position = Vector2(589, 288)
+shape = SubResource("CircleShape2D_bpcvd")
+
+[connection signal="body_entered" from="Bathroom Door" to="Bathroom Door" method="_on_body_entered"]
+[connection signal="body_entered" from="GameStart" to="GameStart" method="_on_body_entered"]

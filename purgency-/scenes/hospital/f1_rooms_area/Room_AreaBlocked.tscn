@@ -119,7 +119,6 @@ position = Vector2(334, 343)
 
 [node name="Nurse" parent="." instance=ExtResource("8_rv6qo")]
 position = Vector2(568, 208)
-script = null
 
 [node name="Cabinet" parent="." instance=ExtResource("9_kc47l")]
 position = Vector2(1005, 357)
