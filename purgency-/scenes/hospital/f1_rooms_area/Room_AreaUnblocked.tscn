@@ -149,4 +149,9 @@ shape = SubResource("RectangleShape2D_lcc1e")
 position = Vector2(578.5, 310)
 shape = SubResource("RectangleShape2D_vo3ct")
 
+[node name="surround" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-287, -189)
+build_mode = 1
+polygon = PackedVector2Array(272, 174, 271, 560, 1043, 561, 1041, 167)
+
 [node name="Dialogue" parent="." instance=ExtResource("11_og2ou")]
