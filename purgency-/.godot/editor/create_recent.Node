@@ -1,8 +1,8 @@
+CollisionShape2D
+Sprite2D
+Area2D
 CollisionPolygon2D
 TileMapLayer
-CollisionShape2D
-Area2D
-Sprite2D
 Button
 TextEdit
 TextureRect
@@ -10,5 +10,4 @@ ColorRect
 StaticBody2D
 Node2D
 ColorRect
-Sprite2D
 CharacterBody2D

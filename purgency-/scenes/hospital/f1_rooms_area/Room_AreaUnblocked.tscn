@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dipiquihjch46"]
+[gd_scene load_steps=17 format=4 uid="uid://dipiquihjch46"]
 
 [ext_resource type="Script" uid="uid://ynytnyndo86q" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_pwr14"]
 [ext_resource type="TileSet" uid="uid://gubk0tyb1lfj" path="res://BGassets/RoomsArea/Rooms_Area.tres" id="2_yocmc"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b1ajd3pr8b3ig" path="res://entities/items/cabinet/Cabinet.tscn" id="9_j3o57"]
 [ext_resource type="PackedScene" uid="uid://d33wejrtayarj" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_bd5ws"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_og2ou"]
+[ext_resource type="PackedScene" uid="uid://bpqmipk5q3spb" path="res://entities/items/loveletter/Loverletter.tscn" id="12_pwr14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbnea"]
 size = Vector2(300, 115.5)
@@ -155,3 +156,8 @@ build_mode = 1
 polygon = PackedVector2Array(272, 174, 271, 560, 1043, 561, 1041, 167)
 
 [node name="Dialogue" parent="." instance=ExtResource("11_og2ou")]
+
+[node name="Loverletter" parent="." instance=ExtResource("12_pwr14")]
+position = Vector2(468, 386)
+rotation = -0.231706
+scale = Vector2(0.48135, 0.502405)
