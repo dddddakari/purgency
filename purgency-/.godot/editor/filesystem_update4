@@ -22,3 +22,4 @@ res://systems/inventorysystem/Slot.tscn
 res://systems/inventorysystem/slot_container.gd
 res://scenes/hospital/f1_rooms_area/Room_Area.tscn
 res://scenes/hospital/f1_rooms_area/Rooms_Area.tscn
+res://systems/inventorysystem/usebutton.tscn
