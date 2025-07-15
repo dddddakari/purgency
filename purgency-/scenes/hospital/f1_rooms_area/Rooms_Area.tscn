@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://gubk0tyb1lfj" path="res://BGassets/RoomsArea/Rooms_Area.tres" id="1_3grdv"]
 [ext_resource type="Script" uid="uid://ynytnyndo86q" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_lcc1e"]
-[ext_resource type="PackedScene" uid="uid://dwwoavnows5ub" path="res://entities/npcs/Nurse.tscn" id="2_7i1bo"]
+[ext_resource type="PackedScene" uid="uid://cnt7hrqujimic" path="res://entities/npcs/Nurse.tscn" id="2_7i1bo"]
 [ext_resource type="PackedScene" uid="uid://b1ajd3pr8b3ig" path="res://entities/items/cabinet/Cabinet.tscn" id="3_62636"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="4_173hx"]
 [ext_resource type="AudioStream" uid="uid://q34cii45y5io" path="res://audio/music/SwitchWithMeTheme.wav" id="5_nbnea"]
@@ -115,6 +115,7 @@ position = Vector2(334, 343)
 
 [node name="Nurse" parent="." instance=ExtResource("2_7i1bo")]
 position = Vector2(567, 203)
+script = null
 
 [node name="Cabinet" parent="." instance=ExtResource("3_62636")]
 position = Vector2(1005, 357)

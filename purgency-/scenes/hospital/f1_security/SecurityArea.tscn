@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cavlfqqc5cnml" path="res://entities/npcs/Lebron.tscn" id="3_dhmbf"]
 [ext_resource type="Script" uid="uid://cjxhhfkso6rqo" path="res://scenes/hospital/f1_security/dialogue_trigger.gd" id="3_sgfwt"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="6_jdnn5"]
-[ext_resource type="Script" path="res://scenes/hospital/f1_security/basement_trigger.gd" id="7_1ch0w"]
+[ext_resource type="Script" uid="uid://bkvbej5h6i00r" path="res://scenes/hospital/f1_security/basement_trigger.gd" id="7_1ch0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2s4hn"]
 size = Vector2(123, 141)

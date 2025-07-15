@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://cfjusx5o2mnil"]
+[gd_scene load_steps=9 format=4 uid="uid://bwjt2fosmmscq"]
 
 [ext_resource type="TileSet" uid="uid://dvyck2pougfbt" path="res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom.tres" id="1_2pcgb"]
-[ext_resource type="Script" uid="uid://cp5xishvygpkd" path="res://scenes/hospital/f1_rooms_area/Bathroom/bathroom_pooped.gd" id="1_sxtwe"]
+[ext_resource type="Script" path="res://scenes/hospital/f1_rooms_area/Bathroom/bathroom_pooped.gd" id="1_sxtwe"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="2_t3gjr"]
-[ext_resource type="Script" uid="uid://corefih4staxr" path="res://scenes/hospital/f1_rooms_area/Bathroom/bathroom_door.gd" id="3_sxtwe"]
+[ext_resource type="Script" path="res://scenes/hospital/f1_rooms_area/Bathroom/bathroom_door.gd" id="3_sxtwe"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="4_t8gqs"]
 [ext_resource type="PackedScene" uid="uid://bk8mgtb0sumsy" path="res://entities/npcs/JanitorNpc.tscn" id="6_t3gjr"]
 
