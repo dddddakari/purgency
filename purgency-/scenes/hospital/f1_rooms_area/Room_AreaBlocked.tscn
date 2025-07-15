@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://ccecwl6cmli85" path="res://assets/button/SPEAKER_ON.png" id="5_2cs1g"]
 [ext_resource type="Script" uid="uid://btlohi51um8lb" path="res://audio/music/muteButton.gd" id="6_lv3m0"]
 [ext_resource type="PackedScene" uid="uid://b2g0jrahw0q02" path="res://entities/items/bathroomdoor/BathroomDoor.tscn" id="7_0v42j"]
-[ext_resource type="PackedScene" uid="uid://dy3b8ittcktse" path="res://entities/npcs/Nurse.tscn" id="8_rv6qo"]
+[ext_resource type="PackedScene" uid="uid://dwwoavnows5ub" path="res://entities/npcs/Nurse.tscn" id="8_rv6qo"]
 [ext_resource type="PackedScene" uid="uid://b1ajd3pr8b3ig" path="res://entities/items/cabinet/Cabinet.tscn" id="9_kc47l"]
 [ext_resource type="PackedScene" uid="uid://d33wejrtayarj" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_xeqpw"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_2emyq"]
-[ext_resource type="PackedScene" uid="uid://cpx237ndsh258" path="res://entities/npcs/Janitor.tscn" id="12_ojdde"]
+[ext_resource type="PackedScene" uid="uid://bfbh0ln8t5v78" path="res://entities/npcs/Janitor.tscn" id="12_ojdde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbnea"]
 size = Vector2(300, 115.5)

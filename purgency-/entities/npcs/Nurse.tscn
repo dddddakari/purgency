@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy3b8ittcktse"]
+[gd_scene load_steps=7 format=3 uid="uid://dwwoavnows5ub"]
 
 [ext_resource type="Script" path="res://entities/npcs/npc_nurse.gd" id="1_y6ljr"]
 [ext_resource type="Texture2D" uid="uid://dr2lccu8q4pil" path="res://assets/npcs/pats.png" id="2_y6ljr"]

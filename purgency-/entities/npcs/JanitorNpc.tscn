@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ebfwbenvs5ft"]
+[gd_scene load_steps=4 format=3 uid="uid://bk8mgtb0sumsy"]
 
 [ext_resource type="Script" path="res://entities/npcs/janitor.gd" id="1_ninfj"]
 [ext_resource type="Texture2D" uid="uid://ulhyhvs7tsab" path="res://entities/npcs/npcs_sprite/kurimanj.png" id="2_yu2rp"]
