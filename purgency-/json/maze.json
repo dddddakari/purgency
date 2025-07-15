@@ -16,7 +16,6 @@
   {
 	"id": "teleport",
 	"name": "Finneas",
-	"text": "teehee so sneaky",
 	"action": "change_scene",
 	"scene_path": "res://minigames/maze/MazeUI.tscn"
   }

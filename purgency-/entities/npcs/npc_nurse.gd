@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name NPCNurse
 
 # Movement settings
-@export var move_distance: float = 100.0  # How far up/down the NPC moves
+@export var move_distance: float = 75.0  # How far up/down the NPC moves
 @export var walk_speed: float = 50.0
 @export var min_stop_time: float = 0.2
 @export var max_stop_time: float = 1.0

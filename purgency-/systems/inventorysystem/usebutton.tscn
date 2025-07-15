@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://evaiigjjckuu"]
+
+[ext_resource type="Texture2D" uid="uid://bn846syqul578" path="res://assets/button/use.webp" id="2_d4n0u"]
+
+[node name="Usebutton" type="Button"]
+anchors_preset = -1
+anchor_left = -0.012
+anchor_top = -0.009
+anchor_right = -0.012
+anchor_bottom = -0.009
+offset_left = 17.28
+offset_top = 8.29
+offset_right = 37.28
+offset_bottom = 19.29
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 79.0
+offset_bottom = 39.0
+color = Color(0.388235, 0.0588235, 0.509804, 1)
+
+[node name="Use" type="Sprite2D" parent="."]
+position = Vector2(38.3047, 16.875)
+scale = Vector2(0.161036, 0.146898)
+texture = ExtResource("2_d4n0u")

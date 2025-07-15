@@ -39,10 +39,15 @@ func set_item(item):
 func update_display():
 	if current_item != null:
 		texture_rect.texture = current_item.texture
-		quantity_label.text = str(current_item.quantity)
+		if current_item.quantity > 1:
+			quantity_label.text = str(current_item.quantity)
+		else:
+			quantity_label.text = ""
+		quantity_label.visible = true
 	else:
 		texture_rect.texture = empty_texture
 		quantity_label.text = ""
+		quantity_label.visible = false
 
 func set_highlight(should_highlight: bool):
 	is_selected = should_highlight

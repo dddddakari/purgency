@@ -1,0 +1,14 @@
+[
+	{
+		"id": "nurseOpening",
+		"name": "Nurse",
+		"text": "Where is the Janit-",
+		"next_id": "nurseSus"
+  	},
+	{	
+		"id": "nurseSus",
+		"name": "Nurse",
+		"text": "wait... should you be here?",
+		"next_id": ""
+	},
+]

@@ -92,11 +92,7 @@ func _process(delta):
 	if not d_active:
 		return
 		
-	if waiting_for_input \
-		and not $Options.visible \
-		and can_advance \
-		and Input.is_action_just_pressed("ui_accept"):
-
+	if waiting_for_input and not $Options.visible and can_advance 	and Input.is_action_just_pressed("ui_accept"):
 		var line = dialogue[curr_dialogue_id]
 
 	# 1) If the line points somewhere explicit, follow it
@@ -226,6 +222,7 @@ func end_dialogue():
 	if not d_active:
 		print("Dialogue already inactive; nothing to end.")
 		return
+
 
 	d_active = false
 	waiting_for_input = false

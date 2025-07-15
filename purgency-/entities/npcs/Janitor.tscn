@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpx237ndsh258"]
 
-[ext_resource type="Texture2D" path="res://entities/npcs/npcs_sprite/kurimanj.png" id="1_d4fgn"]
+[ext_resource type="Texture2D" uid="uid://ulhyhvs7tsab" path="res://entities/npcs/npcs_sprite/kurimanj.png" id="1_d4fgn"]
 [ext_resource type="Script" path="res://entities/npcs/janitor.gd" id="1_hwsd8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d4fgn"]
