@@ -11,3 +11,4 @@ res://scenes/kitchen/kitchen01.tscn
 res://systems/inventorysystem/Inventory.tscn
 res://json/janitor_stop.json
 res://scenes/hospital/f1_rooms_area/RoomsArea.tscn
+res://scenes/hospital/f1_rooms_area/Rooms_Area.tscn
