@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="purgency"
+<<<<<<< HEAD
 run/main_scene="uid://devhnba3eqgyn"
+=======
+run/main_scene="uid://brlncb514osbp"
+>>>>>>> maxim2
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 <<<<<<<Updatedupstream<<<<<<<Updatedupstreamrun/main_scene="uid://bpgckbqg0nw5n"
@@ -25,7 +29,6 @@ buses/default_bus_layout=""
 
 inventory_screen="*res://systems/inventorysystem/inventory_screen.gd"
 AudioManager="*res://audio/music/AudioManager.gd"
-GameState="*res://systems/gamestate/game_state.gd"
 Global="*res://misc/global.gd"
 
 [display]

@@ -42,8 +42,10 @@ position = Vector2(42, 45)
 
 [node name="Door3" parent="." instance=ExtResource("3_t18j5")]
 position = Vector2(212, 80)
+scale = Vector2(1.2, 1.2)
 script = ExtResource("7_th4v4")
 
 [node name="Door4" parent="." instance=ExtResource("3_t18j5")]
 position = Vector2(274, 80)
+scale = Vector2(1.2, 1.2)
 script = ExtResource("8_65rhk")

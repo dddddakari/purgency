@@ -1,18 +1,26 @@
+<<<<<<< HEAD
 res://scenes/hospital/f1_rooms_area/Bathroom
 D:/purgency/purgency-/json
 res://BGassets
 res://BGassets/RoomsArea
 res://entities/npcs/npcs_sprite
 res://assets/button
+=======
+res://entities/npcs
+res://scenes/hospital/f1_rooms_area
+res://scenes/hospital/b_hallway_area
+C:/SEM4/PROJ309/purgency/purgency-/json
+>>>>>>> maxim2
 res://scenes/hospital/b_rooms/jamie_room
+res://BGassets/RoomsArea
 res://json
 res://misc
 res://entities/items/bathroomdoor
-res://scenes/hospital/f1_rooms_area
+res://BGassets
 res://assets/icons/save
 res://assets/npcs
-res://json
 res://entities/npcs/npcs_sprite
+res://scenes/hospital/f1_rooms_area/Bathroom
 res://assets
 res://entities/finn8-bit
 res://entities/player

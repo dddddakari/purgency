@@ -45,5 +45,11 @@ script = ExtResource("7_rpevj")
 position = Vector2(84, 249)
 shape = SubResource("CircleShape2D_ig46r")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(33, 32, 32, 257, 288, 258, 287, 34)
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
