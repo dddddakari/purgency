@@ -1,3 +1,8 @@
+purgency-/project.godot
+*.godot
+
+/purgency-/.godot
+
 # Godot 4+ specific ignores
 .godot/
 .nomedia
