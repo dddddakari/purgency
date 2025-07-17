@@ -158,5 +158,7 @@ shape = SubResource("RectangleShape2D_k7i5a")
 
 [node name="Dialogue" parent="." instance=ExtResource("11_2emyq")]
 
+[node name="Jan" parent="." instance=ExtResource("11_2emyq")]
+
 [node name="Janitor" parent="." instance=ExtResource("12_ojdde")]
 position = Vector2(469, 379)

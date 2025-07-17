@@ -283,6 +283,7 @@ sprite_frames = SubResource("SpriteFrames_vewsg")
 autoplay = "default"
 
 [node name="Inventory1" parent="Sprite2D" instance=ExtResource("5_fkugw")]
+visible = false
 offset_left = -675.253
 offset_top = -190.391
 offset_right = -210.553
