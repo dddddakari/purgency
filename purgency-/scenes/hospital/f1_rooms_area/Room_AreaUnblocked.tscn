@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dipiquihjch46"]
+[gd_scene load_steps=20 format=4 uid="uid://dipiquihjch46"]
 
 [ext_resource type="Script" uid="uid://ynytnyndo86q" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_pwr14"]
 [ext_resource type="TileSet" uid="uid://gubk0tyb1lfj" path="res://BGassets/RoomsArea/Rooms_Area.tres" id="2_yocmc"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://d33wejrtayarj" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_bd5ws"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_og2ou"]
 [ext_resource type="PackedScene" uid="uid://bpqmipk5q3spb" path="res://entities/items/loveletter/Loverletter.tscn" id="12_pwr14"]
+[ext_resource type="Script" uid="uid://7c5mc5d55aca" path="res://entities/items/medicinecart/medicine_cart.gd" id="13_evrt6"]
+[ext_resource type="PackedScene" uid="uid://c2vd78buj8vs7" path="res://entities/items/medicinecart/medicineCart.tscn" id="13_yocmc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbnea"]
 size = Vector2(300, 115.5)
@@ -24,6 +26,9 @@ size = Vector2(344.5, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vo3ct"]
 size = Vector2(349, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evrt6"]
+size = Vector2(94.5, 81)
 
 [node name="RoomsArea" type="Node2D"]
 position = Vector2(-3, 0)
@@ -114,9 +119,6 @@ script = ExtResource("6_c18hq")
 [node name="BathroomDoor" parent="." instance=ExtResource("7_4gdhc")]
 position = Vector2(334, 343)
 
-[node name="Nurse" parent="." instance=ExtResource("8_g8jbq")]
-position = Vector2(568, 208)
-
 [node name="Cabinet" parent="." instance=ExtResource("9_j3o57")]
 position = Vector2(1005, 357)
 
@@ -151,13 +153,26 @@ position = Vector2(578.5, 310)
 shape = SubResource("RectangleShape2D_vo3ct")
 
 [node name="surround" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-287, -189)
+position = Vector2(-205, -194)
 build_mode = 1
-polygon = PackedVector2Array(272, 174, 271, 560, 1043, 561, 1041, 167)
+polygon = PackedVector2Array(183, 179, 192, 570, 966, 568, 960, 181)
+
+[node name="medicine" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(267.75, 136.5)
+shape = SubResource("RectangleShape2D_evrt6")
 
 [node name="Dialogue" parent="." instance=ExtResource("11_og2ou")]
+
+[node name="MedicineCart" parent="." instance=ExtResource("13_yocmc")]
+position = Vector2(554, 326)
+scale = Vector2(0.267816, 0.251726)
+script = ExtResource("13_evrt6")
 
 [node name="Loverletter" parent="." instance=ExtResource("12_pwr14")]
 position = Vector2(468, 386)
 rotation = -0.231706
 scale = Vector2(0.48135, 0.502405)
+
+[node name="Nurse" parent="." instance=ExtResource("8_g8jbq")]
+position = Vector2(564, 179)
+scale = Vector2(1, 1)

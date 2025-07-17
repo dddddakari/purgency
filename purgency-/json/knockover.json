@@ -1,0 +1,22 @@
+[
+	{
+		"id": "FinnNosey",
+		"name": "Finneas",
+		"text": "(The nurse doesnt seem to be looking... should I knock this cabinet over as a distraction?)",
+		"options": [
+			{"text": "KNOCK IT OVER", "next_id": "bad_ending_vro"},
+			{"text": "No, there must be a better way...", "next_id": "Look_for_Love"}
+		]
+	},
+	{
+		"id": "bad_ending_vro",
+		"action": "change_scene",
+		"scene_path": "to the scene that works maybe?"
+	},
+	{
+		"id": "Look_for_Love",
+		"name": "Finneas",
+		"text": "Hmm... I wonder why the Nurse is always looking for the Janitor?",
+		"next_id": "None"
+	}
+]

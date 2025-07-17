@@ -10,14 +10,14 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 	
 	# Check if the love letter has already been picked up
-	if QuestManager.has_quest_item("love_letter"):
+	if QuestManager.has_quest_item("medicine_cabinet"):
 		# If already picked up, hide the letter
 		visible = false
 		set_process(false)
 		interactable.set_process(false)
 	
 func _on_interact():
-	print("Love Letter oooooh")
+	print("mean option")
 	use_dialogue()
 
 func use_dialogue():
@@ -59,16 +59,6 @@ func _on_dialogue_finished():
 	if last_dialogue_id == "Love_Confession":
 		# Add the love letter to the player's quest items
 		QuestManager.add_quest_item("love_letter")
-		
-		# Make the letter disappear from the world
-		visible = false
-		set_process(false)
-		interactable.set_process(false)
-		
-		print("Love letter picked up and added to quest items!")
-		
-		# Optional: Show a notification to the player
-		# NotificationManager.show_notification("Love Letter obtained!")
 	
 	# Reset for next interaction
 	last_dialogue_id = ""
