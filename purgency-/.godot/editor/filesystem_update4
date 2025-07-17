@@ -1,14 +1,3 @@
-res://scenes/hospital/f1_rooms_area/Room_AreaBlocked.tscn
 res://BGassets/RoomsArea/Rooms_Area.tres
-res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom.tres
 res://scenes/kitchen/kitchen01.tres
-res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom.tscn
-res://scenes/hospital/f1_rooms_area/Bathroom/BathroomPooped.tscn
-res://entities/npcs/Janitor.tscn
-res://entities/npcs/JanitorNpc.tscn
-res://entities/npcs/Nurse.tscn
-res://scenes/kitchen/kitchen01.tscn
-res://systems/inventorysystem/Inventory.tscn
-res://json/janitor_stop.json
-res://scenes/hospital/f1_rooms_area/RoomsArea.tscn
-res://scenes/hospital/f1_rooms_area/Rooms_Area.tscn
+res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom.tres
