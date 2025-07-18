@@ -6,7 +6,7 @@ class_name NPCNurse
 @export var walk_speed: float = 50.0
 @export var min_stop_time: float = 0.2
 @export var max_stop_time: float = 1.0
-@export var stop_chance: float = 0.03  # 1% chance per frame
+@export var stop_chance: float = 0.03
 
 # Animation
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D

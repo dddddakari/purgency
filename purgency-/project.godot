@@ -15,6 +15,10 @@ run/main_scene="uid://dd8tq5378pqb1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+QuestManager="*res://systems/Quests/QuestManager.gd"
+
 [display]
 
 window/size/viewport_width=1440
