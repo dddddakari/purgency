@@ -1,0 +1,80 @@
+[
+	{
+		"id": "greeting_with_letter",
+		"name": "Nurse",
+		"text": "Wait A Second... I dont think you should be he-",
+		"options": [
+			{"text": "Wait, I found something that belongs to you", "next_id": "show_letter"},
+			{"text": "I came to talk to the janitor", "next_id": "normal_chat"},
+			{"text": "Can I have your keycard", "next_id": "random"}
+		]
+	},
+	{
+		"id": "show_letter",
+		"name": "Nurse",
+		"text": "Something that belongs to me? What could that be?",
+		"options": [
+			{"text": "I found this love letter addressed to you... from the Janitor", "next_id": "reveal_letter"},
+			{"text": "Never mind, it's nothing", "next_id": "normal_chat"}
+		]
+	},
+	{
+		"id": "random",
+		"name": "Nurse",
+		"text": "What.. No?",
+		"options": [
+			{"text": "Fine.", "next_id": "None"},
+			{"text": "But it's REALLY important", "next_id": "angry_nurse"}
+		]
+	},
+	{
+		"id": "reveal_letter",
+		"name": "Nurse",
+		"text": "A love letter? From... the janitor? *blushes* Oh my, I had no idea he felt that way! Thank you for bringing this to me.",
+		"options": [
+			{"text": "Here, you should have it", "next_id": "give_letter"},
+			{"text": "Maybe I should keep it for now", "next_id": "keep_letter"},
+		]
+	},
+	{
+		"id": "give_letter",
+		"name": "Nurse",
+		"text": "Thank you so much! This is so sweet of you. I'll make sure to talk to him about this. Here, take this as a token of my appreciation.",
+		"next_id": "reward_given"
+	},
+	{
+		"id": "keep_letter",
+		"name": "Nurse",
+		"text": "Oh... well, i guess he didnt WANT to show it to me...",
+		"next_id": "disappointed"
+	},
+	{
+		"id": "reward_given",
+		"name": "Nurse",
+		"text": "Oh my! This is so passionate, I must speak to him RIGHT NOW!",
+		"next_id": "None"
+	},
+	{
+		"id": "angry_nurse",
+		"name": "Nurse",
+		"text": "I said No! Yknow what.. SECURITY!",
+		"next_id": "gone"
+	},
+	{
+		"id": "disappointed",
+		"name": "Nurse",
+		"text": "Well, if you change your mind, you know where to find me.",
+		"next_id": "None"
+	},
+	{
+		"id": "normal_chat",
+		"name": "Nurse",
+		"text": "Hmm... weird, Whatever.",
+		"next_id": "None"
+	},
+	{
+		"id":  "gone",
+		"action": "change_scene",
+		"scene_path": "res://scenes/outside/Receptionist.tscn"
+	}
+]

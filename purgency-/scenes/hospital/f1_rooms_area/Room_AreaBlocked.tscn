@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://brlncb514osbp"]
+[gd_scene load_steps=18 format=4 uid="uid://cicmw4hv5ag44"]
 
 [ext_resource type="Script" uid="uid://ynytnyndo86q" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_k7i5a"]
 [ext_resource type="TileSet" uid="uid://gubk0tyb1lfj" path="res://BGassets/RoomsArea/Rooms_Area.tres" id="2_smqvp"]
@@ -119,7 +119,6 @@ position = Vector2(334, 343)
 
 [node name="Nurse" parent="." instance=ExtResource("8_rv6qo")]
 position = Vector2(568, 208)
-script = null
 
 [node name="Cabinet" parent="." instance=ExtResource("9_kc47l")]
 position = Vector2(1005, 357)

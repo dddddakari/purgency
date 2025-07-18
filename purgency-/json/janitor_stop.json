@@ -18,13 +18,23 @@
   {
 	"id": "game_continue",
 	"name": "Janitor",
-	"text": "Oh The bathroom? Be my guest!"
+	"text": "Oh The bathroom? Be my guest!",
+<<<<<<< HEAD
+	"next_id": "fake",
+=======
+	"next_id": "none"
+>>>>>>> dakari2
   },
   {
 	"id": "game_end",
 	"name": "Receptionist",
 	"text": "Uh No Way Kid, SECURITY.",
 	"action": "change_scene",
-	"scene_path": "res://scenes/outside/Receptionist.tscn"
+	"scene_path": "res://scenes/outside/Receptionist.tscn",
+<<<<<<< HEAD
+	"next_id": "game_end",
+=======
+	"next_id": "none"
+>>>>>>> dakari2
   }
 ]
