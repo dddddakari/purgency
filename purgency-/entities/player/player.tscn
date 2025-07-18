@@ -262,14 +262,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fkugw"]
-radius = 6.70498
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fjmc"]
+size = Vector2(22.1235, 17.7031)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8fjmc"]
 radius = 346.733
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkugw"]
-size = Vector2(13, 24)
+size = Vector2(15, 28)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -283,6 +283,7 @@ sprite_frames = SubResource("SpriteFrames_vewsg")
 autoplay = "default"
 
 [node name="Inventory1" parent="Sprite2D" instance=ExtResource("5_fkugw")]
+visible = false
 offset_left = -675.253
 offset_top = -190.391
 offset_right = -210.553
@@ -291,9 +292,9 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.18793, -4.45547)
+position = Vector2(-0.994814, 2.93708)
 rotation = 1.55683
-shape = SubResource("CircleShape2D_fkugw")
+shape = SubResource("RectangleShape2D_8fjmc")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("3_sglur")]
 visible = false
@@ -314,7 +315,7 @@ shape = SubResource("CircleShape2D_8fjmc")
 [node name="player_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
-position = Vector2(-1.5, -5)
+position = Vector2(-0.5, -3)
 shape = SubResource("RectangleShape2D_fkugw")
 
 [node name="attack_cd" type="Timer" parent="."]
