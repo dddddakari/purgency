@@ -126,12 +126,8 @@ func handle_quest_actions(next_id: String, selected_option: Dictionary) -> void:
 				QuestManager.add_quest_item("blackmail_evidence")
 				print("Letter used as blackmail evidence")
 	
-	# You can add more quest-related actions here
-	# Check for other quest items and handle them accordingly
+
 
 func _on_dialogue_finished() -> void:
 	# Dialogue finished handler
 	print("Dialogue finished.")
-	
-	# Optional: Check if any quest items were used during dialogue
-	# and trigger any follow-up events

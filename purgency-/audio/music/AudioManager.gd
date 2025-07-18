@@ -1,4 +1,4 @@
-# AudioManager.gd - Save this as a singleton/autoload
+# AudioManager.gd - Save this as a singleton/autoload id it doesnt already save, Maxim :3
 extends Node
 
 signal music_toggled(is_muted: bool)
