@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ca88rwo77shkc"]
+[gd_scene load_steps=13 format=4 uid="uid://ca88rwo77shkc"]
 
 [ext_resource type="TileSet" uid="uid://cpgsunai5p6xk" path="res://scenes/hospital/b_hallway_area/B_HallwayArea.tres" id="1_evx07"]
 [ext_resource type="Script" uid="uid://b1lgoe2inqrf6" path="res://scenes/hospital/b_rooms/penelope_room/penelope_room.gd" id="1_f5pvl"]
@@ -15,6 +15,9 @@ size = Vector2(80, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hhf1"]
 size = Vector2(28, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1hhf1"]
+radius = 31.0644
 
 [node name="PenelopeRoom" type="Node2D"]
 script = ExtResource("1_f5pvl")
@@ -73,6 +76,13 @@ z_index = 1
 position = Vector2(200, 10)
 scale = Vector2(1.1875, 1.375)
 texture = ExtResource("9_1hhf1")
+
+[node name="TeddyTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeddyTrigger"]
+z_index = 1
+position = Vector2(38, 147)
+shape = SubResource("CircleShape2D_1hhf1")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="admin_trigger" from="HB_Trigger" to="Closet" method="_on_hb_trigger_admin_trigger"]
