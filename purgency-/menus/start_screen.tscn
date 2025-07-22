@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dd8tq5378pqb1"]
+[gd_scene load_steps=9 format=3 uid="uid://dd8tq5378pqb1"]
 
 [ext_resource type="Script" uid="uid://ct7w1r5k4orfn" path="res://menus/start_screen.gd" id="1_cdxmd"]
 [ext_resource type="Texture2D" uid="uid://vy26xihmmn3m" path="res://menus/main screen.png" id="2_4ttyr"]
 [ext_resource type="Texture2D" uid="uid://d24ci1skwk6n2" path="res://assets/button/NEW_GAME.PNG" id="2_lumme"]
 [ext_resource type="Texture2D" uid="uid://bjo7su05273pd" path="res://assets/button/CONTINUE.PNG" id="3_l3mcm"]
-[ext_resource type="Texture2D" uid="uid://c7iscvwu83ysv" path="res://assets/button/SETTINGS.PNG" id="4_ybcfl"]
 [ext_resource type="Texture2D" uid="uid://becllrjxgayyp" path="res://assets/button/QUIT.PNG" id="5_j0xya"]
 [ext_resource type="AudioStream" uid="uid://q34cii45y5io" path="res://audio/music/SwitchWithMeTheme.wav" id="7_n21s3"]
 [ext_resource type="Texture2D" uid="uid://ccecwl6cmli85" path="res://assets/button/SPEAKER_ON.png" id="8_rfu7b"]
@@ -33,23 +32,16 @@ offset_right = 1134.0
 offset_bottom = 600.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Continue"]
-position = Vector2(-344, 140)
+position = Vector2(-348, 118)
 texture = ExtResource("3_l3mcm")
 region_enabled = true
 region_rect = Rect2(133, 109, 441, 102)
 
-[node name="settings" type="TextureButton" parent="."]
-offset_left = 424.0
-offset_top = 670.0
-offset_right = 1128.0
-offset_bottom = 1374.0
-texture_normal = ExtResource("4_ybcfl")
-
 [node name="quit" type="TextureButton" parent="."]
 offset_left = 424.0
-offset_top = 766.0
-offset_right = 1128.0
-offset_bottom = 1470.0
+offset_top = 738.0
+offset_right = 1284.0
+offset_bottom = 1518.0
 texture_normal = ExtResource("5_j0xya")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -69,6 +61,5 @@ texture_normal = ExtResource("8_rfu7b")
 script = ExtResource("9_7ld8a")
 
 [connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]
