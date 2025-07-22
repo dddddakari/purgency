@@ -1,5 +1,6 @@
 CollisionShape2D
 Area2D
+ColorRect
 Label
 Timer
 CollisionPolygon2D
@@ -8,7 +9,6 @@ Sprite2D
 Button
 TextEdit
 TextureRect
-ColorRect
 StaticBody2D
 Node2D
 TileMapLayer
