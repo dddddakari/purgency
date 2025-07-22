@@ -1,4 +1,4 @@
-# QuestManager.gd - Create this as an AutoLoad (only if it no worky on your machine Maxim)
+# Create this as an AutoLoad (only if it no worky on your machine Maxim)
 extends Node
 
 # Dictionary to store quest items

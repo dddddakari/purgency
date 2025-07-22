@@ -1,4 +1,3 @@
-# area_2d.gd
 extends Area2D
 
 var entered = false  # Track if player entered area

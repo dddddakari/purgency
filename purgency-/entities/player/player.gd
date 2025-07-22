@@ -19,6 +19,8 @@ var enemy_atk_cd = true
 var attack_ip = false
 var can_be_attacked := false
 
+# Adds him as a different group so it's easier to signal for him
+# so NPCs can't accidentally trigger things.
 func _ready():
 	add_to_group("player")
 	print("Player group membership after adding:", is_in_group("player"))
