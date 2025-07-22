@@ -11,22 +11,6 @@ config_version=5
 [application]
 
 config/name="purgency"
-<<<<<<< HEAD
-run/main_scene="uid://ca88rwo77shkc"
-config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
-run/main_scene="uid://ca88rwo77shkc"
-
-[audio]
-
-buses/default_bus_layout=""
-
-[autoload]
-
-inventory_screen="*res://systems/inventorysystem/inventory_screen.gd"
-AudioManager="*res://audio/music/AudioManager.gd"
-Global="*res://misc/global.gd"
-=======
 run/main_scene="uid://dd8tq5378pqb1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
@@ -34,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 QuestManager="*res://systems/Quests/QuestManager.gd"
->>>>>>> dakari2
+AudioManager="*res://audio/music/AudioManager.gd"
 
 [display]
 
