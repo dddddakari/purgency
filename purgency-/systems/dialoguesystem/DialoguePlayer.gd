@@ -151,6 +151,17 @@ func next_script(optional_id = null):
 				print("Action: Starting combat")
 				hostile = true
 				emit_signal("start_combat")
+			"complete_quest_good":
+				print("DialogueSystem: Completing quest via GOOD path")
+				QuestManager.complete_quest_good()
+				var nurse = get_tree().get_first_node_in_group("nurse")
+				if nurse:
+					print("DialogueSystem: Found nurse, giving letter")
+					nurse.receive_love_letter()
+			"nurse_exit":
+				var nurse = get_tree().get_first_node_in_group("nurse")
+				if nurse:
+					nurse.start_emotional_exit()
 
 # Display text and name if present
 	var name_label = $NinePatchRect.get_node("name")

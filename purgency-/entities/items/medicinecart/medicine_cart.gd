@@ -53,19 +53,21 @@ func _monitor_dialogue():
 			_on_dialogue_finished()
 
 func _on_dialogue_finished():
-	print("Dialogue finished on ID:", last_dialogue_id)
+	print("Medicine Cart: Dialogue finished with ID: ", last_dialogue_id)
 	
 	if last_dialogue_id == "bad_ending_vro":
-		# Player chose to knock over the cart
+		print("Medicine Cart: Player chose to knock over cart - BAD path")
 		QuestManager.complete_quest_bad()
-		# Make the cart disappear
 		visible = false
 		set_process(false)
 		interactable.set_process(false)
-		# Distract the nurse
+		print("Medicine Cart: Hiding cart after being knocked over")
+		
 		var nurse = get_tree().get_first_node_in_group("nurse")
 		if nurse:
+			print("Medicine Cart: Found nurse, triggering distraction")
 			nurse.react_to_distraction()
+		else:
+			print("Medicine Cart: ERROR - Couldn't find nurse in group!")
 	
-	# Reset for next interaction
 	last_dialogue_id = ""

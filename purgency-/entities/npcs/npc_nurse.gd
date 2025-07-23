@@ -11,11 +11,17 @@ class_name NPCNurse
 # Animation ( single image for now)
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
+@onready var keycard_scene = preload("res://entities/items/keycard/keycard.tscn") # Create this scene
 
+var is_distracted: bool = false
+var has_received_letter: bool = false
 var start_position: Vector2
 var target_position: Vector2
 var is_moving: bool = true
 var moving_up: bool = true  # Start by moving up
+var is_leaving: bool = false
+var exit_speed: float = 100.0
+var exit_target: Vector2
 
 func _ready():
 	#starting position is the Vector Coordinates, so Vector2(0,0)
@@ -45,6 +51,17 @@ func _physics_process(delta):
 			stop_walking()
 	else:
 		velocity = Vector2.ZERO
+
+	if is_leaving:
+		var direction = (exit_target - position).normalized()
+		velocity = direction * exit_speed
+		move_and_slide()
+		
+		# Check if reached target
+		if position.distance_to(exit_target) < 10.0:
+			print("Nurse: Reached exit point!")
+			set_physics_process(false)
+			timer.start(0.5) # Small delay before disappearing
 
 func update_facing_direction(direction: Vector2):
 	if direction.length() > 0.1:
@@ -76,35 +93,52 @@ func resume_walking():
 		var direction = (target_position - position).normalized()
 		update_facing_direction(direction)
 	
-	
-var is_distracted: bool = false
-var has_received_letter: bool = false
 
 func receive_love_letter():
-	if QuestManager.has_quest_item("love_letter"):
-		has_received_letter = true
-		stop_walking()
-		# Play happy animation
-		sprite.play("happy")
-		# Remove the letter from inventory
-		QuestManager.remove_quest_item("love_letter")
-		# Nurse stays still for a while
-		timer.start(5.0)
-
-func react_to_distraction():
-	is_distracted = true
+	print("NPC Nurse: Received love letter!")
+	has_received_letter = true
 	stop_walking()
-	# Play surprised animation
-	sprite.play("surprised")
-	# Nurse stays still for a while
-	timer.start(5.0)
+	sprite.play("happy")
+	# Start emotional reaction sequence
+	timer.start(2.0) # Wait 2 seconds before reacting
 
 func _on_timer_timeout():
-	if is_distracted or has_received_letter:
-		# Reset after distraction/letter
-		is_distracted = false
-		has_received_letter = false
-		sprite.play("idle")
-		timer.start(randf_range(1.0, 2.0))  # Short delay before resuming
+	if has_received_letter and not is_leaving:
+		start_emotional_exit()
+	elif is_leaving:
+		queue_free() # Nurse disappears after leaving
 	else:
-		resume_walking()
+		# Original timer behavior
+		if is_distracted or has_received_letter:
+			is_distracted = false
+			has_received_letter = false
+			sprite.play("idle")
+			timer.start(randf_range(1.0, 2.0))
+		else:
+			resume_walking()
+
+
+func start_emotional_exit():
+	print("Nurse: Starting emotional exit!")
+	is_leaving = true
+	sprite.play("walk_s") # Play walking animation
+	
+	# Calculate exit position (adjust based on your level layout)
+	exit_target = global_position + Vector2(0, 300) # Moving down
+	drop_keycard()
+	
+	# Start moving
+	set_physics_process(true)
+
+func drop_keycard():
+	print("Nurse: Dropping keycard!")
+	var keycard = keycard_scene.instantiate()
+	keycard.position = global_position + Vector2(20, 20) # Offset from nurse
+	get_parent().add_child(keycard)
+
+func react_to_distraction():
+	print("NPC Nurse: Reacting to distraction!")
+	is_distracted = true
+	stop_walking()
+	sprite.play("surprised")
+	timer.start(5.0)

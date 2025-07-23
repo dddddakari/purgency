@@ -1,14 +1,8 @@
 [
 	{
-		"id": "nurseOpening",
+		"id": "default",
 		"name": "Nurse",
-		"text": "Where is the Janit-",
-		"next_id": "nurseSus"
-  	},
-	{	
-		"id": "nurseSus",
-		"name": "Nurse",
-		"text": "wait... should you be here?",
-		"next_id": ""
-	},
+		"text": "Have you seen the janitor? I need to speak with him...",
+		"next_id": "None"
+	}
 ]

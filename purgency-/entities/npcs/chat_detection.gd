@@ -5,6 +5,8 @@ extends Area2D
 @export_file("*.json") var dialogue_file_with_letter: String = "res://json/nurseletter.json"
 @export var dialogue_player_path: NodePath = "/root/RoomsArea/Dialogue"
 
+var good_points: Node = null #game state
+var bad_points: Node = null # again game state
 var dialogue_player: Node = null  # Reference to dialogue system
 
 func _ready() -> void:
@@ -102,16 +104,18 @@ func _on_option_selected(option_index: int) -> void:
 			dialogue_player.goto_id(next_id)
 		else:
 			print("dialogue_player missing method: goto_id")
-# nurse_interaction.gd
-
+			
+			
 func _on_interact():
+	print("Nurse Interaction: Player interacted with nurse")
+	
 	if QuestManager.has_quest_item("love_letter"):
-		# Player has the letter and wants to give it
+		print("Nurse Interaction: Player has love letter - starting good path dialogue")
 		var dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
 		dialogue_system.d_file = "res://json/nurse_dialogue.json"
 		dialogue_system.start()
 	else:
-		# Normal nurse dialogue
+		print("Nurse Interaction: Player has no letter - starting default dialogue")
 		var dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
 		dialogue_system.d_file = "res://json/nurse_default.json"
 		dialogue_system.start()
@@ -119,3 +123,5 @@ func _on_interact():
 func _on_dialogue_finished() -> void:
 	# Dialogue finished handler
 	print("Dialogue finished.")
+	print(good_points)
+	print(bad_points)

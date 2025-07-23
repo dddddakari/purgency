@@ -10,14 +10,17 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 	
 	# Check if the love letter has already been picked up
-	if QuestManager.has_quest_item("love_letter"):
+	if QuestManager.has_quest_item("keycard"):
 		# If already picked up, hide the letter
 		visible = false
 		set_process(false)
 		interactable.set_process(false)
 	
 func _on_interact():
-	print("Love Letter oooooh")
+	print("1 STEP FORWARD oooooh")
+	print("Keycard picked up!")
+	QuestManager.add_quest_item("nurse_keycard")
+	queue_free() # removing it from the scene
 	use_dialogue()
 
 func use_dialogue():
@@ -56,9 +59,9 @@ func _on_dialogue_finished():
 	print("Love Letter: Dialogue finished with ID: ", last_dialogue_id)
 	
 	if last_dialogue_id == "Love_Confession":
-		print("Love Letter: Player picked up the letter - GOOD path available")
+		print("Keycard: Player picked up the letter - GOOD path available")
 		QuestManager.add_quest_item("love_letter")
-		print("Love Letter: Added to quest items - current items: ", QuestManager.get_all_quest_items())
+		print("Keycard: Added to quest items - current items: ", QuestManager.get_all_quest_items())
 		visible = false
 		set_process(false)
 		interactable.set_process(false)
