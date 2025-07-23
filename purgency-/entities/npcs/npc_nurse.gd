@@ -81,23 +81,16 @@ func receive_love_letter():
 	start_emotional_exit()
 	
 func start_emotional_exit():
-	print("Nurse exit started at position: ", global_position)
-	print("Exit target: ", exit_target)
-
-	if is_leaving:
-		return  # Already leaving
-	
 	print("Nurse: Starting emotional exit!")
 	is_leaving = true
-	is_moving = false  # Stop regular movement
-	
-	# Calculate exit path (adjust these values for your scene)
-	exit_target = global_position + Vector2(0, 500)  # Move further down
+	is_moving = false
+	exit_target = global_position + Vector2(0, 500)
 	drop_keycard()
-	
-	# Force walking animation
 	sprite.play("walk_s")
-	set_physics_process(true)
+	
+	# Remove after exiting
+	await get_tree().create_timer(2.0).timeout  # Wait for exit animation
+	queue_free()  # Completely remove the nurse
 
 func drop_keycard():
 	print("Nurse: Dropping keycard!")

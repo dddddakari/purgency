@@ -30,10 +30,6 @@ func _on_body_entered(body: Node) -> void:
 	if dialogue_player == null:
 		return
 		
-	if body.is_in_group("player") and QuestManager.nurse_left_to_find_janitor:
-		print("Redirecting to new bathroom scene")
-		get_tree().change_scene_to_file("res://scenes/bathroom_together.tscn")
-
 	# Check dialogue file exists
 	if not FileAccess.file_exists(dialogue_file):
 		push_error("Dialogue file not found: " + dialogue_file)

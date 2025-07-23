@@ -2,7 +2,7 @@ extends Area2D
 
 # Dialogue configuration
 @export_file("*.json") var dialogue_file: String = "res://json/janitor_stop.json"
-@export var dialogue_player_path: NodePath = "/root/RoomsArea/Jan"
+@export var dialogue_player_path: NodePath = "/root/RoomsArea/Dialogue"
 
 var dialogue_player: Node = null
 
