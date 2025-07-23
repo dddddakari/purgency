@@ -11,20 +11,10 @@ func _ready() -> void:
 func _on_interact():
 	print("bathroom door interaction")
 	
+	# Check if nurse has left using QuestManager
 	if QuestManager.nurse_left_to_find_janitor:
-		print("Loading animated couple scene")
-		if ResourceLoader.exists("res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom_together.tscn"):
-			# Remove any existing nurse instance first
-			var nurse = get_tree().get_first_node_in_group("nurse")
-			if nurse:
-				nurse.queue_free()
-			
-			get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom_together.tscn")
-		else:
-			push_error("Bathroom_together scene not found!")
+		print("Nurse is gone - loading special scene")
+		get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom_together.tscn")
 	else:
 		print("Loading normal bathroom scene")
-		if ResourceLoader.exists("res://scenes/hospital/f1_rooms_area/Bathroom/BathroomPooped.tscn"):
-			get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/BathroomPooped.tscn")
-		else:
-			push_error("BathroomPooped scene not found!")
+		get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom.tscn")
