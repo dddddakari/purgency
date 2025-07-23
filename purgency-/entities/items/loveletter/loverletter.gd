@@ -17,13 +17,12 @@ func _ready() -> void:
 		interactable.set_process(false)
 	
 func _on_interact():
-	if QuestManager.is_path_chosen():
-		print("Already chose a path, can't interact with letter")
+	if not QuestManager.can_use_letter():
+		print("Cannot use letter - already used")
 		return
 	
-	print("Love Letter oooooh")
+	print("Love Letter interaction")
 	use_dialogue()
-		
 		
 func use_dialogue():
 	dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
@@ -61,8 +60,7 @@ func _on_dialogue_finished():
 	print("Love Letter: Dialogue finished with ID: ", last_dialogue_id)
 	
 	if last_dialogue_id == "Love_Confession":
-		print("Love Letter: Player picked up the letter - GOOD path available")
-		QuestManager.set_path_chosen("good")
+		print("Player picked up the letter")
 		QuestManager.add_quest_item("love_letter")
 		visible = false
 		set_process(false)

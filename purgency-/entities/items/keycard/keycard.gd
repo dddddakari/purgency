@@ -5,22 +5,23 @@ extends Area2D
 
 var dialogue_system = null
 var last_dialogue_id = ""
+var was_picked_up = false
 
 func _ready() -> void:
 	interactable.interact = _on_interact
 	
-	# Check if the love letter has already been picked up
-	if QuestManager.has_quest_item("keycard"):
-		# If already picked up, hide the letter
+	# Only hide if actually picked up
+	if QuestManager.has_quest_item("nurse_keycard"):
+		was_picked_up = true
 		visible = false
 		set_process(false)
 		interactable.set_process(false)
-	
+
 func _on_interact():
-	print("1 STEP FORWARD oooooh")
-	print("Keycard picked up!")
-	QuestManager.add_quest_item("nurse_keycard")
-	queue_free() # removing it from the scene
+	if was_picked_up:
+		return
+	
+	print("Keycard interaction started")
 	use_dialogue()
 
 func use_dialogue():
@@ -31,39 +32,38 @@ func use_dialogue():
 		if FileAccess.file_exists(dialogue_file_path):
 			dialogue_system.d_file = dialogue_file_path 
 			dialogue_system.start()
-			print("Love dialogue started.")
-			
-			# Start monitoring the dialogue system
+			print("Keycard dialogue started")
 			_monitor_dialogue()
 		else:
 			push_error("Dialogue file not found: " + dialogue_file_path)
 
 func _monitor_dialogue():
-	# Check dialogue state every frame while it's active
 	if dialogue_system and dialogue_system.d_active:
-		# Store the current dialogue ID for when dialogue ends
 		if dialogue_system.curr_dialogue_id >= 0 and dialogue_system.curr_dialogue_id < dialogue_system.dialogue.size():
 			var current_dialogue = dialogue_system.dialogue[dialogue_system.curr_dialogue_id]
 			if current_dialogue.has("id"):
 				last_dialogue_id = current_dialogue["id"]
 		
-		# Continue monitoring next frame
 		await get_tree().process_frame
 		if dialogue_system.d_active:
 			_monitor_dialogue()
 		else:
-			# Dialogue has ended, handle the result
 			_on_dialogue_finished()
 
 func _on_dialogue_finished():
-	print("Love Letter: Dialogue finished with ID: ", last_dialogue_id)
+	print("Keycard dialogue finished with ID: ", last_dialogue_id)
 	
+	# Only pick up if player chose to take it
 	if last_dialogue_id == "Love_Confession":
-		print("Keycard: Player picked up the letter - GOOD path available")
-		QuestManager.add_quest_item("love_letter")
-		print("Keycard: Added to quest items - current items: ", QuestManager.get_all_quest_items())
+		print("Player took the keycard")
+		was_picked_up = true
+		QuestManager.add_quest_item("nurse_keycard")
 		visible = false
 		set_process(false)
 		interactable.set_process(false)
+	else:
+		print("Player left the keycard")
+		# Reset interaction state
+		interactable.set_process(true)
 	
 	last_dialogue_id = ""

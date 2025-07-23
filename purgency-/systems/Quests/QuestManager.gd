@@ -3,8 +3,10 @@ extends Node
 
 # Dictionary to store quest items
 var quest_items: Dictionary = {}
-	# Add these new variables
 var path_chosen: String = ""  # "good", "bad", or ""
+var cabinet_knocked: bool = false
+var letter_used: bool = false
+var nurse_left_to_find_janitor: bool = false
 
 
 # Signal for when quest items are added/removed
@@ -60,8 +62,21 @@ func set_path_chosen(path: String):
 	path_chosen = path
 	print("Path chosen: ", path)
 
-func is_path_chosen() -> bool:
-	return path_chosen != ""
+# Add these functions with your other functions
+func set_cabinet_knocked():
+	cabinet_knocked = true
+	print("Cabinet has been knocked over")
 
-func get_chosen_path() -> String:
-	return path_chosen
+func set_letter_used():
+	letter_used = true
+	print("Love letter has been used")
+
+func can_use_letter() -> bool:
+	return not letter_used  # Simplified - only check if letter was used
+
+func can_knock_cabinet() -> bool:
+	return not cabinet_knocked and not letter_used  # Can't knock if letter was used
+
+func set_nurse_left():
+	nurse_left_to_find_janitor = true
+	print("Nurse has left to find janitor")

@@ -17,13 +17,12 @@ func _ready() -> void:
 		interactable.set_process(false)
 	
 func _on_interact():
-	if QuestManager.is_path_chosen():
-		print("Already chose a path, can't interact with cart")
+	if not QuestManager.can_knock_cabinet():
+		print("Cannot knock over cabinet - either already done or nurse is gone")
 		return
 	
-	print("mean option")
+	print("Knocking over cabinet")
 	use_dialogue()
-
 
 			
 func use_dialogue():
@@ -62,8 +61,8 @@ func _on_dialogue_finished():
 	print("Medicine Cart: Dialogue finished with ID: ", last_dialogue_id)
 	
 	if last_dialogue_id == "bad_ending_vro":
-		print("Medicine Cart: Player chose to knock over cart - BAD path")
-		QuestManager.set_path_chosen("bad")
+		print("Medicine Cart: Player chose to knock over cart")
+		QuestManager.set_cabinet_knocked()
 		QuestManager.complete_quest_bad()
 		visible = false
 		set_process(false)

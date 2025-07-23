@@ -41,7 +41,7 @@ func _physics_process(delta):
 		velocity = direction * exit_speed
 		move_and_slide()
 		
-		if position.distance_to(exit_target) < 10.0:
+		if position.distance_to(exit_target) < 20.0:
 			print("Nurse: Reached exit point!")
 			set_physics_process(false)
 			queue_free()
@@ -67,20 +67,19 @@ func update_facing_direction(direction: Vector2):
 			sprite.play("idle")
 
 func receive_love_letter():
-	if QuestManager.is_path_chosen() and QuestManager.get_chosen_path() != "good":
-		return
-	
-	# Rest of your existing function
-	if not can_receive_letter:
+	if QuestManager.cabinet_knocked:
+		print("Nurse won't accept letter after cabinet was knocked")
 		return
 	
 	print("NPC Nurse: Received love letter!")
+	QuestManager.set_letter_used()
+	QuestManager.set_nurse_left()  # Add this line
 	can_receive_letter = false
 	has_received_letter = true
 	is_moving = false
 	sprite.play("happy")
 	start_emotional_exit()
-
+	
 func start_emotional_exit():
 	print("Nurse exit started at position: ", global_position)
 	print("Exit target: ", exit_target)
