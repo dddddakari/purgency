@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2vd78buj8vs7"]
+[gd_scene load_steps=6 format=3 uid="uid://c2vd78buj8vs7"]
 
 [ext_resource type="Texture2D" uid="uid://wjeghtj22ge6" path="res://assets/misc/medicine_cart.png" id="1_bexfw"]
+[ext_resource type="Script" uid="uid://7c5mc5d55aca" path="res://entities/items/medicinecart/medicine_cart.gd" id="1_g170k"]
 [ext_resource type="PackedScene" uid="uid://balrieb8xarpl" path="res://systems/interactionsystem/interactable.tscn" id="2_g170k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bexfw"]
@@ -10,6 +11,8 @@ size = Vector2(350, 346)
 radius = 265.347
 
 [node name="MedicineCart" type="Area2D"]
+scale = Vector2(0.412095, 0.393456)
+script = ExtResource("1_g170k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bexfw")

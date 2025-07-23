@@ -36,3 +36,13 @@ func save_quest_data() -> Dictionary:
 func load_quest_data(data: Dictionary) -> void:
 	if data.has("quest_items"):
 		quest_items = data["quest_items"]
+		
+signal quest_progress(method: String)  # "good" or "bad"
+
+func complete_quest_good():
+	quest_progress.emit("good")
+	GameState.good_points += 1
+
+func complete_quest_bad():
+	quest_progress.emit("bad")
+	GameState.bad_points += 1

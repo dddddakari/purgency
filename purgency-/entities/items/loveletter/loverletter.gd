@@ -55,20 +55,14 @@ func _monitor_dialogue():
 func _on_dialogue_finished():
 	print("Dialogue finished on ID:", last_dialogue_id)
 	
-	# Check if the player chose to pick up the letter
 	if last_dialogue_id == "Love_Confession":
 		# Add the love letter to the player's quest items
 		QuestManager.add_quest_item("love_letter")
-		
-		# Make the letter disappear from the world
 		visible = false
 		set_process(false)
 		interactable.set_process(false)
 		
-		print("Love letter picked up and added to quest items!")
-		
-		# Optional: Show a notification to the player
-		# NotificationManager.show_notification("Love Letter obtained!")
+		# Let the player know they can give this to the nurse
+		print("You can now give the love letter to the nurse!")
 	
-	# Reset for next interaction
 	last_dialogue_id = ""

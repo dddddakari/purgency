@@ -9,4 +9,4 @@ func _ready() -> void:
 
 func _on_interact():
 	print("bathroom door interaction")
-	get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom.tscn")
+	get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/BathroomPooped.tscn")

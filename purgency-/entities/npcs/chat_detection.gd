@@ -77,9 +77,6 @@ func _on_option_selected(option_index: int) -> void:
 	var next_id = selected_option["next_id"]
 	print("Option selected, next_id is:", next_id)
 
-	# Handle special quest actions
-	handle_quest_actions(next_id, selected_option)
-
 	# Find next dialogue entry
 	var next_dialogue = null
 	for dialogue in dialogue_player.dialogue_data:
@@ -105,28 +102,19 @@ func _on_option_selected(option_index: int) -> void:
 			dialogue_player.goto_id(next_id)
 		else:
 			print("dialogue_player missing method: goto_id")
+# nurse_interaction.gd
 
-func handle_quest_actions(next_id: String, selected_option: Dictionary) -> void:
-	# Handle quest item actions based on dialogue choices
-	match next_id:
-		"give_letter":
-			# Player chose to give the love letter to the nurse
-			if QuestManager.has_quest_item("love_letter"):
-				QuestManager.remove_quest_item("love_letter")
-				QuestManager.add_quest_item("letter_delivered")
-				print("Love letter given to nurse!")
-		
-		"keep_letter":
-			# Player chose to keep the letter
-			print("Player decided to keep the love letter")
-		
-		"blackmail_option":
-			# Player chose to use letter for blackmail (if you want this option)
-			if QuestManager.has_quest_item("love_letter"):
-				QuestManager.add_quest_item("blackmail_evidence")
-				print("Letter used as blackmail evidence")
-	
-
+func _on_interact():
+	if QuestManager.has_quest_item("love_letter"):
+		# Player has the letter and wants to give it
+		var dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
+		dialogue_system.d_file = "res://json/nurse_dialogue.json"
+		dialogue_system.start()
+	else:
+		# Normal nurse dialogue
+		var dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
+		dialogue_system.d_file = "res://json/nurse_default.json"
+		dialogue_system.start()
 
 func _on_dialogue_finished() -> void:
 	# Dialogue finished handler

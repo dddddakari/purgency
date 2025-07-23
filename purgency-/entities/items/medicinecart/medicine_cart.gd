@@ -22,7 +22,7 @@ func _on_interact():
 
 func use_dialogue():
 	dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
-	var dialogue_file_path = "res://json/loveletter.json"
+	var dialogue_file_path = "res://json/knockover.json"
 	
 	if dialogue_system:
 		if FileAccess.file_exists(dialogue_file_path):
@@ -55,10 +55,17 @@ func _monitor_dialogue():
 func _on_dialogue_finished():
 	print("Dialogue finished on ID:", last_dialogue_id)
 	
-	# Check if the player chose to pick up the letter
-	if last_dialogue_id == "Love_Confession":
-		# Add the love letter to the player's quest items
-		QuestManager.add_quest_item("love_letter")
+	if last_dialogue_id == "bad_ending_vro":
+		# Player chose to knock over the cart
+		QuestManager.complete_quest_bad()
+		# Make the cart disappear
+		visible = false
+		set_process(false)
+		interactable.set_process(false)
+		# Distract the nurse
+		var nurse = get_tree().get_first_node_in_group("nurse")
+		if nurse:
+			nurse.react_to_distraction()
 	
 	# Reset for next interaction
 	last_dialogue_id = ""

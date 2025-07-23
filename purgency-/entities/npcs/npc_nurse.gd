@@ -73,6 +73,36 @@ func resume_walking():
 		# Resume with correct walk animation
 		var direction = (target_position - position).normalized()
 		update_facing_direction(direction)
+	
+	
+var is_distracted: bool = false
+var has_received_letter: bool = false
+
+func receive_love_letter():
+	if QuestManager.has_quest_item("love_letter"):
+		has_received_letter = true
+		stop_walking()
+		# Play happy animation
+		sprite.play("happy")
+		# Remove the letter from inventory
+		QuestManager.remove_quest_item("love_letter")
+		# Nurse stays still for a while
+		timer.start(5.0)
+
+func react_to_distraction():
+	is_distracted = true
+	stop_walking()
+	# Play surprised animation
+	sprite.play("surprised")
+	# Nurse stays still for a while
+	timer.start(5.0)
 
 func _on_timer_timeout():
-	resume_walking()
+	if is_distracted or has_received_letter:
+		# Reset after distraction/letter
+		is_distracted = false
+		has_received_letter = false
+		sprite.play("idle")
+		timer.start(randf_range(1.0, 2.0))  # Short delay before resuming
+	else:
+		resume_walking()
