@@ -6,9 +6,9 @@ class_name NPCNurse
 @export var walk_speed: float = 50.0
 @export var min_stop_time: float = 0.2
 @export var max_stop_time: float = 1.0
-@export var stop_chance: float = 0.03
+@export var stop_chance: float = 0.03 # set this higher if you want
 
-# Animation
+# Animation ( single image for now)
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
 
@@ -18,7 +18,9 @@ var is_moving: bool = true
 var moving_up: bool = true  # Start by moving up
 
 func _ready():
+	#starting position is the Vector Coordinates, so Vector2(0,0)
 	start_position = position
+	# simply this is target_position = start_position + Vector2(0, -40)
 	target_position = start_position + Vector2(0, -move_distance)  # First target: up
 	
 	sprite.play("idle")
