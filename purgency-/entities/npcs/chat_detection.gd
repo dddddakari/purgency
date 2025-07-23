@@ -107,17 +107,20 @@ func _on_option_selected(option_index: int) -> void:
 			
 			
 func _on_interact():
-	print("Nurse Interaction: Player interacted with nurse")
-	
+	if QuestManager.is_path_chosen():
+		print("Path already chosen, can't interact with nurse")
+		return
+		
+	# Rest of your existing interaction code
 	if QuestManager.has_quest_item("love_letter"):
-		print("Nurse Interaction: Player has love letter - starting good path dialogue")
+		print("Player has love letter - using special nurse dialogue")
 		var dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
-		dialogue_system.d_file = "res://json/nurse_dialogue.json"
+		dialogue_system.d_file = "res://json/nurseletter.json"
 		dialogue_system.start()
 	else:
-		print("Nurse Interaction: Player has no letter - starting default dialogue")
+		print("Player has no letter - using default dialogue")
 		var dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
-		dialogue_system.d_file = "res://json/nurse_default.json"
+		dialogue_system.d_file = "res://json/nurse.json"
 		dialogue_system.start()
 
 func _on_dialogue_finished() -> void:

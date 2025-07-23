@@ -156,12 +156,19 @@ func next_script(optional_id = null):
 				QuestManager.complete_quest_good()
 				var nurse = get_tree().get_first_node_in_group("nurse")
 				if nurse:
-					print("DialogueSystem: Found nurse, giving letter")
-					nurse.receive_love_letter()
+					nurse.receive_love_letter()  # This will trigger the exit
 			"nurse_exit":
 				var nurse = get_tree().get_first_node_in_group("nurse")
 				if nurse:
 					nurse.start_emotional_exit()
+			"trigger_nurse_exit":
+				var nurse = get_tree().get_first_node_in_group("nurse")
+				if nurse:
+					print("Found nurse, triggering exit")
+					nurse.receive_love_letter()
+				else:
+					print("ERROR: No nurse found in group")
+				QuestManager.complete_quest_good()
 
 # Display text and name if present
 	var name_label = $NinePatchRect.get_node("name")

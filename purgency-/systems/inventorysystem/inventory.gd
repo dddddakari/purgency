@@ -181,9 +181,6 @@ func hide_inventory():
 	# Don't repopulate here - just save the current state
 	save_inventory()
 
-func _input(event):
-	if event.is_action_pressed("Inventory"):
-		toggle_inventory()
 		
 func update_display():
 	for i in range(grid_container.get_child_count()):

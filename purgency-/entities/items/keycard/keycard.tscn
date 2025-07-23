@@ -5,25 +5,23 @@
 [ext_resource type="PackedScene" uid="uid://balrieb8xarpl" path="res://systems/interactionsystem/interactable.tscn" id="2_hw0dm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m38sw"]
-size = Vector2(222, 123)
+size = Vector2(12, 6)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kp6we"]
-radius = 206.7
+radius = 17.0294
 
 [node name="Keycard" type="Area2D"]
 script = ExtResource("1_m38sw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-3, 18)
-scale = Vector2(0.373457, 0.3725)
+position = Vector2(0, 1.19209e-07)
+scale = Vector2(0.0196759, 0.0171875)
 texture = ExtResource("1_vausv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 21.5)
 shape = SubResource("RectangleShape2D_m38sw")
 
 [node name="interactable" parent="." instance=ExtResource("2_hw0dm")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
-position = Vector2(3, 3)
 shape = SubResource("CircleShape2D_kp6we")

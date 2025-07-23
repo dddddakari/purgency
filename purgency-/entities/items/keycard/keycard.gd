@@ -25,7 +25,7 @@ func _on_interact():
 
 func use_dialogue():
 	dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
-	var dialogue_file_path = "res://json/loveletter.json"
+	var dialogue_file_path = "res://json/keycard.json"
 	
 	if dialogue_system:
 		if FileAccess.file_exists(dialogue_file_path):

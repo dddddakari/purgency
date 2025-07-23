@@ -12,13 +12,7 @@
 		"id": "nurse_reaction",
 		"name": "Nurse",
 		"text": "Oh my! This is... from him? *blushes* I must tell him how I feel right away!",
-		"action": "complete_quest_good",
-		"next_id": "nurse_exit"
-	},
-	{
-		"id": "nurse_exit",
-		"name": "Finneas",
-		"text": "(The nurse hurriedly leaves, dropping her keycard in the process...)",
+		"action": "trigger_nurse_exit",
 		"next_id": "None"
 	},
 	{

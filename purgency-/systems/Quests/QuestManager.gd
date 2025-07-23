@@ -3,6 +3,9 @@ extends Node
 
 # Dictionary to store quest items
 var quest_items: Dictionary = {}
+	# Add these new variables
+var path_chosen: String = ""  # "good", "bad", or ""
+
 
 # Signal for when quest items are added/removed
 signal quest_item_added(item_name: String)
@@ -51,3 +54,14 @@ func complete_quest_bad():
 	quest_progress.emit("bad")
 	GameState.bad_points += 1
 	print("Current good points: %d, bad points: %d" % [GameState.good_points, GameState.bad_points])
+	
+# Add these new functions
+func set_path_chosen(path: String):
+	path_chosen = path
+	print("Path chosen: ", path)
+
+func is_path_chosen() -> bool:
+	return path_chosen != ""
+
+func get_chosen_path() -> String:
+	return path_chosen

@@ -17,9 +17,15 @@ func _ready() -> void:
 		interactable.set_process(false)
 	
 func _on_interact():
+	if QuestManager.is_path_chosen():
+		print("Already chose a path, can't interact with cart")
+		return
+	
 	print("mean option")
 	use_dialogue()
 
+
+			
 func use_dialogue():
 	dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
 	var dialogue_file_path = "res://json/knockover.json"
@@ -57,17 +63,12 @@ func _on_dialogue_finished():
 	
 	if last_dialogue_id == "bad_ending_vro":
 		print("Medicine Cart: Player chose to knock over cart - BAD path")
+		QuestManager.set_path_chosen("bad")
 		QuestManager.complete_quest_bad()
 		visible = false
 		set_process(false)
 		interactable.set_process(false)
-		print("Medicine Cart: Hiding cart after being knocked over")
 		
 		var nurse = get_tree().get_first_node_in_group("nurse")
 		if nurse:
-			print("Medicine Cart: Found nurse, triggering distraction")
 			nurse.react_to_distraction()
-		else:
-			print("Medicine Cart: ERROR - Couldn't find nurse in group!")
-	
-	last_dialogue_id = ""
