@@ -1,4 +1,3 @@
-
 extends Area2D
 
 # Dialogue configuration
@@ -8,7 +7,6 @@ extends Area2D
 var dialogue_player: Node = null  # Reference to dialogue system
 
 func _ready() -> void:
-	
 	# Get dialogue player node
 	dialogue_player = get_node_or_null(dialogue_player_path)
 	if dialogue_player == null:
@@ -81,7 +79,17 @@ func _on_option_selected(option_index: int) -> void:
 		var scene_path = next_dialogue.get("scene_path", "")
 		if scene_path != "":
 			print("Changing scene to:", scene_path)
-			get_tree().change_scene_to_file(scene_path)
+			
+			# Check which path the player took and load appropriate scene
+			if QuestManager.cabinet_knocked:
+				# Bad path - load the scene with knocked over cabinet
+				get_tree().change_scene_to_file("res://scenes/hospital/f1_rooms_area/Room_AreaKnocked.tscn")
+			elif QuestManager.letter_used:
+				# Good path - load the love scene without nurse
+				get_tree().change_scene_to_file("res://scenes/hospital/f1_rooms_area/Room_AreaLove.tscn")
+			else:
+				# Default path if neither condition is met
+				get_tree().change_scene_to_file(scene_path)
 		else:
 			print("scene_path is empty!")
 	else:
