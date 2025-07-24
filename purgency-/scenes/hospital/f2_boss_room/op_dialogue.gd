@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 var entered = false
 var dialogue_triggered = false
@@ -9,10 +9,9 @@ func _on_body_entered(body: Node2D) -> void:
 		use_dialogue()
 	else:
 		entered = true
-
-
+		
 func use_dialogue():
 	var dialogue = get_parent().get_node("Dialogue")
 	if dialogue:
-		dialogue.d_file = "res://json/pen_aftergame.json"
+		dialogue.d_file = "res://json/finalscene.json"
 		dialogue.start()

@@ -1,0 +1,99 @@
+[
+	{
+	"id": "start",
+	"name": "Nurse",
+	"text": "Please, you don't have to make this worse.. Just hand her over to us and we won't punish you for it.",
+	"next_id": "yosef_res",
+  },
+  {
+	"id": "yosef_res",
+	"name": "???",
+	"text": "No... I have to keep her away from you evil people. She's just a child, and she has so much to live for. I know what you're trying to do.",
+	"next_id": "pen_res",
+  },
+  {
+	"id": "pen_res",
+	"name": "Penelope",
+	"text": "*cough* What's *cough* happen- *cough* -ing *cough* to me?",
+	"next_id": "finn_res",
+  },
+  {
+	"id": "finn_res",
+	"name": "Finneas",
+	"text": "PENELOPE ARE YOU OKAY?",
+	"next_id": "pen_res1",
+  },
+{
+	"id": "pen_res1",
+	"name": "Finneas",
+	"text": "Finn? Is *cough* that you? I feel weird *cough* Finn.",
+	"next_id": "finn_res2",
+  },
+  {
+	"id": "finn_res2",
+	"name": "Finneas",
+	"text": "I'll come save you, just wait for me Pen..",
+	"next_id": "finn_res3",
+  },
+{
+	"id": "finn_res3",
+	"name": "Finneas",
+	"text": "(Who am I supposed to trust? The person beside Penelope looks suspicious, but this whole hospital just.. doesn't feel right either.)",
+	"next_id": "yosef_res2",
+  },
+{
+	"id": "yosef_res2",
+	"name": "???",
+	"text": "KID LISTEN TO ME, they are not holding medicine for this child, that is a poison that they've slowly been injecting with.. do not trust them.",
+	"next_id": "yosef_res3",
+  },
+{
+	"id": "yosef_res3",
+	"name": "Yosef",
+	"text": "My name is Yosef, and I was this hospital's first patien- no, test subject. 
+	They've been preying on the vulnerable in the guise of offering free help. I will help you and this child 
+	get out of here but first, you have to defeat them.",
+	"next_id": "staff_res",
+  },
+{
+	"id": "staff_res",
+	"name": "Nurse",
+	"text": "Do not listen to him! His mind isn't functioning right, and he's made up this story in his head. Listen to us and give this medicine to your sister. NOW.",
+	"next_id": "finn_choice",
+  },
+{
+	"id": "finn_choice",
+	"name": "Finneas",
+	"text": "(I need to decide quick, Penelope needs me.)",
+	"options": [
+	  {
+		"text": "Trust the hospital staff.",
+		"next_id": "bad_res",
+		"points": { "good": 0, "bad": 1 }
+	  },
+	  {
+		"text": "Trust Yosef.",
+		"next_id": "good_res",
+		"points": { "good": 1, "bad": 0 }
+	  }
+	]
+  },
+{
+	"id": "bad_res",
+	"name": "Nurse",
+	"text": "Thank you for trusting us. Please, give her this pill and she'll immediately feel better. We will take care of the other patient..",
+	"next_id": "bad_res2",
+  },
+{
+	"id": "bad_res2",
+	"name": "Yosef",
+	"text": "No! NO! You must no-",
+	"next_id": "bad_res3",
+  },
+{
+	"id": "bad_res3",
+	"name": "Nurse",
+	"text": "Tranquilizer shot, patient can be safely dealt with. Go ahead kid.",
+	"next_id": "bad_res4",
+  },
+]

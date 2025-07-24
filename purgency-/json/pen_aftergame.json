@@ -1,0 +1,14 @@
+[
+	{
+		"id": "start",
+		"name": "Finneas",
+		"text": "That was close.. I'm sure they were also looking for Penelope but... why did they sound so threatening?",
+		"next_id": "2"
+	},
+	{
+		"id": "2",
+		"name": "Finneas",
+		"text": "I have a bad feeling about this. I need to move quick.",
+		"next_id": "3"
+	},
+]

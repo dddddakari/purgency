@@ -1,11 +1,10 @@
-res://entities/items/teddy/Teddy.tscn
+res://entities/player/player.tscn
 res://scenes/outside/receptionist.tres
 res://scenes/kitchen/kitchen01.tres
 res://scenes/hospital/b_hallway_area/B_HallwayArea.tres
 res://entities/items/teddy/Teddy.gdshader
 res://BGassets/RoomsArea/Rooms_Area.tres
 res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom.tres
-res://entities/player/player.tscn
 res://entities/npcs/Lebron.tscn
 res://scenes/hospital/f1_security/SecurityArea.tscn
 res://systems/dialoguesystem/Dialogue.tscn
@@ -42,5 +41,10 @@ res://entities/items/closet.tscn
 res://entities/items/closet/Closet.tscn
 res://minigames/maze/MazeUI.tscn
 res://minigames/maze/Jumpscare.tscn
+res://entities/items/teddy/Teddy.tscn
 res://systems/interactionsystem/interactable.tscn
 res://scenes/hospital/b_rooms/penelope_room/PenelopeRoomLocked.tscn
+res://scenes/hospital/f2_boss_room/BossRoom.tscn
+res://json/finalscene.json
+res://scenes/hospital/f2_boss_room/op_dialogue.gd
+res://scenes/hospital/f2_boss_room/good_end/GoodEnd.tscn
