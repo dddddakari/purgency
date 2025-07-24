@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var correct_code := "1234"  # Set this in inspector
+@export var correct_code := "1234" 
 @onready var display = $Panel/Display
 
 var current_input := ""
