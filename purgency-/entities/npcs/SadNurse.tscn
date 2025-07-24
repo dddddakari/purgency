@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://blh740ge2nw5d"]
 
+[ext_resource type="Script" uid="uid://dgekw0g5rw7qo" path="res://entities/npcs/chat_detection_angry.gd" id="2_2siyl"]
 [ext_resource type="Texture2D" uid="uid://dr2lccu8q4pil" path="res://assets/npcs/pats.png" id="2_6ekok"]
-[ext_resource type="Script" uid="uid://dufcbb5yntp8p" path="res://entities/npcs/chat_detection.gd" id="3_swi22"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6ljr"]
 animations = [{
@@ -82,7 +82,7 @@ rotation = 1.57183
 shape = SubResource("CapsuleShape2D_gtklh")
 
 [node name="chat_detection" type="Area2D" parent="."]
-script = ExtResource("3_swi22")
+script = ExtResource("2_2siyl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection"]
 position = Vector2(1, 14)

@@ -11,20 +11,8 @@ func _ready():
 	keycard = get_node_or_null("/root/RoomsArea/Keycard")
 
 func _on_interact():
-	if keycard and keycard.has_method("try_open_file_room"):
-		if keycard.try_open_file_room():
-			open_file_room()
-	else:
-		# Fallback if keycard can't be found
-		if QuestManager.has_quest_item("nurse_keycard"):
-			open_file_room()
-		else:
-			print("File room is locked")
-
-func open_file_room():
-	print("Opening file room!")
-	# Add your scene change or door opening logic here
 	use_dialogue()
+
 func use_dialogue():
 	dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
 	var dialogue_file_path = "res://json/filedoor.json"

@@ -1,7 +1,7 @@
 extends Area2D
 
 # Dialogue configuration
-@export_file("*.json") var dialogue_file: String = "res://json/nurse.json"
+@export_file("*.json") var dialogue_file: String = "res://json/sad_nurse.json"
 @export var dialogue_player_path: NodePath = "/root/RoomsArea/Dialogue"
 
 var good_points: Node = null # Game state reference
