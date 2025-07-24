@@ -17,6 +17,6 @@
 	"id": "teleport",
 	"name": "Finneas",
 	"action": "change_scene",
-	"scene_path": "res://scenes/hospital/f1_rooms_area/Room_AreaUnblocked.tscn"
+	"scene_path": "res://scenes/hospital/f1_rooms_area/Room_AreaUnlocked.tscn"
   }
 ]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn846syqul578"
-path="res://.godot/imported/use.webp-1b0991d55f6b216c87fc84c31e6ad96c.ctex"
+uid="uid://b2h60k5vjur5m"
+path="res://.godot/imported/pills.jpg-ba493a49847754ab7d08b09cac502854.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/button/use.webp"
-dest_files=["res://.godot/imported/use.webp-1b0991d55f6b216c87fc84c31e6ad96c.ctex"]
+source_file="res://assets/misc/pills.jpg"
+dest_files=["res://.godot/imported/pills.jpg-ba493a49847754ab7d08b09cac502854.ctex"]
 
 [params]
 

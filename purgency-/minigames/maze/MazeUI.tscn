@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ccecwl6cmli85" path="res://assets/button/SPEAKER_ON.png" id="6_4ey82"]
 [ext_resource type="Script" uid="uid://btlohi51um8lb" path="res://audio/music/muteButton.gd" id="7_wwipl"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmi00"]
 size = Vector2(11796.4, 13818.2)
 

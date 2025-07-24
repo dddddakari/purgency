@@ -2076,13 +2076,13 @@ text = "- E to Interact"
 script = ExtResource("8_0iy2g")
 metadata/_edit_use_anchors_ = true
 
-[node name="I" type="Label" parent="Player"]
+[node name="Esc" type="Label" parent="Player"]
 offset_left = -119.0
 offset_top = -44.0
 offset_right = 5.0
 offset_bottom = -21.0
 theme_override_font_sizes/font_size = 10
-text = "- I for Inventory"
+text = "- Esc for Settings"
 script = ExtResource("8_0iy2g")
 metadata/_edit_use_anchors_ = true
 
