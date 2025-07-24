@@ -59,7 +59,7 @@ tile_map_data = PackedByteArray("AAAiAAwAEwAAAAAAAAAiAA0AEwAAAAEAAAAiAA4AEwAAAAI
 tile_set = ExtResource("1_2phmf")
 
 [node name="Player" parent="Tile Maps/plants" instance=ExtResource("3_m2hxg")]
-position = Vector2(479, 250)
+position = Vector2(544, 301)
 
 [node name="TRASH" type="TileMapLayer" parent="Tile Maps/plants"]
 position = Vector2(53, 50)
