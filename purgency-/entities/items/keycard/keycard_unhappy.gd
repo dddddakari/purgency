@@ -3,9 +3,6 @@ extends Area2D
 @onready var interactable: Area2D = $interactable
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
-# Dialogue configuration
-@export_file("*.json") var dialogue_file: String = "res://json/keycard.json"
-@export_file("*.json") var locked_file_room_dialogue: String = "res://json/lockedfileroom.json"
 var dialogue_system = null
 var last_dialogue_id = ""
 var was_picked_up = false
@@ -16,7 +13,9 @@ func _ready() -> void:
 	# Only hide if actually picked up
 	if QuestManager.has_quest_item("nurse_keycard"):
 		was_picked_up = true
-		hide_keycard()
+		visible = false
+		set_process(false)
+		interactable.set_process(false)
 
 func _on_interact():
 	if was_picked_up:
@@ -27,15 +26,16 @@ func _on_interact():
 
 func use_dialogue():
 	dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
+	var dialogue_file_path = "res://json/keycard_unhappy.json"
 	
 	if dialogue_system:
-		if FileAccess.file_exists(dialogue_file):
-			dialogue_system.d_file = dialogue_file 
+		if FileAccess.file_exists(dialogue_file_path):
+			dialogue_system.d_file = dialogue_file_path 
 			dialogue_system.start()
 			print("Keycard dialogue started")
 			_monitor_dialogue()
 		else:
-			push_error("Dialogue file not found: " + dialogue_file)
+			push_error("Dialogue file not found: " + dialogue_file_path)
 
 func _monitor_dialogue():
 	if dialogue_system and dialogue_system.d_active:
@@ -53,38 +53,17 @@ func _monitor_dialogue():
 func _on_dialogue_finished():
 	print("Keycard dialogue finished with ID: ", last_dialogue_id)
 	
-	# Check which option was chosen (happy or unhappy path)
-	if last_dialogue_id == "Love_Confession" or last_dialogue_id == "Stealing":
-		pick_up_keycard()
+	# Only pick up if player chose to take it
+	if last_dialogue_id == "Stealing":
+		print("Player took the keycard")
+		was_picked_up = true
+		QuestManager.add_quest_item("nurse_keycard")
+		visible = false
+		set_process(false)
+		interactable.set_process(false)
 	else:
 		print("Player left the keycard")
 		# Reset interaction state
 		interactable.set_process(true)
 	
 	last_dialogue_id = ""
-
-func pick_up_keycard():
-	print("Player took the keycard")
-	was_picked_up = true
-	QuestManager.add_quest_item("nurse_keycard")
-	hide_keycard()
-
-func hide_keycard():
-	visible = false
-	set_process(false)
-	interactable.set_process(false)
-
-# Call this from your file room door script
-func try_open_file_room():
-	if QuestManager.has_quest_item("nurse_keycard"):
-		return true  # Door can be opened
-	else:
-		play_locked_dialogue()
-		return false  # Door remains locked
-
-func play_locked_dialogue():
-	dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
-	if dialogue_system and FileAccess.file_exists(locked_file_room_dialogue):
-		dialogue_system.d_file = locked_file_room_dialogue
-		dialogue_system.start()
-		print("Playing locked file room dialogue")

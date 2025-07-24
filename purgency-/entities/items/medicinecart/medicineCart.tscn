@@ -22,6 +22,7 @@ position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bexfw")
 
 [node name="interactable" parent="." instance=ExtResource("2_g170k")]
+rotation = -0.0109127
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
 shape = SubResource("CircleShape2D_vjl6k")

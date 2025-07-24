@@ -17,4 +17,4 @@ func _on_interact():
 		get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom_together.tscn")
 	else:
 		print("Loading normal bathroom scene")
-		get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom.tscn")
+		get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/BathroomPooped.tscn")

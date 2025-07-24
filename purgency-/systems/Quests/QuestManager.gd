@@ -80,3 +80,6 @@ func can_knock_cabinet() -> bool:
 func set_nurse_left():
 	nurse_left_to_find_janitor = true
 	print("Nurse has left to find janitor")
+	
+func can_open_file_room() -> bool:
+	return has_quest_item("file_room_key")

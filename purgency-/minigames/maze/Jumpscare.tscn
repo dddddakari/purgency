@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cgetll8mhbvfs" path="res://assets/misc/jumpscare/sprite_18.png" id="19_kwe7g"]
 [ext_resource type="Script" uid="uid://rlgqctn2rwbh" path="res://minigames/maze/jumpscare.gd" id="20_mp0hq"]
 
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_t8lcq"]
 animations = [{
 "frames": [],

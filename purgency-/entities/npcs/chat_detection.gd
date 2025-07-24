@@ -1,16 +1,14 @@
 extends Area2D
 
 # Dialogue configuration
-@export_file("*.json") var dialogue_file: String = "res://json/nurse.json"
-@export_file("*.json") var dialogue_file_with_letter: String = "res://json/nurseletter.json"
+@export_file("*.json") var dialogue_file: String = "res://json/sad_nurse.json"
 @export var dialogue_player_path: NodePath = "/root/RoomsArea/Dialogue"
 
-var good_points: Node = null #game state
-var bad_points: Node = null # again game state
+var good_points: Node = null # Game state reference
+var bad_points: Node = null # Game state reference
 var dialogue_player: Node = null  # Reference to dialogue system
 
 func _ready() -> void:
-	
 	# Get dialogue player node
 	dialogue_player = get_node_or_null(dialogue_player_path)
 	if dialogue_player == null:
@@ -32,26 +30,14 @@ func _on_body_entered(body: Node2D) -> void:
 	if dialogue_player == null:
 		return
 
-	# Choose dialogue file based on quest items
-	var selected_dialogue_file = get_appropriate_dialogue_file()
-	
 	# Check dialogue file exists
-	if not FileAccess.file_exists(selected_dialogue_file):
-		push_error("Dialogue file not found: " + selected_dialogue_file)
+	if not FileAccess.file_exists(dialogue_file):
+		push_error("Dialogue file not found: " + dialogue_file)
 		return
 	
 	# Start dialogue
-	dialogue_player.d_file = selected_dialogue_file
+	dialogue_player.d_file = dialogue_file
 	dialogue_player.start()
-
-func get_appropriate_dialogue_file() -> String:
-	# Check if player has the love letter
-	if QuestManager.has_quest_item("love_letter"):
-		print("Player has love letter - using special nurse dialogue")
-		return dialogue_file_with_letter
-	else:
-		print("Player doesn't have love letter - using normal nurse dialogue")
-		return dialogue_file
 
 func _on_option_selected(option_index: int) -> void:
 	# Handle dialogue option selection
@@ -104,27 +90,20 @@ func _on_option_selected(option_index: int) -> void:
 			dialogue_player.goto_id(next_id)
 		else:
 			print("dialogue_player missing method: goto_id")
-			
-			
+
 func _on_interact():
-	if QuestManager.is_path_chosen():
-		print("Path already chosen, can't interact with nurse")
+	# Simplified interaction for sad nurse - no special conditions
+	if dialogue_player == null:
 		return
 		
-	# Rest of your existing interaction code
-	if QuestManager.has_quest_item("love_letter"):
-		print("Player has love letter - using special nurse dialogue")
-		var dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
-		dialogue_system.d_file = "res://json/nurseletter.json"
-		dialogue_system.start()
-	else:
-		print("Player has no letter - using default dialogue")
-		var dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
-		dialogue_system.d_file = "res://json/nurse.json"
-		dialogue_system.start()
+	print("Interacting with sad nurse")
+	dialogue_player.d_file = dialogue_file
+	dialogue_player.start()
 
 func _on_dialogue_finished() -> void:
 	# Dialogue finished handler
-	print("Dialogue finished.")
-	print(good_points)
-	print(bad_points)
+	print("Dialogue with sad nurse finished.")
+	if good_points:
+		print("Good points:", good_points)
+	if bad_points:
+		print("Bad points:", bad_points)

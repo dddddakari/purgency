@@ -22,7 +22,7 @@
 	{
 		"id": "bad_ending_scene",
 		"action": "change_scene",
-		"scene_path": "res://scenes/bad_ending.tscn",
+		"scene_path": "res://scenes/hospital/f1_rooms_area/Room_AreaCabinetSpilled.tscn",
 		"text": ""
 	},
 	{

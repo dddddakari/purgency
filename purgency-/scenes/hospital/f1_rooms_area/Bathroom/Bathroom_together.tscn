@@ -71,18 +71,18 @@ position = Vector2(492, 385)
 script = null
 
 [node name="Player" parent="." instance=ExtResource("3_yhdiy")]
-position = Vector2(489, 313)
+position = Vector2(632, 477)
 scale = Vector2(2, 2)
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
-position = Vector2(0.5, -8)
+position = Vector2(3, 1)
 zoom = Vector2(3, 3)
 
 [node name="Inlove" type="Area2D" parent="."]
 script = ExtResource("8_yhdiy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inlove"]
-position = Vector2(475, 398)
+position = Vector2(467, 380)
 shape = SubResource("CircleShape2D_lt6pe")
 
 [connection signal="body_entered" from="Bathroom Door" to="Bathroom Door" method="_on_body_entered"]

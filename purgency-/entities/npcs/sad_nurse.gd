@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name SadNurse
+class_name NPCNurse
 
 # Movement settings
 @export var move_distance: float = 40.0
