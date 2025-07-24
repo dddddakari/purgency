@@ -1,7 +1,12 @@
-[gd_scene load_steps=7 format=4 uid="uid://qu57swq6c6c"]
+[gd_scene load_steps=11 format=4 uid="uid://qu57swq6c6c"]
 
 [ext_resource type="TileSet" uid="uid://c348q58upmtsm" path="res://rooms.tres" id="1_fvqlo"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="2_20puf"]
+[ext_resource type="PackedScene" uid="uid://cydwkmkrwkohc" path="res://entities/items/files/files.tscn" id="3_6x235"]
+[ext_resource type="PackedScene" uid="uid://c4260nhp2fa7f" path="res://entities/items/roomdoor/file_room.tscn" id="3_r1gox"]
+[ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="4_r1gox"]
+[ext_resource type="Script" uid="uid://b1jx1scc77mhm" path="res://entities/items/files/files.gd" id="7_fqtgs"]
+[ext_resource type="PackedScene" uid="uid://c4euslbhl7i1u" path="res://entities/items/computerfileroom/Puter.tscn" id="8_in7a4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvqlo"]
 size = Vector2(36, 26)
@@ -11,9 +16,6 @@ size = Vector2(18.5, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r445n"]
 size = Vector2(10, 15)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_fvqlo"]
-radius = 23.1948
 
 [node name="FileRoom" type="Node2D"]
 
@@ -51,7 +53,7 @@ tile_map_data = PackedByteArray("AAAgAA0ACQAAAAAAAAAgAA4ACQAAAAEAAAAhAA0ACQABAAA
 tile_set = ExtResource("1_fvqlo")
 
 [node name="Player" parent="TileMap Layers" instance=ExtResource("2_20puf")]
-position = Vector2(498.616, 223.845)
+position = Vector2(559.811, 214.457)
 scale = Vector2(0.755479, 0.722081)
 
 [node name="topping" type="TileMapLayer" parent="TileMap Layers"]
@@ -85,9 +87,16 @@ shape = SubResource("RectangleShape2D_r445n")
 build_mode = 1
 polygon = PackedVector2Array(-107, -33, 83, -32, 83, 42, 61, 42, 62, 65, -87, 65, -87, 41, -109, 42, -109, -36)
 
-[node name="Door" type="Area2D" parent="."]
-position = Vector2(475, 169)
+[node name="Dialogue" parent="." instance=ExtResource("4_r1gox")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(22, 81)
-shape = SubResource("CircleShape2D_fvqlo")
+[node name="Files" parent="." instance=ExtResource("3_6x235")]
+position = Vector2(500, 187)
+scale = Vector2(0.189133, 0.185764)
+script = ExtResource("7_fqtgs")
+
+[node name="Puter" parent="." instance=ExtResource("8_in7a4")]
+position = Vector2(512, 147)
+
+[node name="AdminRoom" parent="." instance=ExtResource("3_r1gox")]
+position = Vector2(497, 247)
+script = null

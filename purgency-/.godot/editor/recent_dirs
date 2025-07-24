@@ -1,12 +1,12 @@
-res://entities/items/roomdoor
-res://BGassets/singles
 res://scenes/hospital/f1_rooms_area/Fileroom
 D:/purgency/purgency-/json
+res://assets/items_hospital
+res://entities/items/roomdoor
+res://scenes/hospital/f1_rooms_area/Bathroom
+res://BGassets/singles
 res://entities/npcs
 res://
 res://BGassets
-res://scenes/hospital/f1_rooms_area/Bathroom
-res://assets/items_hospital
 res://assets/button
 res://scenes/hospital/b_hallway_area
 res://scenes/hospital/f1_rooms_area

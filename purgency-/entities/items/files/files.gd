@@ -1,21 +1,20 @@
 extends Area2D
 
 @onready var interactable: Area2D = $interactable
-var keycard = null
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 var dialogue_system = null
 var last_dialogue_id = ""
 
-func _ready():
+func _ready() -> void:
 	interactable.interact = _on_interact
-	# Find the keycard in the scene (adjust path as needed)
-	keycard = get_node_or_null("/root/RoomsArea/Keycard")
-
+	
 func _on_interact():
 	use_dialogue()
-
+		
 func use_dialogue():
-	dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
-	var dialogue_file_path = "res://json/filedoor.json"
+	dialogue_system = get_parent().get_node("/root/FileRoom/Dialogue")
+	var dialogue_file_path = "res://json/files.json"
 	
 	if dialogue_system:
 		if FileAccess.file_exists(dialogue_file_path):
@@ -46,4 +45,4 @@ func _monitor_dialogue():
 			_on_dialogue_finished()
 
 func _on_dialogue_finished():
-	pass
+	print("Files: Dialogue finished with ID: ", last_dialogue_id)
