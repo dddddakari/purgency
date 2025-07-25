@@ -130,7 +130,6 @@ position = Vector2(568, 208)
 
 [node name="Cabinet" parent="." instance=ExtResource("9_avhti")]
 position = Vector2(1005, 357)
-script = null
 
 [node name="RoomsArea2D" type="Area2D" parent="."]
 
@@ -138,19 +137,6 @@ script = null
 polygon = PackedVector2Array(215, 140, 211, 603, 1125, 616, 1112, 112, 267, 121, 270, 176, 1042, 175, 1042, 530, 268, 531, 270, 174)
 
 [node name="ContainerCanvas" type="CanvasLayer" parent="."]
-
-[node name="InventoryScreen" parent="ContainerCanvas"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-visible = false
-script = null
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(287, 189)
