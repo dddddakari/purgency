@@ -16,7 +16,7 @@ var health = 80
 var player_inatk_zone = false
 var can_take_dmg = true
 var dead = false
-var player_base_atk = 8
+var player_base_atk = 15
 
 
 func _physics_process(delta: float):
