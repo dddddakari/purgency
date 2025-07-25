@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://b2g0jrahw0q02" path="res://entities/items/bathroomdoor/BathroomDoor.tscn" id="7_pifqf"]
 [ext_resource type="PackedScene" uid="uid://cnt7hrqujimic" path="res://entities/npcs/Nurse.tscn" id="8_p3wa5"]
 [ext_resource type="PackedScene" uid="uid://b1ajd3pr8b3ig" path="res://entities/items/cabinet/Cabinet.tscn" id="9_avhti"]
-[ext_resource type="PackedScene" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_we4yc"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_s0pnb"]
 [ext_resource type="PackedScene" uid="uid://bpqmipk5q3spb" path="res://entities/items/loveletter/Loverletter.tscn" id="12_q23xy"]
 [ext_resource type="PackedScene" uid="uid://c2vd78buj8vs7" path="res://entities/items/medicinecart/medicineCart.tscn" id="13_i38je"]
 [ext_resource type="PackedScene" uid="uid://dnbu4gfni8oip" path="res://entities/items/roomdoor/admin_room.tscn" id="14_6lic6"]
 [ext_resource type="Script" uid="uid://dpxxq3wx7g8ff" path="res://entities/items/roomdoor/lockeddoor.gd" id="15_2rds4"]
 [ext_resource type="PackedScene" uid="uid://c4260nhp2fa7f" path="res://entities/items/roomdoor/file_room.tscn" id="16_2rds4"]
+[ext_resource type="Script" uid="uid://spxpc48tygef" path="res://entities/items/roomdoor/lockedoorfile.gd" id="16_dx3fw"]
 [ext_resource type="Script" uid="uid://do13xwpvq64yu" path="res://scenes/hospital/f1_rooms_area/exit_to_security.gd" id="17_dx3fw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbnea"]
@@ -139,8 +139,18 @@ polygon = PackedVector2Array(215, 140, 211, 603, 1125, 616, 1112, 112, 267, 121,
 
 [node name="ContainerCanvas" type="CanvasLayer" parent="."]
 
-[node name="InventoryScreen" parent="ContainerCanvas" instance=ExtResource("10_we4yc")]
+[node name="InventoryScreen" parent="ContainerCanvas"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 visible = false
+script = null
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(287, 189)
@@ -180,7 +190,7 @@ script = ExtResource("15_2rds4")
 
 [node name="FileRoom" parent="." instance=ExtResource("16_2rds4")]
 position = Vector2(806, 370)
-script = ExtResource("15_2rds4")
+script = ExtResource("16_dx3fw")
 
 [node name="ExitToSecurity" type="Area2D" parent="."]
 script = ExtResource("17_dx3fw")
