@@ -2,21 +2,21 @@
   {
 	"id": "start",
 	"name": "Finneas",
-	"text": "Should I Leave The file room?",
+	"text": "Should I leave the file room?",
 	"options": [
-	  { "text": "Yeah, it weird in here", "next_id": "teleport" },
-	  { "text": "No I'm gonna hack into their mainframe", "next_id": "stay_here" }
+	  { "text": "Yeah, it's weird in here", "next_id": "teleport" },
+	  { "text": "No, I'm gonna hack into their mainframe", "next_id": "stay_here" }
 	]
   },
   {
 	"id": "stay_here",
 	"name": "Finneas",
-	"text": "Teehee So Sneaky"
+	"text": "Teehee! So sneaky."
   },
   {
 	"id": "teleport",
 	"name": "Finneas",
-	"action": "change_scene",
-	"scene_path": "res://scenes/hospital/f1_rooms_area/Room_AreaUnlocked.tscn"
+	"text": "(Leaving...)",
+	"action": "conditional_scene_change"
   }
 ]

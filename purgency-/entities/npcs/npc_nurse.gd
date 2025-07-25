@@ -73,11 +73,17 @@ func receive_love_letter():
 	
 	print("NPC Nurse: Received love letter!")
 	QuestManager.set_letter_used()
-	QuestManager.set_nurse_left()  # Add this line
+	QuestManager.set_nurse_left()
 	can_receive_letter = false
 	has_received_letter = true
 	is_moving = false
 	sprite.play("happy")
+	
+	# Stop any ongoing dialogue first
+	var dialogue_player = get_node_or_null("/root/RoomsArea/Dialogue")
+	if dialogue_player and dialogue_player.has_method("stop_dialogue"):
+		dialogue_player.stop_dialogue()
+	
 	start_emotional_exit()
 	
 func start_emotional_exit():

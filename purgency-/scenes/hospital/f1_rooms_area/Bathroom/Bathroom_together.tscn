@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://deq8tbfu7cgyt"]
+[gd_scene load_steps=13 format=4 uid="uid://deq8tbfu7cgyt"]
 
 [ext_resource type="TileSet" uid="uid://dvyck2pougfbt" path="res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom.tres" id="2_caeo2"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="3_yhdiy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="5_mido0"]
 [ext_resource type="PackedScene" uid="uid://bk8mgtb0sumsy" path="res://entities/npcs/JanitorNpc.tscn" id="6_bmcap"]
 [ext_resource type="PackedScene" uid="uid://cnt7hrqujimic" path="res://entities/npcs/Nurse.tscn" id="7_caeo2"]
+[ext_resource type="PackedScene" uid="uid://balrieb8xarpl" path="res://systems/interactionsystem/interactable.tscn" id="8_oogay"]
 [ext_resource type="Script" uid="uid://dt4ryfmgy0xhd" path="res://scenes/hospital/f1_rooms_area/Bathroom/inlove.gd" id="8_yhdiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpcvd"]
@@ -16,6 +17,9 @@ radius = 143.693
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lt6pe"]
 radius = 89.0898
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mido0"]
+radius = 100.08
 
 [node name="Bathroom" type="Node2D"]
 
@@ -84,5 +88,11 @@ script = ExtResource("8_yhdiy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inlove"]
 position = Vector2(467, 380)
 shape = SubResource("CircleShape2D_lt6pe")
+
+[node name="interactable" parent="Inlove" instance=ExtResource("8_oogay")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inlove/interactable"]
+position = Vector2(470, 387)
+shape = SubResource("CircleShape2D_mido0")
 
 [connection signal="body_entered" from="Bathroom Door" to="Bathroom Door" method="_on_body_entered"]

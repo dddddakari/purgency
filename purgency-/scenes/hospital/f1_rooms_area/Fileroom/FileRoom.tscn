@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://qu57swq6c6c"]
+[gd_scene load_steps=12 format=4 uid="uid://qu57swq6c6c"]
 
 [ext_resource type="TileSet" uid="uid://c348q58upmtsm" path="res://rooms.tres" id="1_fvqlo"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="2_20puf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c4260nhp2fa7f" path="res://entities/items/roomdoor/file_room.tscn" id="3_r1gox"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="4_r1gox"]
 [ext_resource type="Script" uid="uid://b1jx1scc77mhm" path="res://entities/items/files/files.gd" id="7_fqtgs"]
+[ext_resource type="Script" uid="uid://c1ua7o4cdpmkh" path="res://scenes/hospital/f1_rooms_area/Fileroom/fileroomexit.gd" id="8_gpq7r"]
 [ext_resource type="PackedScene" uid="uid://c4euslbhl7i1u" path="res://entities/items/computerfileroom/Puter.tscn" id="8_in7a4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvqlo"]
@@ -98,5 +99,9 @@ script = ExtResource("7_fqtgs")
 position = Vector2(512, 147)
 
 [node name="AdminRoom" parent="." instance=ExtResource("3_r1gox")]
-position = Vector2(497, 247)
-script = null
+position = Vector2(496, 259)
+script = ExtResource("8_gpq7r")
+dialogue_file = "res://json/fileroomexit.json"
+dialogue_player_path = NodePath("/root/FileRoom/Dialogue")
+
+[connection signal="body_entered" from="AdminRoom" to="AdminRoom" method="_on_body_entered"]

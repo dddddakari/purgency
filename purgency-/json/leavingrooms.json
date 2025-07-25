@@ -1,0 +1,17 @@
+[
+  {
+		"id": "start",
+		"name": "Finneas",
+		"text": "(The start of a new hallway... it looks dark.)",
+		"options": [
+			{"text": "Try to open it", "next_id": "access_denied"},
+			{"text": "Leave it be", "next_id": "access_denied"}
+		],
+  },
+  {
+	"id": "access_denied",
+	"name": "Finneas",
+	"text": "I can't leave until I figure out where Pen's room is...",
+	"options": []
+  }
+]

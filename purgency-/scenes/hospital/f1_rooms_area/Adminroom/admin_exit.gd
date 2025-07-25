@@ -1,8 +1,8 @@
 extends Area2D
 
 # Dialogue configuration
-@export_file("*.json") var dialogue_file: String = "res://json/fileroomexit.json"
-@export var dialogue_player_path: NodePath = "/root/FileRoom/Dialogue"
+@export_file("*.json") var dialogue_file: String = "res://json/adminexit.json"
+@export var dialogue_player_path: NodePath = "/root/AdminRoom/Dialogue"
 
 var dialogue_player: Node = null
 
@@ -74,13 +74,13 @@ func _handle_scene_change():
 	print("DEBUG: Current path chosen: ", QuestManager.path_chosen)
 	
 	if QuestManager.path_chosen == "bad":
-		print("DEBUG: Loading cabinet-spilled scene (bad path)")
+		print("DEBUG: Loading bad path scene")
 		get_tree().change_scene_to_file("res://scenes/hospital/f1_rooms_area/Room_AreaCabinetSpilled.tscn")
 	elif QuestManager.path_chosen == "good":
-		print("DEBUG: Loading unlocked scene (good path)")
+		print("DEBUG: Loading good path scene")
 		get_tree().change_scene_to_file("res://scenes/hospital/f1_rooms_area/Room_AreaUnlocked.tscn")
 	else:
-		print("DEBUG: No path chosen yet, loading default unlocked scene")
+		print("DEBUG: Loading default scene")
 		get_tree().change_scene_to_file("res://scenes/hospital/f1_rooms_area/Room_AreaUnlocked.tscn")
 
 func _on_dialogue_finished():

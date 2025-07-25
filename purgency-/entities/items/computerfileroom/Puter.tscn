@@ -19,5 +19,4 @@ position = Vector2(-2, -54)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
 position = Vector2(3, 62)
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_33ceh")

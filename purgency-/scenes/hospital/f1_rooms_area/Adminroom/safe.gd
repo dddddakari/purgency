@@ -5,34 +5,23 @@ extends Area2D
 
 var dialogue_system = null
 var last_dialogue_id = ""
+var has_been_opened: bool = false  # Track if safe was already opened
 
 func _ready() -> void:
 	interactable.interact = _on_interact
 	
-	# Check if the love letter has already been picked up
-	if QuestManager.has_quest_item("love_letter"):
-		# If already picked up, hide the letter
-		visible = false
-		set_process(false)
-		interactable.set_process(false)
-	
 func _on_interact():
-	if not QuestManager.can_use_letter():
-		print("Cannot use letter - already used")
-		return
-	
-	print("Love Letter interaction")
 	use_dialogue()
 		
 func use_dialogue():
-	dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
-	var dialogue_file_path = "res://json/loveletter.json"
+	dialogue_system = get_parent().get_node("/root/AdminRoom/Dialogue")
+	var dialogue_file_path = "res://json/safedialogue.json"
 	
 	if dialogue_system:
 		if FileAccess.file_exists(dialogue_file_path):
 			dialogue_system.d_file = dialogue_file_path 
 			dialogue_system.start()
-			print("Love dialogue started.")
+			print("Safe dialogue started.")
 			
 			# Start monitoring the dialogue system
 			_monitor_dialogue()
@@ -55,15 +44,16 @@ func _monitor_dialogue():
 		else:
 			# Dialogue has ended, handle the result
 			_on_dialogue_finished()
-			
 
 func _on_dialogue_finished():
-	print("Love Letter: Dialogue finished with ID: ", last_dialogue_id)
+	print("Safe: Dialogue finished with ID: ", last_dialogue_id)
 	
-	if last_dialogue_id == "Love_Confession":
-		print("Player picked up the letter")
-		QuestManager.add_quest_item("love_letter")
-		
-		visible = false
-		set_process(false)
-		interactable.set_process(false)
+	if last_dialogue_id == "found_info" and not has_been_opened:
+		print("DEBUG: Attempting to add sister_location_info")
+		has_been_opened = true
+		QuestManager.add_quest_item("sister_location_info")
+		print("DEBUG: Current quest items: ", QuestManager.get_all_quest_items())
+	else:
+		print("DEBUG: Not adding item - Condition not met (ID:", last_dialogue_id, "Opened:", has_been_opened, ")")
+	
+	last_dialogue_id = ""

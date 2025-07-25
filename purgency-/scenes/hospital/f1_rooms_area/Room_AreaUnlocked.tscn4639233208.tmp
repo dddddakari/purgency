@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cicmw4hv5ag44"]
+[gd_scene load_steps=22 format=4 uid="uid://cicmw4hv5ag44"]
 
 [ext_resource type="Script" uid="uid://bn3pawq265l5b" path="res://scenes/hospital/f1_rooms_area/room_area_unlocked.gd" id="1_2rds4"]
 [ext_resource type="TileSet" uid="uid://gubk0tyb1lfj" path="res://BGassets/RoomsArea/Rooms_Area.tres" id="2_i38je"]
@@ -9,14 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://b2g0jrahw0q02" path="res://entities/items/bathroomdoor/BathroomDoor.tscn" id="7_pifqf"]
 [ext_resource type="PackedScene" uid="uid://cnt7hrqujimic" path="res://entities/npcs/Nurse.tscn" id="8_p3wa5"]
 [ext_resource type="PackedScene" uid="uid://b1ajd3pr8b3ig" path="res://entities/items/cabinet/Cabinet.tscn" id="9_avhti"]
-[ext_resource type="PackedScene" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_we4yc"]
+[ext_resource type="PackedScene" uid="uid://d33wejrtayarj" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_we4yc"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_s0pnb"]
 [ext_resource type="PackedScene" uid="uid://bpqmipk5q3spb" path="res://entities/items/loveletter/Loverletter.tscn" id="12_q23xy"]
 [ext_resource type="PackedScene" uid="uid://c2vd78buj8vs7" path="res://entities/items/medicinecart/medicineCart.tscn" id="13_i38je"]
 [ext_resource type="PackedScene" uid="uid://dnbu4gfni8oip" path="res://entities/items/roomdoor/admin_room.tscn" id="14_6lic6"]
 [ext_resource type="Script" uid="uid://dpxxq3wx7g8ff" path="res://entities/items/roomdoor/lockeddoor.gd" id="15_2rds4"]
 [ext_resource type="PackedScene" uid="uid://c4260nhp2fa7f" path="res://entities/items/roomdoor/file_room.tscn" id="16_2rds4"]
-[ext_resource type="Script" uid="uid://do13xwpvq64yu" path="res://scenes/hospital/f1_rooms_area/exit_to_security.gd" id="17_dx3fw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbnea"]
 size = Vector2(300, 115.5)
@@ -32,9 +31,6 @@ size = Vector2(349, 122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i38je"]
 size = Vector2(298.75, 23)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rds4"]
-size = Vector2(243, 35)
 
 [node name="RoomsArea" type="Area2D"]
 position = Vector2(-3, 0)
@@ -180,12 +176,3 @@ script = ExtResource("15_2rds4")
 [node name="FileRoom" parent="." instance=ExtResource("16_2rds4")]
 position = Vector2(806, 370)
 script = ExtResource("15_2rds4")
-
-[node name="ExitToSecurity" type="Area2D" parent="."]
-script = ExtResource("17_dx3fw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitToSecurity"]
-position = Vector2(624.5, 190.5)
-shape = SubResource("RectangleShape2D_2rds4")
-
-[connection signal="body_entered" from="ExitToSecurity" to="ExitToSecurity" method="_on_body_entered"]

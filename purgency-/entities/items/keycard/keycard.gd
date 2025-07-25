@@ -11,12 +11,21 @@ var last_dialogue_id = ""
 var was_picked_up = false
 
 func _ready() -> void:
+	print("Keycard loaded at position: ", global_position)
 	interactable.interact = _on_interact
 	
-	# Only hide if actually picked up
 	if QuestManager.has_quest_item("nurse_keycard"):
 		was_picked_up = true
 		hide_keycard()
+	else:
+		print("Keycard available for pickup")
+
+func pick_up_keycard():
+	print("Player took the keycard at position: ", global_position)
+	was_picked_up = true
+	QuestManager.add_quest_item("nurse_keycard")
+	hide_keycard()
+	print("Keycard added to inventory")
 
 func _on_interact():
 	if was_picked_up:
@@ -62,12 +71,6 @@ func _on_dialogue_finished():
 		interactable.set_process(true)
 	
 	last_dialogue_id = ""
-
-func pick_up_keycard():
-	print("Player took the keycard")
-	was_picked_up = true
-	QuestManager.add_quest_item("nurse_keycard")
-	hide_keycard()
 
 func hide_keycard():
 	visible = false
