@@ -2076,6 +2076,7 @@ script = ExtResource("8_0iy2g")
 metadata/_edit_use_anchors_ = true
 
 [node name="Esc" type="Label" parent="Player"]
+visible = false
 offset_left = -119.0
 offset_top = -44.0
 offset_right = 5.0
@@ -2241,19 +2242,6 @@ position = Vector2(2, -2)
 polygon = PackedVector2Array(15, 18, 254, 18, 255, -13, 398, -13, 398, 178, 255, 177, 255, 210, 14, 209, 14, 23, -27, 25, -24, 246, 300, 249, 296, 202, 447, 205, 452, -63, 215, -69, 213, -16, -34, -14, -30, 30, 14, 21)
 
 [node name="ContainerCanvas" type="CanvasLayer" parent="."]
-
-[node name="InventoryScreen" parent="ContainerCanvas"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-visible = false
-script = null
 
 [node name="Dialogue" parent="." instance=ExtResource("20_qbm3f")]
 
