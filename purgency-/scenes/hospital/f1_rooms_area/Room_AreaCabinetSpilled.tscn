@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://btlohi51um8lb" path="res://audio/music/muteButton.gd" id="6_y0fg4"]
 [ext_resource type="PackedScene" uid="uid://b2g0jrahw0q02" path="res://entities/items/bathroomdoor/BathroomDoor.tscn" id="7_rf2ap"]
 [ext_resource type="PackedScene" uid="uid://b1ajd3pr8b3ig" path="res://entities/items/cabinet/Cabinet.tscn" id="9_bq1ib"]
-[ext_resource type="PackedScene" uid="uid://d33wejrtayarj" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_si8ic"]
+[ext_resource type="PackedScene" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_si8ic"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_ouypf"]
 [ext_resource type="Script" uid="uid://ciypcuonykfnh" path="res://entities/items/medicinecart/knockedovercart.gd" id="13_aljgc"]
 [ext_resource type="PackedScene" uid="uid://c2vd78buj8vs7" path="res://entities/items/medicinecart/medicineCart.tscn" id="13_cf1m0"]

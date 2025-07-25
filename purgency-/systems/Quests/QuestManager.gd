@@ -44,19 +44,6 @@ func load_quest_data(data: Dictionary) -> void:
 		
 signal quest_progress(method: String)  # "good" or "bad"
 
-
-func complete_quest_good():
-	print("QuestManager: Completing quest via GOOD path")
-	quest_progress.emit("good")
-	GameState.good_points += 1
-	print("Current good points: %d, bad points: %d" % [GameState.good_points, GameState.bad_points])
-
-func complete_quest_bad():
-	print("QuestManager: Completing quest via BAD path")
-	quest_progress.emit("bad")
-	GameState.bad_points += 1
-	print("Current good points: %d, bad points: %d" % [GameState.good_points, GameState.bad_points])
-	
 # Add these new functions
 func set_path_chosen(path: String):
 	path_chosen = path
@@ -83,3 +70,17 @@ func set_nurse_left():
 	
 func can_open_file_room() -> bool:
 	return has_quest_item("file_room_key")
+
+func complete_quest_good():
+	print("QuestManager: Completing quest via GOOD path")
+	set_path_chosen("good")  # Set the path when completing quest
+	quest_progress.emit("good")
+	GameState.good_points += 1
+	print("Current good points: %d, bad points: %d" % [GameState.good_points, GameState.bad_points])
+
+func complete_quest_bad():
+	print("QuestManager: Completing quest via BAD path")
+	set_path_chosen("bad")  # Set the path when completing quest
+	quest_progress.emit("bad")
+	GameState.bad_points += 1
+	print("Current good points: %d, bad points: %d" % [GameState.good_points, GameState.bad_points])

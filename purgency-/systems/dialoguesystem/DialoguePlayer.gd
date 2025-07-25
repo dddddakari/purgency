@@ -11,12 +11,13 @@ var curr_dialogue_id := -1
 var d_active := false
 var id_map := {}
 
-var player: CharacterBody2D = null
+var player: Node2D = null
 var waiting_for_input := false
 
 var can_advance := true  # Controls if input can advance dialogue
 #default state not hostile
 var hostile = false
+
 
 func _ready():
 	print("DialoguePlayer: _ready called")
@@ -27,9 +28,9 @@ func _ready():
 	if player == null:
 		print("[Warning] Player not found in group 'player'.")
 	else:
-		print("Player found:", player)
+		print("Player found:", player, " (Type: ", player.get_class(), ")")
 
-
+# Later in your code, check if player has the method before calling it
 func start():
 	print("DialoguePlayer: start() called")
 	if d_active:
@@ -40,9 +41,11 @@ func start():
 	d_active = true
 	$NinePatchRect.visible = true
 
-	if player:
+	if player and player.has_method("set_movement_enabled"):
 		player.set_movement_enabled(false)
 		print("Player movement disabled.")
+	elif player:
+		print("[Warning] Player doesn't have set_movement_enabled method")
 
 	dialogue = load_dialogue()
 	print("Dialogue size is:", dialogue.size())
@@ -135,6 +138,7 @@ func next_script(optional_id = null):
 	var current_line = dialogue[curr_dialogue_id]
 
 # Handle actions (regardless of whether there's text)
+# Handle actions (regardless of whether there's text)
 	if current_line.has("action"):
 		match current_line["action"]:
 			"change_scene":
@@ -147,6 +151,10 @@ func next_script(optional_id = null):
 					print("scene_path is empty!")
 					end_dialogue()
 					return
+			"conditional_scene_change":
+				print("Action: Conditional scene change triggered")
+				_handle_conditional_scene_change()
+				return
 			"start_combat":
 				print("Action: Starting combat")
 				hostile = true
@@ -186,6 +194,22 @@ func next_script(optional_id = null):
 	else:
 		waiting_for_input = true
 		can_advance = true
+		
+		
+func _handle_conditional_scene_change():
+	print("DEBUG: Handling conditional scene change...")
+	print("DEBUG: Current path chosen: ", QuestManager.path_chosen)
+	
+	if QuestManager.path_chosen == "bad":
+		print("DEBUG: Loading cabinet-spilled scene (bad path)")
+		get_tree().change_scene_to_file("res://scenes/hospital/f1_rooms_area/Room_AreaCabinetSpilled.tscn")
+	elif QuestManager.path_chosen == "good":
+		print("DEBUG: Loading unlocked scene (good path)")
+		get_tree().change_scene_to_file("res://scenes/hospital/f1_rooms_area/Room_AreaUnlocked.tscn")
+	else:
+		print("DEBUG: No path chosen yet, loading default unlocked scene")
+		get_tree().change_scene_to_file("res://scenes/hospital/f1_rooms_area/Room_AreaUnlocked.tscn")
+
 
 
 func show_options(options_array):
@@ -235,12 +259,12 @@ func clear_options():
 		child.queue_free()
 
 
+
 func end_dialogue():
 	print("\n--- end_dialogue called ---")
 	if not d_active:
 		print("Dialogue already inactive; nothing to end.")
 		return
-
 
 	d_active = false
 	waiting_for_input = false
@@ -249,6 +273,8 @@ func end_dialogue():
 	$Options.visible = false
 	clear_options()
 
-	if player:
+	if player and player.has_method("set_movement_enabled"):
 		player.set_movement_enabled(true)
 		print("Movement re-enabled in end_dialogue().")
+	elif player:
+		print("[Warning] Player doesn't have set_movement_enabled method")
