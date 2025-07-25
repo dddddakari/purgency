@@ -11,7 +11,7 @@
   {
 	"id": "open_safe",
 	"name": "Finneas",
-	"text": "There's a document inside... 'Patient Transfer: Penelope O'Dessa to Basement Wubg, Room 1. Special condition: Do not disturb after 8PM.'",
+	"text": "There's a document inside... 'Patient Transfer: Penelope O'Dessa to Basement Wubg, Room B01. Special condition: Do not disturb after 8PM.'",
 	"next_id": "remember_info" 
   },
 {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b3ifv2yjd8xr7"]
+[gd_scene load_steps=19 format=4 uid="uid://b3ifv2yjd8xr7"]
 
 [ext_resource type="Script" uid="uid://ynytnyndo86q" path="res://scenes/hospital/f1_rooms_area/rooms_area.gd" id="1_ebyxo"]
 [ext_resource type="TileSet" uid="uid://gubk0tyb1lfj" path="res://BGassets/RoomsArea/Rooms_Area.tres" id="2_5x4xn"]
@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://ccecwl6cmli85" path="res://assets/button/SPEAKER_ON.png" id="5_i2cbi"]
 [ext_resource type="Script" uid="uid://btlohi51um8lb" path="res://audio/music/muteButton.gd" id="6_k6yym"]
 [ext_resource type="PackedScene" uid="uid://b2g0jrahw0q02" path="res://entities/items/bathroomdoor/BathroomDoor.tscn" id="7_ctk5x"]
+[ext_resource type="Script" uid="uid://duser0rvjm7ur" path="res://entities/items/bathroomdoor/bathroom_doorunpooped.gd" id="8_5x4xn"]
 [ext_resource type="PackedScene" uid="uid://cnt7hrqujimic" path="res://entities/npcs/Nurse.tscn" id="8_lk5v6"]
 [ext_resource type="PackedScene" uid="uid://b1ajd3pr8b3ig" path="res://entities/items/cabinet/Cabinet.tscn" id="9_y8jm5"]
-[ext_resource type="PackedScene" uid="uid://d33wejrtayarj" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_lhveh"]
+[ext_resource type="PackedScene" path="res://systems/inventorysystem/InventoryScreen.tscn" id="10_lhveh"]
 [ext_resource type="PackedScene" uid="uid://dklxgwl1bkqaa" path="res://systems/dialoguesystem/Dialogue.tscn" id="11_icrkd"]
 [ext_resource type="PackedScene" uid="uid://bfbh0ln8t5v78" path="res://entities/npcs/Janitor.tscn" id="12_nkgjf"]
 
@@ -116,6 +117,7 @@ script = ExtResource("6_k6yym")
 
 [node name="BathroomDoor" parent="." instance=ExtResource("7_ctk5x")]
 position = Vector2(334, 343)
+script = ExtResource("8_5x4xn")
 
 [node name="Nurse" parent="." instance=ExtResource("8_lk5v6")]
 position = Vector2(568, 208)
@@ -162,3 +164,5 @@ shape = SubResource("RectangleShape2D_k7i5a")
 
 [node name="Janitor" parent="." instance=ExtResource("12_nkgjf")]
 position = Vector2(469, 379)
+
+[connection signal="body_entered" from="Janitor" to="Janitor" method="_on_body_entered"]

@@ -130,6 +130,7 @@ position = Vector2(568, 208)
 
 [node name="Cabinet" parent="." instance=ExtResource("9_avhti")]
 position = Vector2(1005, 357)
+script = null
 
 [node name="RoomsArea2D" type="Area2D" parent="."]
 
