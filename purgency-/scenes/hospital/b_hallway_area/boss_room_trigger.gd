@@ -1,7 +1,9 @@
 extends Area2D
 
+func _ready() -> void:
+	pass
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: CharacterBody2D) -> void:
 	use_dialogue()
 	
 func use_dialogue():
