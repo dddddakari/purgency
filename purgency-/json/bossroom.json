@@ -40,8 +40,6 @@
   },
   {
 	"id": "boss_encounter",
-	"id": "teleport",
-	"name": "Finneas",
 	"action": "change_scene",
 	"scene_path": "res://scenes/hospital/f2_boss_room/final_boss_room.tscn",
 	"next_id": "none"

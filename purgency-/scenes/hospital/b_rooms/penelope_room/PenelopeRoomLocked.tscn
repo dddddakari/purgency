@@ -60,3 +60,5 @@ script = ExtResource("8_pfw1e")
 z_index = 1
 position = Vector2(82, 9)
 shape = SubResource("CircleShape2D_h33qr")
+
+[connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
