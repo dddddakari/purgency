@@ -17,12 +17,17 @@ func _ready() -> void:
 		interactable.set_process(false)
 	
 func _on_interact():
-	print("mean option")
+	if not QuestManager.can_knock_cabinet():
+		print("Cannot knock over cabinet - either already done or nurse is gone")
+		return
+	
+	print("Knocking over cabinet")
 	use_dialogue()
 
+			
 func use_dialogue():
 	dialogue_system = get_parent().get_node("/root/RoomsArea/Dialogue")
-	var dialogue_file_path = "res://json/loveletter.json"
+	var dialogue_file_path = "res://json/knockover.json"
 	
 	if dialogue_system:
 		if FileAccess.file_exists(dialogue_file_path):
@@ -53,12 +58,16 @@ func _monitor_dialogue():
 			_on_dialogue_finished()
 
 func _on_dialogue_finished():
-	print("Dialogue finished on ID:", last_dialogue_id)
+	print("Medicine Cart: Dialogue finished with ID: ", last_dialogue_id)
 	
-	# Check if the player chose to pick up the letter
-	if last_dialogue_id == "Love_Confession":
-		# Add the love letter to the player's quest items
-		QuestManager.add_quest_item("love_letter")
-	
-	# Reset for next interaction
-	last_dialogue_id = ""
+	if last_dialogue_id == "bad_ending_vro":
+		print("Medicine Cart: Player chose to knock over cart")
+		QuestManager.set_cabinet_knocked()
+		QuestManager.complete_quest_bad()
+		visible = false
+		set_process(false)
+		interactable.set_process(false)
+		
+		var nurse = get_tree().get_first_node_in_group("nurse")
+		if nurse:
+			nurse.react_to_distraction()

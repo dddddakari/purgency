@@ -5,8 +5,16 @@ extends Area2D
 func _ready() -> void:
 	interactable.interact = _on_interact
 	# Debug: Make the collision shape visible
-	interactable.get_node("CollisionShape2D").debug_color = Color.RED
+	if interactable.has_node("CollisionShape2D"):
+		interactable.get_node("CollisionShape2D").debug_color = Color.RED
 
 func _on_interact():
 	print("bathroom door interaction")
-	get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom.tscn")
+	
+	# Check if nurse has left using QuestManager
+	if QuestManager.nurse_left_to_find_janitor:
+		print("Nurse is gone - loading special scene")
+		get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/Bathroom_together.tscn")
+	else:
+		print("Loading normal bathroom scene")
+		get_tree().change_scene_to_file.call_deferred("res://scenes/hospital/f1_rooms_area/Bathroom/BathroomPooped.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://pksf4tlvtjol"]
+[gd_scene load_steps=11 format=4 uid="uid://pksf4tlvtjol"]
 
 [ext_resource type="TileSet" uid="uid://cpgsunai5p6xk" path="res://scenes/hospital/b_hallway_area/B_HallwayArea.tres" id="1_7g344"]
 [ext_resource type="PackedScene" uid="uid://dqm0mk3hhq2c0" path="res://entities/player/player.tscn" id="2_gxpi4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://ckwhsoqmaen5u" path="res://scenes/hospital/b_hallway_area/door2.gd" id="6_tspyp"]
 [ext_resource type="Script" uid="uid://ddtlfjwbv3uq6" path="res://scenes/hospital/b_hallway_area/door3.gd" id="7_th4v4"]
 [ext_resource type="Script" uid="uid://i7cb40mxkapx" path="res://scenes/hospital/b_hallway_area/door4.gd" id="8_65rhk"]
+[ext_resource type="Script" uid="uid://b2o0sxv2cnl2p" path="res://scenes/hospital/b_hallway_area/boss_room_trigger.gd" id="9_65rhk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_th4v4"]
 radius = 47.3814
@@ -54,7 +55,10 @@ scale = Vector2(1.2, 1.2)
 script = ExtResource("8_65rhk")
 
 [node name="BossRoomTrigger" type="Area2D" parent="."]
+script = ExtResource("9_65rhk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossRoomTrigger"]
-position = Vector2(860, 45)
+position = Vector2(879, 40)
 shape = SubResource("CircleShape2D_th4v4")
+
+[connection signal="body_entered" from="BossRoomTrigger" to="BossRoomTrigger" method="_on_body_entered"]

@@ -1,4 +1,6 @@
-# AudioManager.gd - Save this as a singleton/autoload
+# Save this as a singleton/autoload 
+# if it doesnt already save, Maxim :3
+# should control music everywhere so just add buttons
 extends Node
 
 signal music_toggled(is_muted: bool)

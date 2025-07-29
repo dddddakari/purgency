@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cs0ppsqod3klo" path="res://entities/player/Prototype_Character.png" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://dfg0hums245ty" path="res://entities/player/finneassprite.png" id="3_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://cuq3e8q041hyd" path="res://systems/interactionsystem/InteractingComponent.tscn" id="3_sglur"]
-[ext_resource type="PackedScene" uid="uid://le4evi2ue18i" path="res://systems/inventorysystem/Inventory.tscn" id="5_fkugw"]
+[ext_resource type="PackedScene" uid="uid://drh77lyyehqep" path="res://menus/settings_menu.tscn" id="5_fkugw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wq0jh"]
 atlas = ExtResource("3_8fjmc")
@@ -282,15 +282,6 @@ scale = Vector2(-0.142169, 0.152318)
 sprite_frames = SubResource("SpriteFrames_vewsg")
 autoplay = "default"
 
-[node name="Inventory1" parent="Sprite2D" instance=ExtResource("5_fkugw")]
-visible = false
-offset_left = -675.253
-offset_top = -190.391
-offset_right = -210.553
-offset_bottom = 116.884
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.994814, 2.93708)
 rotation = 1.55683
@@ -305,6 +296,7 @@ scale = Vector2(1, 0.8985)
 zoom = Vector2(5, 5)
 
 [node name="InteractionArea" type="Area2D" parent="." groups=["player"]]
+visible = false
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
@@ -323,6 +315,10 @@ wait_time = 0.5
 
 [node name="deal_atk_timer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="SettingsMenu" parent="." instance=ExtResource("5_fkugw")]
+visible = false
+position = Vector2(-2, -4)
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

@@ -19,23 +19,25 @@ var enemy_atk_cd = true
 var attack_ip = false
 var can_be_attacked := false
 
+# Adds him as a different group so it's easier to signal for him
+# so NPCs can't accidentally trigger things.
 func _ready():
 	add_to_group("player")
 	print("Player group membership after adding:", is_in_group("player"))
 
-func set_movement_enabled(body):
+func set_movement_enabled(_body):
 	player_movement(true)
 
-func _on_interaction_area_body_entered(body):
-	print("Player entered area:", body.name)
-	if body.has_method("_on_interaction_area_body_entered"):
+func _on_interaction_area_body_entered(_body):
+	print("Player entered area:", _body.name)
+	if _body.has_method("_on_interaction_area_body_entered"):
 		print("Body has interaction handler")
 
 func _on_interaction_area_body_exited(body):
 	print("Player exited area:", body.name)
 
-func _physics_process(delta):
-	player_movement(delta)
+func _physics_process(_delta):
+	player_movement(_delta)
 	enemy_atk()
 	attack()
 	
@@ -45,7 +47,7 @@ func _physics_process(delta):
 		health = 0
 		print("dead")
 
-func player_movement(delta):
+func player_movement(_delta):
 	if not can_move:
 		return
 

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b474nd2262k6r" path="res://assets/noFilter.png" id="1_1h10t"]
 [ext_resource type="Script" uid="uid://cvryusv08m12s" path="res://minigames/heartbeat/heartbeat_moving.gd" id="1_ni6ig"]
 
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ni6ig"]
 radius = 122.119
 

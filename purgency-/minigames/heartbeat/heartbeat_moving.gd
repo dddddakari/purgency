@@ -12,7 +12,7 @@ func _process(delta):
 	if set_start:
 		heartbeat()
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") and not set_start:
 		start_game()
 

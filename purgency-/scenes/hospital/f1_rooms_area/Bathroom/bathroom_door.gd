@@ -29,7 +29,7 @@ func _on_body_entered(body: Node) -> void:
 	
 	if dialogue_player == null:
 		return
-
+		
 	# Check dialogue file exists
 	if not FileAccess.file_exists(dialogue_file):
 		push_error("Dialogue file not found: " + dialogue_file)
